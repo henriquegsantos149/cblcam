@@ -424,6 +424,35 @@
 
     .wave-bottom { display: block; width: 100%; overflow: hidden; line-height: 0; }
 
+    /* ============================================================
+       SUCCESS MODAL
+    ============================================================ */
+    #success-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(16, 69, 69, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    #success-modal.open {
+      display: flex;
+      opacity: 1;
+    }
+    .modal-card {
+      transform: scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #success-modal.open .modal-card {
+      transform: scale(1);
+    }
+
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #F5F6F7; }
     ::-webkit-scrollbar-thumb { background: #239C99; border-radius: 4px; }
@@ -1356,7 +1385,7 @@
 
           <div class="reveal reveal-delay-2 bg-[#F5F6F7] rounded-3xl p-8 sm:p-10 border border-gray-100 shadow-sm">
             <h3 class="font-bold text-[#1B6E6E] text-xl mb-6">Preencha seus dados</h3>
-            <form action="https://www.lp.ambientalpro.com.br/congresso-brasileiro-de-licenciamento-e-consultoria-ambiental/" method="get" target="_blank" class="space-y-5" aria-label="Formulário de interesse no congresso">
+            <form id="form-registration" class="space-y-5" aria-label="Formulário de interesse no congresso">
               <div>
                 <label for="f-nome" class="block text-sm font-semibold text-gray-700 mb-1.5">Seu nome <span class="text-red-500" aria-hidden="true">*</span></label>
                 <input type="text" id="f-nome" name="nome" class="form-input" placeholder="Digite seu nome completo" required autocomplete="name">
@@ -1386,8 +1415,8 @@
                   </label>
                 </div>
               </fieldset>
-              <button type="submit" class="w-full bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold text-lg py-4 rounded-2xl transition-colors duration-200 cursor-pointer shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#FFD11A]/50 mt-2">
-                QUERO GARANTIR MEU INGRESSO
+              <button type="submit" id="btn-submit" class="w-full bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold text-lg py-4 rounded-2xl transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#FFD11A]/50 mt-2 disabled:opacity-50 disabled:cursor-wait">
+                <span id="btn-text">QUERO GARANTIR MEU INGRESSO</span>
               </button>
               <p class="text-gray-400 text-xs text-center mt-2">Ao continuar você concorda com os termos de uso e política de privacidade da Ambiental Pro.</p>
             </form>
@@ -1494,9 +1523,183 @@
   </footer>
 
   <!-- ============================================================
-       JAVASCRIPT
+       SUCCESS MODAL (TICKET SELECTION)
   ============================================================ -->
+  <div id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+      
+      <div class="text-center mb-10">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 id="modal-title" class="font-display font-bold text-[#1B6E6E] text-2xl sm:text-3xl mb-2">QUASE LÁ!</h2>
+        <p class="text-gray-600">Seu interesse foi registrado com sucesso. Agora, selecione o tipo de ingresso para garantir sua vaga:</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <!-- Básico -->
+        <div class="bg-white rounded-3xl p-6 border-2 border-gray-200 flex flex-col shadow-sm">
+          <p class="font-bold text-[#239C99] text-sm uppercase tracking-widest mb-3">Ingresso Básico</p>
+          <div class="mb-1">
+            <span class="font-display text-[#1B6E6E]" style="font-size:2.8rem;">R$&nbsp;97</span>
+            <span class="text-gray-500 text-sm">,00</span>
+          </div>
+          <p class="text-gray-500 text-xs mb-6">ou 12x de R$ 9,70</p>
+          <ul class="space-y-2 mb-8 flex-1">
+            <li class="flex items-start gap-2.5 text-xs text-gray-700">
+              <svg class="w-4 h-4 text-[#2EBFBC] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Oficina prática ao vivo (dia 27)</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs text-gray-700">
+              <svg class="w-4 h-4 text-[#2EBFBC] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Transmissões ao vivo (28 a 30)</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs text-gray-700">
+              <svg class="w-4 h-4 text-[#2EBFBC] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Certificado digital (14h)</span>
+            </li>
+          </ul>
+          <button onclick="selectTicket('basico')" class="btn-basico block text-center border-2 border-[#1B6E6E] text-[#1B6E6E] hover:bg-[#1B6E6E] hover:text-white font-bold py-3.5 rounded-2xl transition-all duration-200 cursor-pointer">
+            QUERO O BÁSICO
+          </button>
+        </div>
+
+        <!-- Completo -->
+        <div class="pricing-popular rounded-3xl p-6 flex flex-col relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FFD11A] text-[#1B6E6E] font-bold text-[10px] uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md whitespace-nowrap">
+            MAIS POPULAR
+          </div>
+          <p class="font-bold text-[#7AD8D6] text-sm uppercase tracking-widest mb-3">Ingresso Completo</p>
+          <div class="mb-1">
+            <span class="font-display text-white" style="font-size:2.8rem;">R$&nbsp;147</span>
+            <span class="text-white/70 text-sm">,00</span>
+          </div>
+          <p class="text-white/60 text-xs mb-6">ou 12x de R$ 14,70</p>
+          <ul class="space-y-2 mb-8 flex-1">
+            <li class="flex items-start gap-2.5 text-xs text-white/90">
+              <svg class="w-4 h-4 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Tudo do Básico + <strong class="font-bold">Acesso VITALÍCIO</strong></span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs text-white/90">
+              <svg class="w-4 h-4 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Rever o conteúdo quando quiser</span>
+            </li>
+          </ul>
+          <button onclick="selectTicket('completo')" class="btn-completo block text-center bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold py-3.5 rounded-2xl transition-all duration-200 cursor-pointer shadow-lg">
+            QUERO O COMPLETO
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // ============================================================
+    // UTMS & ACTIVE CAMPAIGN INTEGRATION
+    // ============================================================
+    let currentContactId = null;
+
+    function getUtms() {
+      const utms = {};
+      const params = new URLSearchParams(window.location.search);
+      for (const [key, value] of params.entries()) {
+        const lowerKey = key.toLowerCase();
+        if (lowerKey.startsWith('utm_') || lowerKey.startsWith('cblcam_')) {
+          utms[key] = value;
+        }
+      }
+      return utms;
+    }
+
+    const form = document.getElementById('form-registration');
+    const btnSubmit = document.getElementById('btn-submit');
+    const btnText = document.getElementById('btn-text');
+    const modal = document.getElementById('success-modal');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // UI Feedback
+        btnSubmit.disabled = true;
+        btnText.textContent = 'PROCESSANDO...';
+
+        const formData = new FormData(form);
+        const utms = getUtms();
+
+        const payload = {
+          name: formData.get('nome'),
+          email: formData.get('email'),
+          phone: formData.get('telefone'),
+          area: formData.get('area'),
+          graduacao: formData.get('graduacao'),
+          utms: utms
+        };
+
+        try {
+          const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            currentContactId = data.contactId;
+            // Abrir modal
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+          } else {
+            alert('Ocorreu um erro ao salvar seus dados. Por favor, tente novamente.');
+            console.error(data.error);
+          }
+        } catch (err) {
+          alert('Erro de conexão. Verifique sua internet.');
+          console.error(err);
+        } finally {
+          btnSubmit.disabled = false;
+          btnText.textContent = 'QUERO GARANTIR MEU INGRESSO';
+        }
+      });
+    }
+
+    async function selectTicket(type) {
+      if (!currentContactId) return;
+
+      const tagName = type === 'basico' 
+        ? '[C2] [CBLCAM] Geral' 
+        : '[C2] [CBLCAM] Acesso a Gravação';
+      
+      const btn = document.querySelector(`.btn-${type}`);
+      const originalText = btn.textContent;
+      btn.textContent = 'CARREGANDO...';
+      btn.disabled = true;
+
+      try {
+        await fetch('/api/tag', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contactId: currentContactId, tagName: tagName })
+        });
+
+        // Placeholder Redirection
+        if (type === 'basico') {
+          window.location.href = 'https://pay.hotmart.com/placeholder-basico';
+        } else {
+          window.location.href = 'https://pay.hotmart.com/placeholder-completo';
+        }
+      } catch (err) {
+        console.error('Tagging error:', err);
+        // Prosseguir mesmo com erro de tag para não travar o usuário
+        window.location.href = type === 'basico' 
+          ? 'https://pay.hotmart.com/placeholder-basico' 
+          : 'https://pay.hotmart.com/placeholder-completo';
+      }
+    }
+
     // ============================================================
     // COUNTDOWN
     // ============================================================
@@ -1506,7 +1709,8 @@
       const diff   = target - now;
       if (diff <= 0) {
         ['cd-days','cd-hours','cd-minutes','cd-seconds'].forEach(id => {
-          document.getElementById(id).textContent = '00';
+          const el = document.getElementById(id);
+          if (el) el.textContent = '00';
         });
         return;
       }
@@ -1514,10 +1718,16 @@
       const h = Math.floor((diff % 86400000) / 3600000);
       const m = Math.floor((diff % 3600000)  / 60000);
       const s = Math.floor((diff % 60000)    / 1000);
-      document.getElementById('cd-days').textContent    = String(d).padStart(2,'0');
-      document.getElementById('cd-hours').textContent   = String(h).padStart(2,'0');
-      document.getElementById('cd-minutes').textContent = String(m).padStart(2,'0');
-      document.getElementById('cd-seconds').textContent = String(s).padStart(2,'0');
+      
+      const setEl = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = String(val).padStart(2,'0');
+      };
+      
+      setEl('cd-days', d);
+      setEl('cd-hours', h);
+      setEl('cd-minutes', m);
+      setEl('cd-seconds', s);
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
@@ -1527,7 +1737,6 @@
     // ============================================================
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      // Quando scrollar mais de 40px, o menu encolhe levemente para otimizar espaço
       if (window.scrollY > 40) {
         navbar.classList.add('scrolled');
       } else {
@@ -1545,14 +1754,14 @@
     function openMobileMenu() {
       menuOpen = true;
       mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden'; // Bloqueia scroll do fundo
+      document.body.style.overflow = 'hidden'; 
       hamburgerBtn.setAttribute('aria-expanded', 'true');
     }
 
     function closeMobileMenu() {
       menuOpen = false;
       mobileMenu.classList.remove('open');
-      document.body.style.overflow = ''; // Libera scroll
+      document.body.style.overflow = ''; 
       hamburgerBtn.setAttribute('aria-expanded', 'false');
     }
 
@@ -1569,7 +1778,9 @@
         btn.classList.remove('active');
         btn.setAttribute('aria-selected', 'false');
       });
-      document.getElementById(id).classList.add('active');
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active');
+      
       const btn = document.querySelector(`[aria-controls="${id}"]`);
       if (btn) { btn.classList.add('active'); btn.setAttribute('aria-selected', 'true'); }
     }
@@ -1579,12 +1790,16 @@
     // ============================================================
     function toggleFaq(btn) {
       const item   = btn.closest('.faq-item');
+      if (!item) return;
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item.open').forEach(el => {
         el.classList.remove('open');
         el.querySelector('button').setAttribute('aria-expanded', 'false');
       });
-      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      if (!isOpen) { 
+        item.classList.add('open'); 
+        btn.setAttribute('aria-expanded', 'true'); 
+      }
     }
 
     // ============================================================
