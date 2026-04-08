@@ -28,22 +28,22 @@ export default async function handler(req, res) {
     // Prepare Custom Fields (fieldValues) using IDs found in ActiveCampaign
     const fieldValues = [];
 
-    if (area) fieldValues.push({ field: '250', value: area });
-    if (graduacao) fieldValues.push({ field: '249', value: graduacao });
+    if (area) fieldValues.push({ field: '614', value: area });
+    if (graduacao) fieldValues.push({ field: '613', value: graduacao });
 
-    // Mapping UTMs to fieldValues (using [L07] [POS] [GEOPROCESSAMENTO] fields)
+    // Mapping UTMs to fieldValues (using [CBLCAM] specific fields)
     if (utms) {
-      if (utms.CBLCAM_UTM_SOURCE) fieldValues.push({ field: '245', value: utms.CBLCAM_UTM_SOURCE });
-      if (utms.CBLCAM_UTM_MEDIUM) fieldValues.push({ field: '246', value: utms.CBLCAM_UTM_MEDIUM });
-      if (utms.CBLCAM_UTM_CAMPAIGN) fieldValues.push({ field: '244', value: utms.CBLCAM_UTM_CAMPAIGN });
-      if (utms.CBLCAM_UTM_TERM) fieldValues.push({ field: '247', value: utms.CBLCAM_UTM_TERM });
-      if (utms.CBLCAM_UTM_CONTENT) fieldValues.push({ field: '251', value: utms.CBLCAM_UTM_CONTENT });
+      if (utms.CBLCAM_UTM_SOURCE) fieldValues.push({ field: '607', value: utms.CBLCAM_UTM_SOURCE });
+      if (utms.CBLCAM_UTM_MEDIUM) fieldValues.push({ field: '609', value: utms.CBLCAM_UTM_MEDIUM });
+      if (utms.CBLCAM_UTM_CAMPAIGN) fieldValues.push({ field: '608', value: utms.CBLCAM_UTM_CAMPAIGN });
+      if (utms.CBLCAM_UTM_TERM) fieldValues.push({ field: '610', value: utms.CBLCAM_UTM_TERM });
+      if (utms.CBLCAM_UTM_CONTENT) fieldValues.push({ field: '611', value: utms.CBLCAM_UTM_CONTENT });
     }
 
-    // Add registration date
+    // Add registration date to CBLCAM field
     const now = new Date();
     const formattedDate = now.toLocaleDateString('pt-BR');
-    fieldValues.push({ field: '248', value: formattedDate });
+    fieldValues.push({ field: '612', value: formattedDate });
 
     const contactPayload = {
       contact: {
