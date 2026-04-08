@@ -127,9 +127,9 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 20px;
       box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.12);
-      padding: 2.25rem 1.5rem;
+      padding: 1.5rem 1.25rem;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .glass-card::before {
@@ -712,7 +712,7 @@
           HERO
     ============================================================ -->
     <section id="hero"
-      class="relative hero-bg min-h-[90vh] sm:min-h-screen flex items-center pt-24 sm:pt-32 overflow-hidden"
+      class="relative hero-bg min-h-[90vh] sm:min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden"
       aria-label="Apresentação do congresso">
       <!-- Decorative blobs -->
       <div
@@ -725,12 +725,13 @@
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1B6E6E]/8 rounded-full blur-[100px] pointer-events-none"
         aria-hidden="true"></div>
 
-      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-24 w-full text-center">
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-24 w-full text-center">
 
-        <div class="glass-card max-w-5xl mx-auto mb-8 sm:mb-12 relative overflow-hidden">
-          <!-- Live badge -->
+        <!-- CONTAINER PRINCIPAL: Altere 'max-w-6xl' para mudar a largura total do card -->
+        <div class="glass-card max-w-6xl mx-auto mb-8 sm:mb-12 relative">
+          <!-- SELO AO VIVO: Altere 'mb-3' para 'mb-0' ou negativo se quiser subir a logo ainda mais -->
           <div
-            class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FFD11A]/20 to-[#FFD11A]/10 border border-[#FFD11A]/40 rounded-full px-4 py-2 mb-6 reveal reveal-delay-1 shadow-lg backdrop-blur-md">
+            class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FFD11A]/20 to-[#FFD11A]/10 border border-[#FFD11A]/40 rounded-full px-4 py-2 mb-0 reveal reveal-delay-1 shadow-lg backdrop-blur-md relative z-10">
             <span class="live-dot w-2 h-2 rounded-full bg-[#FFD11A] inline-block shadow-[0_0_8px_#FFD11A]"
               aria-hidden="true"></span>
             <span class="text-white text-xs font-bold tracking-widest uppercase">Transmissão ao Vivo</span>
@@ -738,18 +739,16 @@
             <span class="text-white/80 text-xs font-medium">100% Online</span>
           </div>
 
-          <!-- Main heading -->
-          <h1 class="font-display font-black text-white leading-[1.1] mb-6 reveal reveal-delay-2 drop-shadow-2xl"
-            style="font-size: clamp(1.8rem, 4.5vw, 3.8rem); letter-spacing: -0.015em;">
-            II CONGRESSO BRASILEIRO DE<br>
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-[#7AD8D6] via-[#2EBFBC] to-[#239C99]">LICENCIAMENTO
-              E CONSULTORIA AMBIENTAL</span>
+          <!-- LOGO: Se a logo ainda parecer longe do selo acima, aumente o '-mt-32' para '-mt-40' ou mais -->
+          <h1 class="reveal reveal-delay-2 -mt-32 -mb-40 relative z-0 flex justify-center">
+            <img src="apoio/logo.png" alt="II CONGRESSO BRASILEIRO DE LICENCIAMENTO E CONSULTORIA AMBIENTAL"
+              class="w-[120%] max-w-none h-auto drop-shadow-2xl float-animation">
           </h1>
 
-          <!-- Subtitle -->
+          <!-- SUBTÍTULO: '-mt-4' aproxima ainda mais este texto da parte visível da logo -->
+          <!-- SUBTÍTULO: Aumentei para '-mt-16' para subir as informações de baixo e encostar na logo -->
           <p
-            class="text-white/90 text-lg sm:text-xl font-medium max-w-2xl mx-auto mb-4 leading-relaxed reveal reveal-delay-3">
+            class="text-white/90 text-lg sm:text-xl font-medium max-w-2xl mx-auto mb-4 leading-relaxed reveal reveal-delay-3 relative z-10 -mt-20">
             <span
               class="inline-block bg-[#FFD11A]/15 border border-[#FFD11A]/30 px-3 py-1 rounded text-[#FFD11A] font-bold text-xs sm:text-sm uppercase tracking-wide">
               Nova Lei do Licenciamento Ambiental
@@ -1574,31 +1573,42 @@
             <ul class="space-y-3 mb-8 flex-1">
               <li class="flex items-start gap-2.5 text-sm text-white/90">
                 <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
                 </svg>
                 <span>Tudo do Ingresso Básico</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-white/90">
                 <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
                 </svg>
-                <span><strong class="font-bold">Acesso VITALÍCIO</strong> às gravações da oficina e todas as palestras</span>
+                <span><strong class="font-bold">Acesso VITALÍCIO</strong> às gravações da oficina e todas as
+                  palestras</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-white/90">
                 <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
                 </svg>
                 <span>Rever o conteúdo quando e onde quiser</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-white/90">
                 <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
                 </svg>
                 <span>Certificado digital de participação (14h)</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-white/90">
                 <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
                 </svg>
                 <span>Acesso completo por tempo ilimitado</span>
               </li>
@@ -1883,7 +1893,8 @@
                   placeholder="Ex: Engenharia Ambiental, Direito, Biologia..." required>
               </div>
               <fieldset>
-                <legend class="block text-sm font-semibold text-gray-700 mb-2.5">Você possui graduação completa? <span class="text-red-500" aria-hidden="true">*</span>
+                <legend class="block text-sm font-semibold text-gray-700 mb-2.5">Você possui graduação completa? <span
+                    class="text-red-500" aria-hidden="true">*</span>
                 </legend>
                 <div class="flex gap-6">
                   <label class="flex items-center gap-2 cursor-pointer">
@@ -2039,8 +2050,9 @@
   ============================================================ -->
   <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6"
     style="background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px);">
-    <div class="bg-white rounded-[2.5rem] max-w-5xl w-full max-h-[90vh] overflow-y-auto p-8 sm:p-12 shadow-2xl relative animate-in">
-      
+    <div
+      class="bg-white rounded-[2.5rem] max-w-5xl w-full max-h-[90vh] overflow-y-auto p-8 sm:p-12 shadow-2xl relative animate-in">
+
       <!-- HEADER DO MODAL -->
       <div class="text-center mb-10 sm:mb-12">
         <div class="w-16 h-16 bg-[#E8F5E9] rounded-full flex items-center justify-center mx-auto mb-6 text-[#2E7D32]">
@@ -2048,8 +2060,11 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 id="modal-title" class="font-display font-bold text-[#1B6E6E] text-3xl sm:text-4xl mb-4 uppercase tracking-tight">QUASE LÁ!</h2>
-        <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">Seu interesse foi registrado com sucesso. Agora, selecione o tipo de ingresso para garantir sua vaga:</p>
+        <h2 id="modal-title"
+          class="font-display font-bold text-[#1B6E6E] text-3xl sm:text-4xl mb-4 uppercase tracking-tight">QUASE LÁ!
+        </h2>
+        <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">Seu interesse foi registrado com sucesso. Agora,
+          selecione o tipo de ingresso para garantir sua vaga:</p>
       </div>
 
       <!-- CARDS DE INGRESSO -->
@@ -2065,30 +2080,39 @@
           <ul class="space-y-4 mb-8 flex-1">
             <li class="flex items-start gap-2.5 text-sm text-gray-600">
               <svg class="w-5 h-5 text-[#30B1AD] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Acesso à oficina prática ao vivo (dia 27)</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-gray-600">
               <svg class="w-5 h-5 text-[#30B1AD] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Transmissões ao vivo — dias 28, 29 e 30</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-gray-600">
               <svg class="w-5 h-5 text-[#30B1AD] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Painéis com especialistas e autoridades</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-gray-600">
               <svg class="w-5 h-5 text-[#30B1AD] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Certificado digital de participação (14h)</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-gray-300">
-              <svg class="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
               <span>Acesso às gravações após o evento</span>
@@ -2115,31 +2139,42 @@
           <ul class="space-y-4 mb-8 flex-1">
             <li class="flex items-start gap-2.5 text-sm text-white/90">
               <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Tudo do Ingresso Básico</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-white/90">
               <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
-              <span><strong class="font-bold">Acesso VITALÍCIO</strong> às gravações da oficina e todas as palestras</span>
+              <span><strong class="font-bold">Acesso VITALÍCIO</strong> às gravações da oficina e todas as
+                palestras</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-white/90">
               <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Rever o conteúdo quando e onde quiser</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-white/90">
               <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Certificado digital de participação (14h)</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-white/90">
               <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Acesso completo por tempo ilimitado</span>
             </li>
