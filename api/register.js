@@ -25,22 +25,25 @@ export default async function handler(req, res) {
     const firstName = nameParts[0];
     const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
 
-    // Prepare Custom Fields (fieldValues)
-    // IMPORTANT: Replace the 'ID' values below with the real IDs from your ActiveCampaign account.
-    // Use numeric IDs (e.g., "1", "2").
+    // Prepare Custom Fields (fieldValues) using IDs found in ActiveCampaign
     const fieldValues = [];
 
-    if (area) fieldValues.push({ field: 'ID_AREA_FORMACAO', value: area });
-    if (graduacao) fieldValues.push({ field: 'ID_GRADUACAO', value: graduacao });
+    if (area) fieldValues.push({ field: '250', value: area });
+    if (graduacao) fieldValues.push({ field: '249', value: graduacao });
 
-    // Mapping UTMs to fieldValues
+    // Mapping UTMs to fieldValues (using [L07] [POS] [GEOPROCESSAMENTO] fields)
     if (utms) {
-      if (utms.CBLCAM_UTM_SOURCE) fieldValues.push({ field: 'ID_UTM_SOURCE', value: utms.CBLCAM_UTM_SOURCE });
-      if (utms.CBLCAM_UTM_MEDIUM) fieldValues.push({ field: 'ID_UTM_MEDIUM', value: utms.CBLCAM_UTM_MEDIUM });
-      if (utms.CBLCAM_UTM_CAMPAIGN) fieldValues.push({ field: 'ID_UTM_CAMPAIGN', value: utms.CBLCAM_UTM_CAMPAIGN });
-      if (utms.CBLCAM_UTM_TERM) fieldValues.push({ field: 'ID_UTM_TERM', value: utms.CBLCAM_UTM_TERM });
-      if (utms.CBLCAM_UTM_CONTENT) fieldValues.push({ field: 'ID_UTM_CONTENT', value: utms.CBLCAM_UTM_CONTENT });
+      if (utms.CBLCAM_UTM_SOURCE) fieldValues.push({ field: '245', value: utms.CBLCAM_UTM_SOURCE });
+      if (utms.CBLCAM_UTM_MEDIUM) fieldValues.push({ field: '246', value: utms.CBLCAM_UTM_MEDIUM });
+      if (utms.CBLCAM_UTM_CAMPAIGN) fieldValues.push({ field: '244', value: utms.CBLCAM_UTM_CAMPAIGN });
+      if (utms.CBLCAM_UTM_TERM) fieldValues.push({ field: '247', value: utms.CBLCAM_UTM_TERM });
+      if (utms.CBLCAM_UTM_CONTENT) fieldValues.push({ field: '251', value: utms.CBLCAM_UTM_CONTENT });
     }
+
+    // Add registration date
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('pt-BR');
+    fieldValues.push({ field: '248', value: formattedDate });
 
     const contactPayload = {
       contact: {
