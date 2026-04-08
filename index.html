@@ -1877,12 +1877,12 @@ er bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold py-4 rounded-2xl tra
               </div>
               <div>
                 <label for="f-area" class="block text-sm font-semibold text-gray-700 mb-1.5">Qual é a sua área de
-                  formação?</label>
+                  formação? <span class="text-red-500" aria-hidden="true">*</span></label>
                 <input type="text" id="f-area" name="area" class="form-input"
-                  placeholder="Ex: Engenharia Ambiental, Direito, Biologia...">
+                  placeholder="Ex: Engenharia Ambiental, Direito, Biologia..." required>
               </div>
               <fieldset>
-                <legend class="block text-sm font-semibold text-gray-700 mb-2.5">Você possui graduação completa?
+                <legend class="block text-sm font-semibold text-gray-700 mb-2.5">Você possui graduação completa? <span class="text-red-500" aria-hidden="true">*</span>
                 </legend>
                 <div class="flex gap-6">
                   <label class="flex items-center gap-2 cursor-pointer">

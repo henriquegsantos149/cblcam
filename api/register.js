@@ -16,20 +16,31 @@ export default async function handler(req, res) {
   try {
     const { name, email, phone, area, graduacao, utms } = req.body;
 
+    console.log('--- Novo Registro Recebido ---');
+    console.log('Dados:', { name, email, phone, area, graduacao });
+    console.log('UTMs capturados:', utms);
+
     // Split name into first and last if possible
     const nameParts = name ? name.trim().split(' ') : [''];
     const firstName = nameParts[0];
     const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
 
-    // Prepare ActiveCampaign Payload
-    // Note: We'll attempt to sync the contact. 
-    // Custom fields for area/graduation/UTMs should be configured in AC.
-    // We send them as fieldValues if we had IDs, but for now we'll send a generic update.
-    
-    // For UTMs, we'll try to map them to fieldValues if we can find common patterns, 
-    // or just store them in a way the user can use.
-    // PRO TIP: To map custom fields, the user usually needs the field IDs.
-    // For now, we'll focus on the core contact data.
+    // Prepare Custom Fields (fieldValues)
+    // IMPORTANT: Replace the 'ID' values below with the real IDs from your ActiveCampaign account.
+    // Use numeric IDs (e.g., "1", "2").
+    const fieldValues = [];
+
+    if (area) fieldValues.push({ field: 'ID_AREA_FORMACAO', value: area });
+    if (graduacao) fieldValues.push({ field: 'ID_GRADUACAO', value: graduacao });
+
+    // Mapping UTMs to fieldValues
+    if (utms) {
+      if (utms.CBLCAM_UTM_SOURCE) fieldValues.push({ field: 'ID_UTM_SOURCE', value: utms.CBLCAM_UTM_SOURCE });
+      if (utms.CBLCAM_UTM_MEDIUM) fieldValues.push({ field: 'ID_UTM_MEDIUM', value: utms.CBLCAM_UTM_MEDIUM });
+      if (utms.CBLCAM_UTM_CAMPAIGN) fieldValues.push({ field: 'ID_UTM_CAMPAIGN', value: utms.CBLCAM_UTM_CAMPAIGN });
+      if (utms.CBLCAM_UTM_TERM) fieldValues.push({ field: 'ID_UTM_TERM', value: utms.CBLCAM_UTM_TERM });
+      if (utms.CBLCAM_UTM_CONTENT) fieldValues.push({ field: 'ID_UTM_CONTENT', value: utms.CBLCAM_UTM_CONTENT });
+    }
 
     const contactPayload = {
       contact: {
@@ -37,7 +48,7 @@ export default async function handler(req, res) {
         firstName,
         lastName,
         phone,
-        // We can add fieldValues here if we have the IDs (e.g., { field: "1", value: "value" })
+        fieldValues
       }
     };
 
