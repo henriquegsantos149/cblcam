@@ -345,60 +345,37 @@
     ============================================================ */
     .speaker-card {
       background: #fff;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      border-radius: 24px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
-      width: calc(50% - 1.25rem);
-      /* Default 2 columns */
+      width: calc(100% - 1.25rem);
+      display: flex;
+      flex-direction: column;
     }
 
     @media (min-width: 640px) {
       .speaker-card {
-        width: calc(33.333% - 1.25rem);
+        width: calc(50% - 1.25rem);
       }
-
-      /* sm: 3 columns */
     }
 
     @media (min-width: 768px) {
       .speaker-card {
-        width: calc(25% - 1.25rem);
+        width: calc(33.333% - 1.25rem);
       }
-
-      /* md: 4 columns */
     }
 
     @media (min-width: 1024px) {
       .speaker-card {
-        max-width: 280px;
+        width: calc(25% - 1.25rem);
+        max-width: 300px;
       }
-
-      /* cap size on large screens */
     }
 
     .speaker-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 28px rgba(27, 110, 110, 0.16);
-    }
-
-    .speaker-avatar {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 1.7rem;
-      color: #fff;
-      margin: 0 auto;
-      flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      object-fit: cover;
+      box-shadow: 0 12px 30px rgba(27, 110, 110, 0.12);
     }
 
     /* Gradientes extraídos da logo */
@@ -937,7 +914,8 @@
                 </svg>
               </div>
               <p class="font-bold text-[#239C99] mb-1 text-sm uppercase tracking-wide">28 de abril</p>
-              <p class="text-gray-700 font-semibold">Novo Marco do Licenciamento Ambiental</p>
+              <p class="text-gray-700 font-semibold">O Novo Marco do Licenciamento Ambiental no Brasil: avanços, riscos
+                e controvérsias</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
               <div class="w-11 h-11 rounded-xl bg-[#2EBFBC]/12 flex items-center justify-center mb-4">
@@ -948,7 +926,8 @@
                 </svg>
               </div>
               <p class="font-bold text-[#2EBFBC] mb-1 text-sm uppercase tracking-wide">29 de abril</p>
-              <p class="text-gray-700 font-semibold">Dados e Tecnologias Aplicadas ao Licenciamento</p>
+              <p class="text-gray-700 font-semibold">Inovação, Dados e a Responsabilidade pela Eficiência no
+                Licenciamento</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
               <div class="w-11 h-11 rounded-xl bg-[#1B6E6E]/10 flex items-center justify-center mb-4">
@@ -959,7 +938,7 @@
                 </svg>
               </div>
               <p class="font-bold text-[#1B6E6E] mb-1 text-sm uppercase tracking-wide">30 de abril</p>
-              <p class="text-gray-700 font-semibold">Estratégias e Segurança Jurídica no Setor Ambiental</p>
+              <p class="text-gray-700 font-semibold">Estratégias, Segurança Jurídica e o futuro do Setor Ambiental</p>
             </div>
           </div>
         </div>
@@ -1084,79 +1063,139 @@
         <div class="flex flex-wrap justify-center gap-5">
 
           <article class="speaker-card reveal reveal-delay-1" tabindex="0" aria-label="Palestrante Henrique Gonzalez">
-            <div class="h-2 bg-gradient-to-r from-[#2EBFBC] to-[#1B6E6E]"></div>
-            <div class="relative pt-6 px-5 pb-5 text-center">
-              <img src="apoio/Henrique.png" alt="Henrique Gonzalez" class="speaker-avatar mb-4" width="76" height="76"
-                loading="lazy">
-              <h3 class="font-bold text-[#1B6E6E] text-[15px] leading-tight mb-1">Henrique Gonzalez</h3>
-              <p class="text-gray-500 text-xs leading-snug font-medium">Engenheiro Ambiental, Especialista em
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Henrique.png" alt="Henrique Gonzalez" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Henrique Gonzalez</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Engenheiro Ambiental, Especialista em
                 Geotecnologias · UFRJ</p>
+              </div>
             </div>
           </article>
 
           <article class="speaker-card reveal reveal-delay-2" tabindex="0" aria-label="Palestrante Karen Machado">
-            <div class="h-2 bg-gradient-to-r from-[#239C99] to-[#165A5A]"></div>
-            <div class="relative pt-6 px-5 pb-5 text-center">
-              <img src="apoio/Karen.png" alt="Karen Machado" class="speaker-avatar mb-4" width="76" height="76"
-                loading="lazy">
-              <h3 class="font-bold text-[#1B6E6E] text-[15px] leading-tight mb-1">Karen Machado</h3>
-              <p class="text-gray-500 text-xs leading-snug font-medium">Advogada, Especialista em Direito Ambiental ·
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Karen.png" alt="Karen Machado" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Karen Machado</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogada, Especialista em Direito Ambiental ·
                 PUC</p>
+              </div>
             </div>
           </article>
 
           <article class="speaker-card reveal reveal-delay-3" tabindex="0" aria-label="Palestrante Rafael Timbola">
-            <div class="h-2 bg-gradient-to-r from-[#1B6E6E] to-[#104545]"></div>
-            <div class="relative pt-6 px-5 pb-5 text-center">
-              <img src="apoio/Rafael.png" alt="Rafael Timbola" class="speaker-avatar mb-4" width="76" height="76"
-                loading="lazy">
-              <h3 class="font-bold text-[#1B6E6E] text-[15px] leading-tight mb-1">Rafael Timbola</h3>
-              <p class="text-gray-500 text-xs leading-snug font-medium">Eng. Ambiental, Mestre e Doutor, O Perito
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Rafael.png" alt="Rafael Timbola" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Rafael Timbola</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Eng. Ambiental, Mestre e Doutor, O Perito
                 Ambiental</p>
+              </div>
             </div>
           </article>
 
           <article class="speaker-card reveal reveal-delay-4" tabindex="0" aria-label="Palestrante Anelise Gomes">
-            <div class="h-2 bg-gradient-to-r from-[#7AD8D6] to-[#239C99]"></div>
-            <div class="relative pt-6 px-5 pb-5 text-center">
-              <img src="apoio/Anelise.png" alt="Anelise Gomes" class="speaker-avatar mb-4" width="76" height="76"
-                loading="lazy">
-              <h3 class="font-bold text-[#1B6E6E] text-[15px] leading-tight mb-1">Anelise Gomes</h3>
-              <p class="text-gray-500 text-xs leading-snug font-medium">Cientista Social, Doutoranda em Ciências
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Anelise.png" alt="Anelise Gomes" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Anelise Gomes</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Cientista Social, Doutoranda em Ciências
                 Ambientais · IEE/USP</p>
+              </div>
             </div>
           </article>
 
           <article class="speaker-card reveal" tabindex="0" aria-label="Palestrante Cassio Albert Arend">
-            <div class="h-2 bg-gradient-to-r from-[#2EBFBC] to-[#1B6E6E]"></div>
-            <div class="relative pt-6 px-5 pb-5 text-center">
-              <img src="apoio/Cassio.png" alt="Cassio Albert Arend" class="speaker-avatar mb-4" width="76" height="76"
-                loading="lazy">
-              <h3 class="font-bold text-[#1B6E6E] text-[15px] leading-tight mb-1">Cássio Alberto Arend</h3>
-              <p class="text-gray-500 text-xs leading-snug font-medium">Advogado, Doutor em Direito Ambiental (UCS)
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Cassio.png" alt="Cassio Albert Arend" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Cássio Alberto Arend</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogado, Doutor em Direito Ambiental (UCS)
                 · CONSEMA/RS</p>
+              </div>
             </div>
           </article>
 
           <article class="speaker-card reveal reveal-delay-1" tabindex="0" aria-label="Palestrante Glaucia Brenny">
-            <div class="h-2 bg-gradient-to-r from-[#239C99] to-[#165A5A]"></div>
-            <div class="relative pt-6 px-5 pb-5 text-center">
-              <img src="apoio/Glaucia.png" alt="Glaucia Brenny" class="speaker-avatar mb-4" width="76" height="76"
-                loading="lazy">
-              <h3 class="font-bold text-[#1B6E6E] text-[15px] leading-tight mb-1">Glaucia Brenny</h3>
-              <p class="text-gray-500 text-xs leading-snug font-medium">Advogada e Gestora Ambiental, Mestre em Controle
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Glaucia.png" alt="Glaucia Brenny" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Glaucia Brenny</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogada e Gestora Ambiental, Mestre em Controle
                 de Poluição</p>
+              </div>
             </div>
           </article>
 
           <article class="speaker-card reveal reveal-delay-2" tabindex="0" aria-label="Palestrante Nelson Tonon">
-            <div class="h-2 bg-gradient-to-r from-[#1B6E6E] to-[#104545]"></div>
-            <div class="relative pt-6 px-5 pb-5 text-center">
-              <img src="apoio/Nelson.png" alt="Nelson Tonon" class="speaker-avatar mb-4" width="76" height="76"
-                loading="lazy">
-              <h3 class="font-bold text-[#1B6E6E] text-[15px] leading-tight mb-1">Nelson Tonon</h3>
-              <p class="text-gray-500 text-xs leading-snug font-medium">Advogado, Especialista em Ambiental e Processual
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Nelson.png" alt="Nelson Tonon" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Nelson Tonon</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogado, Especialista em Ambiental e Processual
                 Civil</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card reveal reveal-delay-3" tabindex="0" aria-label="Palestrante Fabiana Figueiró">
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Fabiana%20Figueir%C3%B3.png" alt="Fabiana Figueiró" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Fabiana Figueiró</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Mestre em Direito Ambiental · Souto Correa</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card reveal reveal-delay-4" tabindex="0" aria-label="Palestrante Gustavo Coser">
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Gustavo%20Coser.png" alt="Gustavo Coser" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Gustavo Coser</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Engenheiro Ambiental, 17 anos em ESG · UFES</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card reveal" tabindex="0" aria-label="Palestrante Cláudio Farenzena">
+            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
+              <div class="w-full mb-2">
+                <img src="apoio/Cl%C3%A1udio%20Farenzena.png" alt="Cláudio Farenzena" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
+              </div>
+              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Cláudio Farenzena</h3>
+                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
+                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogado e Especialista em Direito Ambiental</p>
+              </div>
             </div>
           </article>
 
@@ -1181,13 +1220,13 @@
         <!-- Tabs -->
         <div class="flex flex-wrap gap-3 justify-center mb-10 reveal" role="tablist" aria-label="Dias do congresso">
           <button class="tab-btn active" onclick="showTab('day27')" role="tab" aria-selected="true"
-            aria-controls="day27" id="tab-day27">27 Abr — Oficina</button>
+            aria-controls="day27" id="tab-day27">27 de Abr — Oficina Prática</button>
           <button class="tab-btn" onclick="showTab('day28')" role="tab" aria-selected="false" aria-controls="day28"
-            id="tab-day28">28 Abr — Marco Legal</button>
+            id="tab-day28">28 de Abril - Dia 1</button>
           <button class="tab-btn" onclick="showTab('day29')" role="tab" aria-selected="false" aria-controls="day29"
-            id="tab-day29">29 Abr — Tecnologias</button>
+            id="tab-day29">29 Abril - Dia 2</button>
           <button class="tab-btn" onclick="showTab('day30')" role="tab" aria-selected="false" aria-controls="day30"
-            id="tab-day30">30 Abr — Estratégias</button>
+            id="tab-day30">30 Abril - Dia 3</button>
         </div>
 
         <!-- Day 27 -->
@@ -1236,7 +1275,8 @@
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-[#1B6E6E] text-lg">O Novo Marco do Licenciamento Ambiental</h3>
+                <h3 class="font-bold text-[#1B6E6E] text-lg">O Novo Marco do Licenciamento Ambiental no Brasil: avanços,
+                  riscos e controvérsias</h3>
                 <p class="text-gray-500 text-sm">28 de abril de 2026 · 17h às 21h</p>
               </div>
             </div>
@@ -1274,6 +1314,17 @@
                     Técnicos e Jurídicos na Transição para o Novo Fluxo de Licenciamento</p>
                 </div>
               </div>
+              <div
+                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
+                <img src="apoio/Fabiana%20Figueir%C3%B3.png" alt="Fabiana Figueiró"
+                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
+                  loading="lazy">
+                <div class="flex-1">
+                  <h4 class="font-bold text-[#1B6E6E] text-base">Fabiana Figueiró</h4>
+                  <p class="text-gray-600 text-sm leading-snug mt-0.5">A Nova Lei e os Avanços no Saneamento Básico:
+                    Dispensa, Simplificação e Segurança Jurídica</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1290,7 +1341,9 @@
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-[#1B6E6E] text-lg">Dados e Tecnologias Aplicadas ao Licenciamento</h3>
+                <h3 class="font-bold text-[#1B6E6E] text-lg">Inovação, Dados e a Responsabilidade pela Eficiência no
+                  Licenciamento
+                </h3>
                 <p class="text-gray-500 text-sm">29 de abril de 2026 · 17h às 21h</p>
               </div>
             </div>
@@ -1317,6 +1370,17 @@
                     Periciais</p>
                 </div>
               </div>
+              <div
+                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
+                <img src="apoio/Gustavo%20Coser.png" alt="Gustavo Coser"
+                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
+                  loading="lazy">
+                <div class="flex-1">
+                  <h4 class="font-bold text-[#1B6E6E] text-base">Gustavo Coser</h4>
+                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Responsabilidade Técnica e Eficiência
+                    Operacional: O Consultor como Protagonista da Celeridade no Novo Marco</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1333,7 +1397,8 @@
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-[#1B6E6E] text-lg">Estratégias e Segurança Jurídica no Setor Ambiental</h3>
+                <h3 class="font-bold text-[#1B6E6E] text-lg">Estratégia, Segurança Jurídica e o Futuro do Setor
+                  Ambiental</h3>
                 <p class="text-gray-500 text-sm">30 de abril de 2026 · 17h às 21h</p>
               </div>
             </div>
@@ -1360,6 +1425,17 @@
                     Licenciamento: gestão de impactos, riscos e passivos</p>
                 </div>
               </div>
+              <div
+                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
+                <img src="apoio/Cl%C3%A1udio%20Farenzena.png" alt="Cláudio Farenzena"
+                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
+                  loading="lazy">
+                <div class="flex-1">
+                  <h4 class="font-bold text-[#1B6E6E] text-base">Cláudio Farenzena</h4>
+                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Precificação de serviços: como definir o preço
+                    justo para valorizar o seu trabalho e não perder clientes</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1376,59 +1452,8 @@
 
           <!-- Certificate mockup -->
           <div class="reveal text-center lg:text-left">
-            <div
-              class="inline-block bg-white rounded-3xl p-8 shadow-2xl max-w-sm w-full text-left relative overflow-hidden">
-              <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#2EBFBC] to-[#239C99]"></div>
-              <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-[#2EBFBC]/10 rounded-full" aria-hidden="true"></div>
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 rounded-xl bg-[#1B6E6E]/10 flex items-center justify-center">
-                  <svg class="w-7 h-7 text-[#1B6E6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-bold text-[#1B6E6E] text-sm uppercase tracking-wide">Certificado Digital</p>
-                  <p class="text-gray-500 text-xs">II CBLCAM · 2026</p>
-                </div>
-              </div>
-              <p class="text-[#1B6E6E] font-display text-5xl mb-1">14h</p>
-              <p class="text-gray-700 font-semibold mb-5">de Carga Horária</p>
-              <div class="space-y-2.5">
-                <div class="flex items-center gap-2 text-sm text-gray-600">
-                  <svg class="w-4 h-4 text-[#2EBFBC] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"
-                    aria-hidden="true">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd" />
-                  </svg>
-                  Válido em todo território nacional
-                </div>
-                <div class="flex items-center gap-2 text-sm text-gray-600">
-                  <svg class="w-4 h-4 text-[#2EBFBC] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"
-                    aria-hidden="true">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd" />
-                  </svg>
-                  Incluso em todos os ingressos
-                </div>
-                <div class="flex items-center gap-2 text-sm text-gray-600">
-                  <svg class="w-4 h-4 text-[#2EBFBC] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"
-                    aria-hidden="true">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd" />
-                  </svg>
-                  Enviado por e-mail após o evento
-                </div>
-              </div>
-              <div class="mt-5 pt-5 border-t border-gray-100">
-                <p class="text-gray-500 text-xs">Realização: <span class="font-semibold text-[#1B6E6E]">Ambiental
-                    Pro</span></p>
-              </div>
-            </div>
+            <img src="apoio/Certificado.png" alt="Certificado Digital Modelo"
+              class="inline-block w-full max-w-lg lg:max-w-xl drop-shadow-2xl hover:scale-105 transition-transform duration-500">
           </div>
 
           <!-- Text -->
