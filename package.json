@@ -1,0 +1,28 @@
+{
+  "name": "cblcam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "dev:api": "vercel dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriquegsantos149/cblcam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/henriquegsantos149/cblcam/issues"
+  },
+  "homepage": "https://github.com/henriquegsantos149/cblcam#readme",
+  "devDependencies": {
+    "cheerio": "^1.2.0",
+    "serve": "^14.2.6",
+    "vercel": "^59.5.0"
+  }
+}

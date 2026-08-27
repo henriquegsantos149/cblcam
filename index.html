@@ -34,11 +34,11 @@
   <!-- End Meta Pixel Code -->
 
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="apoio/Logo_menu_rev.png" />
+  <link rel="icon" type="image/webp" href="apoio/Logo_menu_rev.webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="II Congresso Brasileiro de Licenciamento e Consultoria Ambiental – O Marco Regulatório da Nova Lei do Licenciamento Ambiental no Brasil. 27 a 30 de abril de 2026, online.">
-  <title>II CBLCAM 2026 – Congresso Brasileiro de Licenciamento e Consultoria Ambiental</title>
+    content="III Congresso Brasileiro de Licenciamento e Consultoria Ambiental – O Marco Regulatório da Nova Lei do Licenciamento Ambiental no Brasil. 21 a 24 de setembro de 2026, online.">
+  <title>III CBLCAM 2026 – Congresso Brasileiro de Licenciamento e Consultoria Ambiental</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -57,9 +57,9 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet">
 
   <style>
@@ -74,20 +74,20 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #F5F6F7;
+      background: #F2F2F2;
       color: #2C2C2C;
       overflow-x: hidden;
     }
 
     /* ============================================================
-       HERO  — paleta teal extraída da logo
+       HERO  — gradiente com paleta completa
     ============================================================ */
     .hero-bg {
-      background: #1B6E6E;
+      background: #548035;
       background-image:
-        radial-gradient(ellipse at 80% 10%, rgba(46, 191, 188, 0.25) 0%, transparent 50%),
-        radial-gradient(ellipse at 15% 90%, rgba(35, 156, 153, 0.3) 0%, transparent 55%),
-        radial-gradient(ellipse at 50% 50%, rgba(27, 110, 110, 0.15) 0%, transparent 70%);
+        radial-gradient(ellipse at 85% 15%, rgba(146, 191, 48, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 15% 85%, rgba(44, 123, 123, 0.3) 0%, transparent 55%),
+        linear-gradient(145deg, #1D4C3D 0%, #2C7B7B 30%, #3B7E5E 65%, #548035 100%);
     }
 
     .hero-bg::before {
@@ -116,6 +116,17 @@
 
     .float-animation {
       animation: float 6s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    /* Otimizações de performance e memória para iOS Safari / WebKit */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .hero-bg, section, .reveal, .speaker-card, .faq-item {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     /* ============================================================
@@ -154,20 +165,21 @@
        COUNTDOWN
     ============================================================ */
     .cd-box {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 14px;
       padding: 10px 16px;
       min-width: 72px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       transition: transform 0.2s ease, background 0.3s ease;
     }
 
     .cd-box:hover {
       transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.16);
     }
 
     .cd-num {
@@ -175,14 +187,15 @@
       font-weight: 800;
       font-size: 2.2rem;
       line-height: 1;
-      color: #FFD11A;
-      text-shadow: 0 0 15px rgba(255, 209, 26, 0.3);
+      color: #ffffff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
     }
 
     .cd-label {
       font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       margin-top: 4px;
@@ -217,14 +230,15 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       align-items: center;
+      background: linear-gradient(90deg, rgba(29, 76, 61, 0.96) 0%, rgba(44, 123, 123, 0.96) 35%, rgba(59, 126, 94, 0.96) 70%, rgba(84, 128, 53, 0.96) 100%);
     }
 
     #navbar.scrolled {
       height: 80px;
-      background: rgba(27, 110, 110, 0.92) !important;
+      background: linear-gradient(90deg, rgba(22, 60, 48, 0.98) 0%, rgba(35, 100, 100, 0.98) 35%, rgba(47, 105, 75, 0.98) 70%, rgba(68, 106, 42, 0.98) 100%) !important;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.22);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -242,13 +256,13 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #FFD11A;
+      background: #92BF30;
       transition: width 0.3s ease;
       border-radius: 2px;
     }
 
     .nav-link:hover {
-      color: #FFD11A;
+      color: #92BF30;
     }
 
     .nav-link:hover::after {
@@ -260,7 +274,7 @@
       position: fixed;
       inset: 0;
       z-index: 60;
-      background: rgba(27, 110, 110, 0.98);
+      background: rgba(113, 166, 75, 0.98);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       display: flex;
@@ -325,19 +339,19 @@
     }
 
     .nav-cta {
-      background: #FFD11A;
-      color: #1B6E6E;
-      font-weight: 800;
+      background: #92BF30;
+      color: #133824;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 209, 26, 0.25);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .nav-cta:hover {
-      background: #FFC107;
+      background: #82AC2A;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 209, 26, 0.4);
+      box-shadow: 0 8px 25px rgba(146, 191, 48, 0.4);
     }
 
     /* ============================================================
@@ -375,24 +389,24 @@
 
     .speaker-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(27, 110, 110, 0.12);
+      box-shadow: 0 12px 30px rgba(65, 166, 166, 0.12);
     }
 
     /* Gradientes extraídos da logo */
     .grad-a {
-      background: linear-gradient(135deg, #2EBFBC, #1B6E6E);
+      background: linear-gradient(135deg, #41A6A6, #41A6A6);
     }
 
     .grad-b {
-      background: linear-gradient(135deg, #239C99, #165A5A);
+      background: linear-gradient(135deg, #53A67F, #3C7E7E);
     }
 
     .grad-c {
-      background: linear-gradient(135deg, #1B6E6E, #104545);
+      background: linear-gradient(135deg, #41A6A6, #336B50);
     }
 
     .grad-d {
-      background: linear-gradient(135deg, #7AD8D6, #239C99);
+      background: linear-gradient(135deg, #71A64B, #53A67F);
     }
 
     /* ============================================================
@@ -407,11 +421,11 @@
     }
 
     .tab-btn {
-      padding: 10px 20px;
-      border-radius: 10px;
+      padding: 10px 22px;
+      border-radius: 12px;
       font-weight: 600;
       font-size: 0.875rem;
-      color: #1B6E6E;
+      color: #2C7B7B;
       background: #fff;
       border: 2px solid #e5e7eb;
       cursor: pointer;
@@ -420,14 +434,16 @@
     }
 
     .tab-btn:hover {
-      border-color: #239C99;
-      color: #239C99;
+      border-color: #3B7E5E;
+      color: #1D4C3D;
     }
 
     .tab-btn.active {
-      background: #1B6E6E;
-      border-color: #1B6E6E;
-      color: #FFD11A;
+      background: #1D4C3D;
+      border-color: #1D4C3D;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(29, 76, 61, 0.2);
     }
 
     /* ============================================================
@@ -488,7 +504,7 @@
        GRADIENT TEXT
     ============================================================ */
     .text-gradient {
-      background: linear-gradient(135deg, #2EBFBC 0%, #239C99 100%);
+      background: linear-gradient(135deg, #41A6A6 0%, #53A67F 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -500,7 +516,7 @@
     .accent-line {
       width: 56px;
       height: 4px;
-      background: linear-gradient(90deg, #2EBFBC, #239C99);
+      background: linear-gradient(90deg, #41A6A6, #53A67F);
       border-radius: 2px;
     }
 
@@ -508,8 +524,8 @@
        PRICING CARD POPULAR — gradiente teal da logo
     ============================================================ */
     .pricing-popular {
-      background: linear-gradient(155deg, #1B6E6E 0%, #239C99 100%);
-      box-shadow: 0 12px 40px rgba(27, 110, 110, 0.32);
+      background: linear-gradient(145deg, #1D4C3D 0%, #2C7B7B 30%, #3B7E5E 65%, #548035 100%);
+      box-shadow: 0 12px 40px rgba(29, 76, 61, 0.35);
     }
 
     /* ============================================================
@@ -529,8 +545,8 @@
     }
 
     .form-input:focus {
-      border-color: #239C99;
-      box-shadow: 0 0 0 3px rgba(35, 156, 153, 0.15);
+      border-color: #53A67F;
+      box-shadow: 0 0 0 3px rgba(83, 166, 127, 0.15);
     }
 
     .form-input::placeholder {
@@ -543,9 +559,15 @@
     .stat-num {
       font-family: 'Outfit', sans-serif;
       font-weight: 800;
-      font-size: 3.5rem;
-      line-height: 1;
-      color: #1B6E6E;
+      font-size: 2.25rem;
+      line-height: 1.1;
+      color: #41A6A6;
+    }
+
+    @media (min-width: 640px) {
+      .stat-num {
+        font-size: 2.6rem;
+      }
     }
 
     .wave-bottom {
@@ -563,7 +585,7 @@
       position: fixed;
       inset: 0;
       z-index: 100;
-      background: rgba(16, 69, 69, 0.45);
+      background: rgba(45, 115, 115, 0.45);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       align-items: center;
@@ -592,17 +614,20 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #F5F6F7;
+      background: #F2F2F2;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #239C99;
+      background: #53A67F;
       border-radius: 4px;
     }
   </style>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
-<body class="font-body bg-[#F5F6F7] text-[#2C2C2C] overflow-x-hidden">
+<body class="font-body bg-[#F2F2F2] text-[#2C2C2C] overflow-x-hidden">
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTZ9NFFN" height="0" width="0"
@@ -611,23 +636,23 @@
 
   <!-- Skip to main content (accessibility) -->
   <a href="#hero"
-    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#FFD11A] focus:text-[#1B6E6E] focus:font-bold focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#92BF30] focus:text-[#41A6A6] focus:font-bold focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
     Pular para o conteúdo principal
   </a>
 
   <!-- ============================================================
        NAVIGATION
   ============================================================ -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-[#1B6E6E]" role="navigation"
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50" role="navigation"
     aria-label="Navegação principal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="flex items-center justify-between w-full">
 
         <!-- Logo nav -->
         <a href="#hero"
-          class="flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#FFD11A] rounded-xl p-1 group"
+          class="flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#92BF30] rounded-xl py-1 -ml-8 sm:-ml-12 md:-ml-16 group"
           aria-label="Início – II CBLCAM 2026">
-          <img src="apoio/Logo_menu_rev.png" alt="II CBLCAM 2026"
+          <img src="apoio/Logo_menu_rev.webp" alt="II CBLCAM 2026"
             class="h-16 sm:h-18 md:h-20 object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.3)] transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_8px_24px_rgba(0,0,0,0.4)]"
             width="280" height="80">
         </a>
@@ -636,7 +661,7 @@
         <div class="hidden lg:flex items-center gap-8">
           <a href="#certificado" class="nav-link text-sm uppercase tracking-wider">Certificado</a>
           <a href="#publico" class="nav-link text-sm uppercase tracking-wider">Público-Alvo</a>
-          <a href="#palestrantes" class="nav-link text-sm uppercase tracking-wider">Palestrantes</a>
+
           <a href="#palestras" class="nav-link text-sm uppercase tracking-wider">Palestras</a>
           <a href="#sobre" class="nav-link text-sm uppercase tracking-wider">Sobre</a>
           <a href="#faq" class="nav-link text-sm uppercase tracking-wider">FAQ</a>
@@ -649,11 +674,11 @@
             QUERO PARTICIPAR
           </a>
           <button id="hamburger-btn"
-            class="lg:hidden p-2 text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#FFD11A] rounded-lg transition-transform active:scale-95"
+            class="lg:hidden p-2 text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#92BF30] rounded-lg transition-transform active:scale-95"
             aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
             <svg id="icon-menu" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"
               aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
             </svg>
           </button>
         </div>
@@ -665,20 +690,20 @@
       <button onclick="closeMobileMenu()"
         class="absolute top-6 right-6 p-2 text-white/60 hover:text-white transition-colors" aria-label="Fechar menu">
         <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
       <div class="flex flex-col items-center text-center">
-        <img src="apoio/Logo_menu_rev.png" alt="II CBLCAM 2026"
+        <img src="apoio/Logo_menu_rev.webp" alt="II CBLCAM 2026"
           class="h-20 mb-12 opacity-80 drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
         <a href="#certificado" class="mobile-link" onclick="closeMobileMenu()">Certificado</a>
         <a href="#publico" class="mobile-link" onclick="closeMobileMenu()">Público-Alvo</a>
-        <a href="#palestrantes" class="mobile-link" onclick="closeMobileMenu()">Palestrantes</a>
+
         <a href="#palestras" class="mobile-link" onclick="closeMobileMenu()">Palestras</a>
         <a href="#sobre" class="mobile-link" onclick="closeMobileMenu()">Sobre o Congresso</a>
         <a href="#faq" class="mobile-link" onclick="closeMobileMenu()">FAQ</a>
         <a href="#inscricao"
-          class="mobile-link mt-8 bg-[#FFD11A] text-[#1B6E6E] px-10 py-4 rounded-full !opacity-100 !transform-none"
+          class="mobile-link mt-8 bg-[#92BF30] text-[#133824] px-10 py-4 rounded-full !opacity-100 !transform-none"
           onclick="closeMobileMenu()">QUERO PARTICIPAR</a>
       </div>
     </div>
@@ -692,170 +717,202 @@
     <section id="hero"
       class="relative hero-bg min-h-[90vh] sm:min-h-screen flex items-center pt-24 sm:pt-32 overflow-hidden"
       aria-label="Apresentação do congresso">
-      <!-- Decorative blobs -->
+      <!-- Decorative blobs otimizados -->
       <div
-        class="absolute top-20 right-0 w-96 h-96 sm:w-[32rem] sm:h-[32rem] bg-[#2EBFBC]/15 rounded-full blur-3xl pointer-events-none"
+        class="absolute top-20 right-0 w-80 h-80 sm:w-96 sm:h-96 bg-[#71A64B]/20 rounded-full blur-2xl pointer-events-none"
+        style="will-change: transform; transform: translate3d(0,0,0);"
         aria-hidden="true"></div>
       <div
-        class="absolute bottom-32 left-0 w-72 h-72 sm:w-[28rem] sm:h-[28rem] bg-[#239C99]/20 rounded-full blur-2xl pointer-events-none"
+        class="absolute bottom-32 left-0 w-64 h-64 sm:w-80 sm:h-80 bg-[#53A67F]/20 rounded-full blur-2xl pointer-events-none"
+        style="will-change: transform; transform: translate3d(0,0,0);"
         aria-hidden="true"></div>
       <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1B6E6E]/8 rounded-full blur-[100px] pointer-events-none"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#71A64B]/15 rounded-full blur-[100px] pointer-events-none"
         aria-hidden="true"></div>
 
-      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-24 w-full text-center">
+      <div
+        class="relative mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12 sm:pt-8 sm:pb-24 w-full text-left lg:grid lg:items-center max-w-7xl lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <div class="hero-left-column relative z-10 w-full mb-12 lg:mb-0">
 
-        <!-- CONTAINER PRINCIPAL: Altere 'max-w-6xl' para mudar a largura total do card -->
-        <div class="glass-card max-w-6xl mx-auto mb-8 sm:mb-12 relative">
-          <!-- SELO AO VIVO: Altere 'mb-3' para 'mb-0' ou negativo se quiser subir a logo ainda mais -->
-          <div
-            class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FFD11A]/20 to-[#FFD11A]/10 border border-[#FFD11A]/40 rounded-full px-4 py-2 mb-0 reveal reveal-delay-1 shadow-lg backdrop-blur-md relative z-10">
-            <span class="live-dot w-2 h-2 rounded-full bg-[#FFD11A] inline-block shadow-[0_0_8px_#FFD11A]"
-              aria-hidden="true"></span>
-            <span class="text-white text-xs font-bold tracking-widest uppercase">Transmissão ao Vivo</span>
-            <span class="text-white/50 px-1">·</span>
-            <span class="text-white/80 text-xs font-medium">100% Online</span>
+          <!-- CONTAINER PRINCIPAL: Altere 'max-w-6xl' para mudar a largura total do card -->
+          <div class="max-w-6xl mx-auto mb-8 sm:mb-12 relative">
+
+
+            <div class="grid grid-cols-3 gap-1.5 sm:gap-3.5 mb-8 sm:mb-10 reveal reveal-delay-4 w-full max-w-xl">
+              <div
+                class="flex items-center justify-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-1.5 py-2 sm:px-5 sm:py-3 hover:bg-white/15 transition-colors">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#92BF30] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span class="text-white text-[12px] min-[360px]:text-[13px] min-[410px]:text-[14.5px] sm:text-[16px] font-semibold whitespace-nowrap">21 a 24/09</span>
+              </div>
+              <div
+                class="flex items-center justify-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-1.5 py-2 sm:px-5 sm:py-3 hover:bg-white/15 transition-colors">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#92BF30] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-white text-[12px] min-[360px]:text-[13px] min-[410px]:text-[14.5px] sm:text-[16px] font-semibold whitespace-nowrap">17h às 21h</span>
+              </div>
+              <div
+                class="flex items-center justify-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-1.5 py-2 sm:px-5 sm:py-3 hover:bg-white/15 transition-colors">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#92BF30] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                  </path>
+                </svg>
+                <span class="text-white text-[12px] min-[360px]:text-[13px] min-[410px]:text-[14.5px] sm:text-[16px] font-semibold whitespace-nowrap">Google Meet</span>
+              </div>
+            </div>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-[4rem] font-bold text-white mb-6 leading-[1.1] font-display max-w-4xl tracking-tight">
+              III Congresso Brasileiro de Licenciamento e Consultoria Ambiental
+            </h1>
+
+            <div class="flex flex-col items-start gap-3 mb-4 relative z-10">
+              <span class="inline-block bg-white/20 border border-white/40 backdrop-blur-md px-4 py-1.5 rounded-full text-white font-bold text-sm uppercase tracking-wider shadow-sm">
+                Nova Lei do Licenciamento Ambiental
+              </span>
+
+            </div>
           </div>
 
-          <!-- LOGO: Subi mais um pouco (-mt-24) e afastei o conteúdo de baixo (-mb-14) -->
-          <h1 class="reveal reveal-delay-2 -mt-10 -mb-14 sm:-mt-32 sm:-mb-40 relative z-0 flex justify-center">
-            <img src="apoio/logo.png" alt="II CONGRESSO BRASILEIRO DE LICENCIAMENTO E CONSULTORIA AMBIENTAL"
-              class="w-[115%] sm:w-[120%] max-w-none h-auto drop-shadow-2xl float-animation">
-          </h1>
+          <!-- Event info pills -->
 
-          <!-- SUBTÍTULO: '-mt-4' aproxima ainda mais este texto da parte visível da logo -->
-          <!-- SUBTÍTULO: Afastei mais um pouco para não colar na logo (-mt-4) -->
-          <p
-            class="text-white/90 text-lg sm:text-xl font-medium max-w-2xl mx-auto mb-4 leading-relaxed reveal reveal-delay-3 relative z-10 -mt-4 sm:-mt-20">
-            <span
-              class="inline-block bg-[#FFD11A]/15 border border-[#FFD11A]/30 px-3 py-1 rounded text-[#FFD11A] font-bold text-xs sm:text-sm uppercase tracking-wide">
-              Nova Lei do Licenciamento Ambiental
-            </span>
+
+          <!-- Countdown -->
+          <div class="mb-10">
+            <p class="text-white/90 text-xs uppercase tracking-[0.2em] mb-4 font-bold">Faltam para o congresso</p>
+            <div class="flex gap-3 flex-wrap justify-start">
+              <div class="cd-box">
+                <div class="cd-num" id="cd-days">--</div>
+                <div class="cd-label">Dias</div>
+              </div>
+              <div class="cd-box">
+                <div class="cd-num" id="cd-hours">--</div>
+                <div class="cd-label">Horas</div>
+              </div>
+              <div class="cd-box">
+                <div class="cd-num" id="cd-minutes">--</div>
+                <div class="cd-label">Min</div>
+              </div>
+              <div class="cd-box">
+                <div class="cd-num" id="cd-seconds">--</div>
+                <div class="cd-label">Seg</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 mb-8 reveal justify-start">
+            <a href="#inscricao"
+              class="group inline-flex items-center justify-center gap-2 bg-[#92BF30] hover:bg-[#A3D436] text-[#133824] font-extrabold text-base sm:text-lg px-10 py-5 rounded-full transition-all duration-300 shadow-[0_8px_30px_rgba(146,191,48,0.4)] hover:shadow-[0_12px_45px_rgba(146,191,48,0.6)] hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[#92BF30]/50">
+              <span> GARANTIR MINHA VAGA</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6">
+                </path>
+              </svg>
+            </a>
+            <a href="#sobre"
+              class="group inline-flex items-center justify-center gap-2 border-2 border-white/60 hover:border-white bg-white/10 hover:bg-white text-white hover:text-[#133824] font-bold text-base sm:text-lg px-10 py-5 rounded-full transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-white/40 hover:-translate-y-1">
+              <span>Saiba Mais</span>
+            </a>
+          </div>
+
+          <!-- Realização -->
+          <p class="text-white/70 text-xs mt-2 reveal">
+            Realização: <span class="text-white font-semibold">Ambiental Pro</span>
           </p>
-          <p class="text-white/50 text-sm sm:text-base font-semibold reveal reveal-delay-3">
-            27 a 30 de abril de 2026
-          </p>
         </div>
+        <div id="inscricao"
+          class="bg-[#F2F2F2] rounded-3xl border border-gray-100 hero-right-column relative z-10 w-full mx-auto shadow-2xl bg-white border-0 lg:ml-auto max-w-sm p-5 sm:p-6 scroll-mt-28">
+          <h3 class="font-bold text-[#41A6A6] text-xl mb-6">Preencha seus dados</h3>
+          <form id="form-registration" class="space-y-3" aria-label="Formulário de interesse no congresso">
+            <div>
+              <label for="f-nome" class="block text-sm font-semibold text-gray-700 mb-1.5">Seu nome <span
+                  class="text-red-500" aria-hidden="true">*</span></label>
+              <input type="text" id="f-nome" name="nome" class="form-input" placeholder="Digite seu nome completo"
+                required="" autocomplete="name">
+            </div>
+            <div>
+              <label for="f-email" class="block text-sm font-semibold text-gray-700 mb-1.5">Seu e-mail <span
+                  class="text-red-500" aria-hidden="true">*</span></label>
+              <input type="email" id="f-email" name="email" class="form-input" placeholder="seu@email.com" required=""
+                autocomplete="email">
+            </div>
+            <div>
+              <label for="f-tel" class="block text-sm font-semibold text-gray-700 mb-1.5">Telefone com DDD <span
+                  class="text-red-500" aria-hidden="true">*</span></label>
+              <input type="tel" id="f-tel" name="telefone" class="form-input" placeholder="(21) 99999-9999" required=""
+                autocomplete="tel">
+            </div>
+            <fieldset>
+              <legend class="block text-sm font-semibold text-gray-700 mb-2.5">Você possui graduação completa? <span
+                  class="text-red-500" aria-hidden="true">*</span>
+              </legend>
+              <div class="flex gap-6">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="graduacao" value="sim" class="w-4 h-4" style="accent-color:#53A67F;"
+                    required="">
+                  <span class="text-gray-700 text-sm">Sim</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="graduacao" value="nao" class="w-4 h-4" style="accent-color:#53A67F;">
+                  <span class="text-gray-700 text-sm">Não</span>
+                </label>
+              </div>
+            </fieldset>
+            <div id="area-container" style="display: none;">
+              <label for="f-area" class="block text-sm font-semibold text-gray-700 mb-1.5">Qual é a sua área de
+                formação? <span class="text-red-500" aria-hidden="true">*</span></label>
+              <input type="text" id="f-area" name="area" class="form-input"
+                placeholder="Ex: Engenharia Ambiental, Direito, Biologia...">
+            </div>
 
-        <!-- Event info pills -->
-        <div class="flex flex-wrap justify-center gap-3 mb-10 reveal reveal-delay-4">
-          <div
-            class="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-3 hover:bg-white/15 transition-colors">
-            <svg class="w-4 h-4 text-[#FFD11A] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span class="text-white text-sm font-semibold">27 a 30/04</span>
-          </div>
-          <div
-            class="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-3 hover:bg-white/15 transition-colors">
-            <svg class="w-4 h-4 text-[#FFD11A] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-white text-sm font-semibold">17h às 21h</span>
-          </div>
-          <div
-            class="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-3 hover:bg-white/15 transition-colors">
-            <svg class="w-4 h-4 text-[#FFD11A] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <span class="text-white text-sm font-semibold">Google Meet</span>
-          </div>
+            <button type="submit" id="btn-submit"
+              class="w-full bg-[#92BF30] hover:bg-[#A3D436] text-[#133824] font-bold text-lg py-4 rounded-2xl transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#92BF30]/50 mt-2 disabled:opacity-50 disabled:cursor-wait">
+              <span id="btn-text">QUERO GARANTIR MEU INGRESSO</span>
+            </button>
+            <p class="text-gray-400 text-xs text-center mt-2">Ao continuar você concorda com os termos de uso e
+              política de privacidade da Ambiental Pro.</p>
+          </form>
         </div>
-
-        <!-- Countdown -->
-        <div class="mb-10">
-          <p class="text-white/40 text-xs uppercase tracking-[0.2em] mb-4 font-bold">Faltam para o congresso</p>
-          <div class="flex justify-center gap-3 flex-wrap">
-            <div class="cd-box">
-              <div class="cd-num" id="cd-days">--</div>
-              <div class="cd-label">Dias</div>
-            </div>
-            <div class="cd-box">
-              <div class="cd-num" id="cd-hours">--</div>
-              <div class="cd-label">Horas</div>
-            </div>
-            <div class="cd-box">
-              <div class="cd-num" id="cd-minutes">--</div>
-              <div class="cd-label">Min</div>
-            </div>
-            <div class="cd-box">
-              <div class="cd-num" id="cd-seconds">--</div>
-              <div class="cd-label">Seg</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8 reveal">
-          <a href="#inscricao"
-            class="group inline-flex items-center justify-center gap-2 bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-extrabold text-base sm:text-lg px-10 py-5 rounded-full transition-all duration-300 shadow-[0_8px_30px_rgba(255,209,26,0.4)] hover:shadow-[0_12px_45px_rgba(255,209,26,0.6)] hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[#FFD11A]/50">
-            <span> GARANTIR MINHA VAGA</span>
-            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-          <a href="#sobre"
-            class="group inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/70 bg-white/5 hover:bg-white/10 text-white font-bold text-base sm:text-lg px-10 py-5 rounded-full transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-white/40 hover:-translate-y-1">
-            <span>Saiba Mais</span>
-          </a>
-        </div>
-
-        <!-- Realização -->
-        <p class="text-white/35 text-[10px] mt-2 reveal">
-          Realização: <span class="text-white/60 font-semibold">Ambiental Pro</span>
-        </p>
       </div>
 
-      <!-- Wave divider - mais elaborado -->
-      <div class="wave-bottom absolute bottom-0 left-0 right-0" aria-hidden="true">
-        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-          style="height:80px;width:100%;">
-          <path d="M0 80C240 50 480 80 720 50C960 20 1200 50 1440 20V80H0Z" fill="#F5F6F7" />
-          <path d="M0 70C240 45 480 70 720 45C960 20 1200 45 1440 20V80H0Z" fill="#F0F1F2" />
-        </svg>
-      </div>
     </section>
 
     <!-- ============================================================
          SOBRE O CONGRESSO
     ============================================================ -->
-    <section id="sobre" class="py-20 bg-[#F5F6F7]" aria-label="Sobre o congresso">
+    <section id="sobre" class="py-20 bg-[#F2F2F2]" aria-label="Sobre o congresso">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-16 reveal">
           <div class="accent-line mx-auto mb-5"></div>
-          <h2 class="font-display font-bold text-[#1B6E6E] mb-4"
-            style="font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -0.01em;">SOBRE O CONGRESSO</h2>
+          <h2 class="font-display font-bold text-[#41A6A6] text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">SOBRE O CONGRESSO</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            O <strong class="text-[#1B6E6E]">II CBLCAM</strong> chega à sua segunda edição elegendo como tema central o
-            Marco Regulatório da Nova Lei do Licenciamento Ambiental no Brasil.
+            O <strong class="text-[#41A6A6]">III CBLCAM</strong> chega à sua terceira edição reunindo especialistas e autoridades para discutir os principais impactos e desafios da Nova Lei do Licenciamento Ambiental.
           </p>
         </div>
 
         <!-- Stats -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16">
-          <div class="reveal reveal-delay-1 bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
-            <div class="stat-num">4</div>
-            <div class="text-[#239C99] font-semibold text-sm uppercase tracking-wide mt-1">Dias de Congresso</div>
+        <div class="grid grid-cols-3 gap-2 sm:gap-5 max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div class="reveal reveal-delay-1 bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-5 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col justify-center items-center">
+            <div class="stat-num text-2xl min-[360px]:text-3xl sm:text-4xl">4</div>
+            <div class="text-[#53A67F] font-bold text-[10px] min-[360px]:text-[11px] sm:text-xs uppercase tracking-tight sm:tracking-wider mt-1 sm:mt-1.5 leading-tight">Dias de Congresso</div>
           </div>
-          <div class="reveal reveal-delay-2 bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
-            <div class="stat-num">+400</div>
-            <div class="text-[#239C99] font-semibold text-sm uppercase tracking-wide mt-1">Profissionais</div>
+          <div class="reveal reveal-delay-2 bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-5 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col justify-center items-center">
+            <div class="stat-num text-2xl min-[360px]:text-3xl sm:text-4xl">14h</div>
+            <div class="text-[#53A67F] font-bold text-[10px] min-[360px]:text-[11px] sm:text-xs uppercase tracking-tight sm:tracking-wider mt-1 sm:mt-1.5 leading-tight">de Certificação</div>
           </div>
-          <div class="reveal reveal-delay-3 bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
-            <div class="stat-num">14h</div>
-            <div class="text-[#239C99] font-semibold text-sm uppercase tracking-wide mt-1">de Certificação</div>
-          </div>
-          <div class="reveal reveal-delay-4 bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
-            <div class="stat-num">100%</div>
-            <div class="text-[#239C99] font-semibold text-sm uppercase tracking-wide mt-1">Online e ao Vivo</div>
+          <div class="reveal reveal-delay-3 bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-5 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col justify-center items-center">
+            <div class="stat-num text-2xl min-[360px]:text-3xl sm:text-4xl">100%</div>
+            <div class="text-[#53A67F] font-bold text-[10px] min-[360px]:text-[11px] sm:text-xs uppercase tracking-tight sm:tracking-wider mt-1 sm:mt-1.5 leading-tight">Online e ao Vivo</div>
           </div>
         </div>
 
@@ -863,31 +920,25 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div class="reveal space-y-5">
             <p class="text-gray-700 text-lg leading-relaxed">
-              O evento foi planejado para entregar atualização direta sobre essa novidade que está <strong
-                class="text-[#1B6E6E]">redefinindo o setor ambiental</strong>, capacitando profissionais para dominarem
-              as novas tipologias de licenciamento — simplificado, autodeclaratório e ordinário.
+              O <strong class="text-[#41A6A6]">III CBLCAM – Congresso Brasileiro de Licenciamento e Consultoria Ambiental</strong> chega à sua terceira edição reunindo especialistas e profissionais de todo o país para discutir os <strong class="text-[#41A6A6]">principais impactos e desafios da Nova Lei do Licenciamento Ambiental</strong>.
             </p>
             <p class="text-gray-700 text-lg leading-relaxed">
-              Ao longo de quatro dias, a programação prioriza a <strong class="text-[#1B6E6E]">aplicação prática e a
-                segurança jurídica</strong> diante das mudanças na legislação e na distribuição de competências entre os
-              entes federativos.
+              Será um espaço estratégico para <strong class="text-[#41A6A6]">compartilhar conhecimento, experiências práticas e estratégias</strong>, conectando palestrantes e autoridades do setor a um público altamente qualificado de consultores, empreendedores, profissionais e gestores ambientais.
             </p>
             <p class="text-gray-700 text-lg leading-relaxed">
-              É o ponto de encontro para consultores, advogados, peritos e gestores que buscam alinhar procedimentos,
-              conhecer tecnologias aplicadas (IA e geoprocessamento) e mitigar riscos frente aos novos prazos e
-              responsabilidades técnicas.
+              Ao longo de quatro dias de imersão online e ao vivo, a programação prioriza a <strong class="text-[#41A6A6]">aplicação prática e a segurança jurídica</strong> frente às novas modalidades (LAC, LAU, LAE), novos prazos e responsabilidades técnicas no novo marco regulatório.
             </p>
-            <blockquote class="border-l-4 border-[#2EBFBC] pl-5 py-2 mt-6">
-              <p class="text-[#1B6E6E] font-semibold text-lg italic leading-snug">
-                "Mais do que acompanhar palestras, o participante tem a oportunidade de compreender o impacto imediato
-                da nova lei no mercado."
+            <blockquote class="border-l-4 border-[#41A6A6] pl-5 py-2 mt-6">
+              <p class="text-[#41A6A6] font-semibold text-lg italic leading-snug">
+                "Mais do que acompanhar palestras, o participante tem a oportunidade de compreender e dominar o impacto imediato da nova lei no mercado."
               </p>
             </blockquote>
             <a href="#inscricao"
-              class="inline-flex items-center gap-2 bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold text-base px-7 py-3.5 rounded-full transition-colors duration-200 cursor-pointer mt-4 focus:outline-none focus:ring-4 focus:ring-[#FFD11A]/40">
+              class="inline-flex items-center gap-2 bg-[#92BF30] hover:bg-[#A3D436] text-[#133824] font-bold text-base px-7 py-3.5 rounded-full transition-colors duration-200 cursor-pointer mt-4 focus:outline-none focus:ring-4 focus:ring-[#92BF30]/40">
               GARANTIR MINHA VAGA
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6">
+                </path>
               </svg>
             </a>
           </div>
@@ -895,161 +946,130 @@
           <!-- Program day cards -->
           <div class="reveal reveal-delay-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <!-- Card 1 -->
-            <div class="relative bg-[#FFFBF0] rounded-xl p-5 border border-[#FBBF24] flex items-center shadow-sm">
-              <div class="absolute -top-3 left-6 bg-[#FBBF24] text-amber-900 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Bônus</div>
+            <div class="relative bg-[#F0F7E4] rounded-xl p-5 border border-[#92BF30] flex items-center shadow-sm">
+              <div
+                class="absolute -top-3 left-6 bg-[#92BF30] text-[#133824] text-[10px] sm:text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                Bônus</div>
               <div class="flex items-center gap-5 w-full pt-1">
                 <div class="flex flex-col items-center justify-center min-w-[65px]">
-                  <span class="font-display font-bold text-5xl text-[#165A5A] leading-none" style="letter-spacing: -0.03em;">27</span>
-                  <span class="text-[#165A5A] font-bold text-[11px] uppercase mt-1 tracking-wide">ABR/26</span>
+                  <span class="font-display font-bold text-5xl text-[#3C7E7E] leading-none"
+                    style="letter-spacing: -0.03em;">21</span>
+                  <span class="text-[#3C7E7E] font-bold text-[11px] uppercase mt-1 tracking-wide">SET/26</span>
                 </div>
                 <div class="flex-1">
-                  <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Dia Zero</p>
-                  <p class="font-bold text-[#1B6E6E] text-[15px] sm:text-base leading-snug">Oficina Prática</p>
+                  <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Dia 0</p>
+                  <p class="font-bold text-[#41A6A6] text-[15px] sm:text-base leading-snug">Oficina Prática</p>
                 </div>
               </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-center shadow-sm hover:border-[#239C99]/50 transition-colors">
+            <div
+              class="bg-white rounded-xl p-5 border border-gray-200 flex items-center shadow-sm hover:border-[#53A67F]/50 transition-colors">
               <div class="flex items-center gap-5 w-full">
                 <div class="flex flex-col items-center justify-center min-w-[65px]">
-                  <span class="font-display font-bold text-5xl text-[#165A5A] leading-none" style="letter-spacing: -0.03em;">28</span>
-                  <span class="text-[#165A5A] font-bold text-[11px] uppercase mt-1 tracking-wide">ABR/26</span>
+                  <span class="font-display font-bold text-5xl text-[#3C7E7E] leading-none"
+                    style="letter-spacing: -0.03em;">22</span>
+                  <span class="text-[#3C7E7E] font-bold text-[11px] uppercase mt-1 tracking-wide">SET/26</span>
                 </div>
                 <div class="flex-1">
-                  <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Primeiro Dia</p>
-                  <p class="font-bold text-[#1B6E6E] text-[15px] sm:text-base leading-snug">O Novo Marco do Licenciamento Ambiental no Brasil: avanços, riscos e controvérsias</p>
+                  <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Dia 1</p>
+                  <p class="font-bold text-[#41A6A6] text-[15px] sm:text-base leading-snug">O Novo Fluxo Operacional: Da Lei à Rotina do Licenciamento</p>
                 </div>
               </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-center shadow-sm hover:border-[#239C99]/50 transition-colors">
+            <div
+              class="bg-white rounded-xl p-5 border border-gray-200 flex items-center shadow-sm hover:border-[#53A67F]/50 transition-colors">
               <div class="flex items-center gap-5 w-full">
                 <div class="flex flex-col items-center justify-center min-w-[65px]">
-                  <span class="font-display font-bold text-5xl text-[#165A5A] leading-none" style="letter-spacing: -0.03em;">29</span>
-                  <span class="text-[#165A5A] font-bold text-[11px] uppercase mt-1 tracking-wide">ABR/26</span>
+                  <span class="font-display font-bold text-5xl text-[#3C7E7E] leading-none"
+                    style="letter-spacing: -0.03em;">23</span>
+                  <span class="text-[#3C7E7E] font-bold text-[11px] uppercase mt-1 tracking-wide">SET/26</span>
                 </div>
                 <div class="flex-1">
-                  <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Segundo Dia</p>
-                  <p class="font-bold text-[#1B6E6E] text-[15px] sm:text-base leading-snug">Inovação, Dados e a Responsabilidade pela Eficiência no Licenciamento</p>
+                  <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Dia 2</p>
+                  <p class="font-bold text-[#41A6A6] text-[15px] sm:text-base leading-snug">Impactos Setoriais: Agronegócio, Infraestrutura e Projetos Estratégicos</p>
                 </div>
               </div>
             </div>
 
             <!-- Card 4 -->
-            <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-center shadow-sm hover:border-[#239C99]/50 transition-colors">
+            <div
+              class="bg-white rounded-xl p-5 border border-gray-200 flex items-center shadow-sm hover:border-[#53A67F]/50 transition-colors">
               <div class="flex items-center gap-5 w-full">
                 <div class="flex flex-col items-center justify-center min-w-[65px]">
-                  <span class="font-display font-bold text-5xl text-[#165A5A] leading-none" style="letter-spacing: -0.03em;">30</span>
-                  <span class="text-[#165A5A] font-bold text-[11px] uppercase mt-1 tracking-wide">ABR/26</span>
+                  <span class="font-display font-bold text-5xl text-[#3C7E7E] leading-none"
+                    style="letter-spacing: -0.03em;">24</span>
+                  <span class="text-[#3C7E7E] font-bold text-[11px] uppercase mt-1 tracking-wide">SET/26</span>
                 </div>
                 <div class="flex-1">
-                  <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Terceiro Dia</p>
-                  <p class="font-bold text-[#1B6E6E] text-[15px] sm:text-base leading-snug">Estratégias, Segurança Jurídica e o futuro do Setor Ambiental</p>
+                  <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Dia 3</p>
+                  <p class="font-bold text-[#41A6A6] text-[15px] sm:text-base leading-snug">Compliance, Risco Jurídico e o Futuro da Consultoria Ambiental</p>
                 </div>
               </div>
             </div>
-          </div></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============================================================
          PÚBLICO-ALVO
     ============================================================ -->
-    <section id="publico" class="py-20 bg-white" aria-label="Público-alvo do congresso">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="publico" class="py-20 hero-bg relative overflow-hidden text-white" aria-label="Público-alvo do congresso">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         <div class="text-center mb-14 reveal">
-          <div class="accent-line mx-auto mb-5"></div>
-          <h2 class="font-display font-bold text-[#1B6E6E] mb-4"
-            style="font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -0.01em;">PARA QUEM É O CONGRESSO</h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">O II CBLCAM foi criado para reunir todos os profissionais e
+          <div class="h-1 w-14 bg-[#92BF30] rounded mx-auto mb-5"></div>
+          <h2 class="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">PARA QUEM É O CONGRESSO</h2>
+          <p class="text-white/85 text-lg max-w-2xl mx-auto">O III CBLCAM foi criado para reunir todos os profissionais e
             estudantes interessados em licenciamento, consultoria e gestão ambiental no Brasil.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
-            class="reveal reveal-delay-1 bg-[#F5F6F7] rounded-2xl p-7 border border-gray-100 hover:border-[#239C99]/35 hover:shadow-md transition-all duration-200">
-            <div class="w-12 h-12 rounded-xl bg-[#1B6E6E] flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-[#1B6E6E] text-lg mb-2">Consultores Ambientais</h3>
+            class="reveal reveal-delay-1 bg-white rounded-2xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
+            <h3 class="font-bold text-[#1D4C3D] text-lg sm:text-xl mb-2.5">Consultores Ambientais</h3>
             <p class="text-gray-600 text-sm leading-relaxed">Consultores independentes e empresas que atuam em
               licenciamento, auditorias, perícias e gestão ambiental em busca de novas metodologias e tendências de
               mercado.</p>
           </div>
 
           <div
-            class="reveal reveal-delay-2 bg-[#F5F6F7] rounded-2xl p-7 border border-gray-100 hover:border-[#239C99]/35 hover:shadow-md transition-all duration-200">
-            <div class="w-12 h-12 rounded-xl bg-[#239C99] flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-[#1B6E6E] text-lg mb-2">Órgãos Reguladores</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Servidores de secretarias estaduais/municipais de meio
-              ambiente, IBAMA, ICMBio e órgãos licenciadores que necessitam alinhar procedimentos e conhecer novas
-              ferramentas.</p>
+            class="reveal reveal-delay-2 bg-white rounded-2xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
+            <h3 class="font-bold text-[#1D4C3D] text-lg sm:text-xl mb-2.5">Órgãos Reguladores</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Servidores públicos (IBAMA, ICMBio e secretarias) buscando
+              alinhamento de procedimentos e novas ferramentas.</p>
           </div>
 
           <div
-            class="reveal reveal-delay-3 bg-[#F5F6F7] rounded-2xl p-7 border border-gray-100 hover:border-[#239C99]/35 hover:shadow-md transition-all duration-200">
-            <div class="w-12 h-12 rounded-xl bg-[#2EBFBC] flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-[#1B6E6E] text-lg mb-2">Empresas e Empreendedores</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Representantes dos setores de energia, mineração,
-              agronegócio, indústria e infraestrutura que buscam orientação estratégica para adequação à legislação e
-              mitigação de riscos.</p>
+            class="reveal reveal-delay-3 bg-white rounded-2xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
+            <h3 class="font-bold text-[#1D4C3D] text-lg sm:text-xl mb-2.5">Empresas e Empreendedores</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Setores de energia, mineração, agro e indústria buscando
+              adequação legal e mitigação de riscos ambientais.</p>
           </div>
 
           <div
-            class="reveal reveal-delay-1 bg-[#F5F6F7] rounded-2xl p-7 border border-gray-100 hover:border-[#239C99]/35 hover:shadow-md transition-all duration-200">
-            <div class="w-12 h-12 rounded-xl bg-[#1B6E6E] flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-[#1B6E6E] text-lg mb-2">Peritos e Auditores</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Profissionais que atuam em perícias judiciais,
-              extrajudiciais e auditorias de conformidade, interessados em metodologias de avaliação de impactos e novas
-              exigências legais.</p>
+            class="reveal reveal-delay-1 bg-white rounded-2xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
+            <h3 class="font-bold text-[#1D4C3D] text-lg sm:text-xl mb-2.5">Peritos e Auditores</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Especialistas em perícias e auditorias focados em novas
+              exigências legais e avaliação de impactos.</p>
           </div>
 
           <div
-            class="reveal reveal-delay-2 bg-[#F5F6F7] rounded-2xl p-7 border border-gray-100 hover:border-[#239C99]/35 hover:shadow-md transition-all duration-200">
-            <div class="w-12 h-12 rounded-xl bg-[#239C99] flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-[#1B6E6E] text-lg mb-2">Advogados Ambientais</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Profissionais que atuam em consultoria jurídica, defesa de
-              processos administrativos e judiciais, com necessidade de atualizações normativas e integração
-              técnica-jurídica.</p>
+            class="reveal reveal-delay-2 bg-white rounded-2xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
+            <h3 class="font-bold text-[#1D4C3D] text-lg sm:text-xl mb-2.5">Advogados Ambientais</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Profissionais de consultoria e defesa jurídica em busca de
+              atualizações normativas e integração técnica-jurídica.</p>
           </div>
 
           <div
-            class="reveal reveal-delay-3 bg-[#F5F6F7] rounded-2xl p-7 border border-gray-100 hover:border-[#239C99]/35 hover:shadow-md transition-all duration-200">
-            <div class="w-12 h-12 rounded-xl bg-[#2EBFBC] flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-[#1B6E6E] text-lg mb-2">Tecnologia e Inovação</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Empresas de softwares GIS, sensoriamento remoto, modelagem
-              ambiental, monitoramento e compliance interessadas em expor soluções e gerar negócios no setor.</p>
+            class="reveal reveal-delay-3 bg-white rounded-2xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
+            <h3 class="font-bold text-[#1D4C3D] text-lg sm:text-xl mb-2.5">Tecnologia e Inovação</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Empresas de softwares, GIS e monitoramento interessadas em
+              expor soluções e gerar novos negócios no setor.</p>
           </div>
         </div>
       </div>
@@ -1058,159 +1078,7 @@
     <!-- ============================================================
          PALESTRANTES
     ============================================================ -->
-    <section id="palestrantes" class="py-20 bg-[#F5F6F7]" aria-label="Palestrantes do congresso">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="text-center mb-14 reveal">
-          <div class="accent-line mx-auto mb-5"></div>
-          <h2 class="font-display font-bold text-[#1B6E6E] mb-4"
-            style="font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -0.01em;">PALESTRANTES</h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Especialistas de referência nacional no licenciamento
-            ambiental, direito ambiental, geotecnologias e inteligência artificial.</p>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-5">
-
-          <article class="speaker-card reveal reveal-delay-1" tabindex="0" aria-label="Palestrante Henrique Gonzalez">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Henrique.png" alt="Henrique Gonzalez" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Henrique Gonzalez</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Engenheiro Ambiental, Especialista em
-                Geotecnologias · UFRJ</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-2" tabindex="0" aria-label="Palestrante Karen Machado">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Karen.png" alt="Karen Machado" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Karen Machado</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogada, Especialista em Direito Ambiental ·
-                PUC</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-3" tabindex="0" aria-label="Palestrante Rafael Timbola">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Rafael.png" alt="Rafael Timbola" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Rafael Timbola</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Eng. Ambiental, Mestre e Doutor, O Perito
-                Ambiental</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-4" tabindex="0" aria-label="Palestrante Anelise Gomes">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Anelise.png" alt="Anelise Gomes" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Anelise Gomes</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Cientista Social, Doutoranda em Ciências
-                Ambientais · IEE/USP</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal" tabindex="0" aria-label="Palestrante Cassio Albert Arend">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Cassio.png" alt="Cassio Albert Arend" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Cássio Alberto Arend</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogado, Doutor em Direito Ambiental (UCS)
-                · CONSEMA/RS</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-1" tabindex="0" aria-label="Palestrante Glaucia Brenny">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Glaucia.png" alt="Glaucia Brenny" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Glaucia Brenny</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogada e Gestora Ambiental, Mestre em Controle
-                de Poluição</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-2" tabindex="0" aria-label="Palestrante Nelson Tonon">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Nelson.png" alt="Nelson Tonon" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Nelson Tonon</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogado, Especialista em Ambiental e Processual
-                Civil</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-3" tabindex="0" aria-label="Palestrante Fabiana Figueiró">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Fabiana%20Figueir%C3%B3.png" alt="Fabiana Figueiró" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Fabiana Figueiró</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Mestre em Direito Ambiental · Souto Correa</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-4" tabindex="0" aria-label="Palestrante Gustavo Coser">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Gustavo%20Coser.png" alt="Gustavo Coser" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Gustavo Coser</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Engenheiro Ambiental, 17 anos em ESG · UFES</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal" tabindex="0" aria-label="Palestrante Cláudio Farenzena">
-            <div class="p-2 sm:p-2.5 h-full flex flex-col bg-white rounded-3xl">
-              <div class="w-full mb-2">
-                <img src="apoio/Cl%C3%A1udio%20Farenzena.png" alt="Cláudio Farenzena" class="w-full aspect-[4/5] object-cover rounded-2xl sm:rounded-[1.25rem]" loading="lazy">
-              </div>
-              <div class="bg-[#1B6E6E] rounded-xl sm:rounded-2xl p-5 sm:p-6 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[16px] sm:text-[18px] leading-tight mb-2">Cláudio Farenzena</h3>
-                <div class="w-10 flex-shrink-0 h-[2px] bg-[#FFD11A] mb-3 rounded-full"></div>
-                <p class="text-white/85 text-[13px] sm:text-[14px] leading-snug font-medium">Advogado e Especialista em Direito Ambiental</p>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
 
     <!-- ============================================================
          PALESTRAS / PROGRAMAÇÃO
@@ -1220,8 +1088,7 @@
 
         <div class="text-center mb-14 reveal">
           <div class="accent-line mx-auto mb-5"></div>
-          <h2 class="font-display text-[#1B6E6E] mb-4"
-            style="font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: 0.04em;">PROGRAMAÇÃO</h2>
+          <h2 class="font-display font-bold text-[#41A6A6] text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">PROGRAMAÇÃO</h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto">Quatro dias intensos com conteúdo prático e aplicado ao
             novo cenário do licenciamento ambiental.</p>
         </div>
@@ -1229,110 +1096,72 @@
         <!-- Tabs -->
         <div class="flex flex-wrap gap-3 justify-center mb-10 reveal" role="tablist" aria-label="Dias do congresso">
           <button class="tab-btn active" onclick="showTab('day27')" role="tab" aria-selected="true"
-            aria-controls="day27" id="tab-day27">27 de Abr — Oficina Prática</button>
+            aria-controls="day27" id="tab-day27">21/09 — Dia 0: Oficina Prática</button>
           <button class="tab-btn" onclick="showTab('day28')" role="tab" aria-selected="false" aria-controls="day28"
-            id="tab-day28">28 de Abril - Dia 1</button>
+            id="tab-day28">22/09 — Dia 1: O Novo Fluxo Operacional</button>
           <button class="tab-btn" onclick="showTab('day29')" role="tab" aria-selected="false" aria-controls="day29"
-            id="tab-day29">29 Abril - Dia 2</button>
+            id="tab-day29">23/09 — Dia 2: Impactos Setoriais</button>
           <button class="tab-btn" onclick="showTab('day30')" role="tab" aria-selected="false" aria-controls="day30"
-            id="tab-day30">30 Abril - Dia 3</button>
+            id="tab-day30">24/09 — Dia 3: Compliance e Risco Jurídico</button>
         </div>
 
         <!-- Day 27 -->
         <div id="day27" class="tab-content active reveal" role="tabpanel" aria-labelledby="tab-day27">
-          <div class="bg-[#F5F6F7] rounded-2xl p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-[#1B6E6E] flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-[#1B6E6E] text-lg">Oficina Prática</h3>
-                <p class="text-gray-500 text-sm">27 de abril de 2026 · 17h às 18h30</p>
+          <div class="bg-[#F2F2F2] rounded-2xl p-6 sm:p-8">
+            <div class="mb-6">
+              <h3 class="font-bold text-[#2C7B7B] text-xl">Dia 0 — Oficina Prática</h3>
+              <p class="text-gray-500 text-sm font-medium">21 de setembro de 2026 · 17h às 18h30</p>
+            </div>
+            <div class="space-y-3">
+              <div class="bg-white rounded-xl p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all">
+                <div class="flex items-start gap-3.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] mt-1.5 flex-shrink-0"></div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg mb-1 leading-snug">Oficina Prática</h4>
+                    <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed">
+                      Abertura da programação técnica com atividade prática conduzida pela equipe EnviroAsset. Participação mediante confirmação via formulário de check-in.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="bg-white rounded-xl p-5 border border-gray-100 flex items-start gap-4">
-              <div class="w-8 h-8 rounded-full bg-[#2EBFBC]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <div class="w-2.5 h-2.5 rounded-full bg-[#2EBFBC]"></div>
-              </div>
-              <div>
-                <p class="text-gray-500 text-xs mb-1">17h00 – 18h30 · Oficina Prática</p>
-                <p class="font-bold text-[#1B6E6E]">EnviroAsset</p>
-                <p class="text-gray-600 text-sm mt-1">Abertura da programação técnica com atividade prática conduzida
-                  pela equipe EnviroAsset. Participação mediante confirmação via formulário de check-in.</p>
-              </div>
-            </div>
-            <div class="mt-5 p-4 bg-[#FFD11A]/15 border border-[#FFD11A]/40 rounded-xl">
-              <p class="text-[#1B6E6E] text-sm font-medium"><strong>Importante:</strong> A participação na oficina
-                requer confirmação prévia pelo formulário de check-in.</p>
+            <div class="mt-5 p-4 bg-[#92BF30]/15 border border-[#92BF30]/40 rounded-xl">
+              <p class="text-[#1D4C3D] text-sm font-medium"><strong>Importante:</strong> A participação na oficina requer confirmação prévia pelo formulário de check-in.</p>
             </div>
           </div>
         </div>
 
         <!-- Day 28 -->
         <div id="day28" class="tab-content reveal" role="tabpanel" aria-labelledby="tab-day28">
-          <div class="bg-[#F5F6F7] rounded-2xl p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-[#239C99] flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-[#1B6E6E] text-lg">O Novo Marco do Licenciamento Ambiental no Brasil: avanços,
-                  riscos e controvérsias</h3>
-                <p class="text-gray-500 text-sm">28 de abril de 2026 · 17h às 21h</p>
-              </div>
+          <div class="bg-[#F2F2F2] rounded-2xl p-6 sm:p-8">
+            <div class="mb-6">
+              <h3 class="font-bold text-[#2C7B7B] text-xl">DIA 1 — O Novo Fluxo Operacional: Da Lei à Rotina do Licenciamento</h3>
+              <p class="text-gray-500 text-sm font-medium">22 de setembro de 2026 · 17h às 21h</p>
             </div>
-            <div class="space-y-4">
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Cassio.png" alt="Cassio Albert Arend"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Cassio Albert Arend</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Tipologias de Licenciamento: LP, LI, LO,
-                    Simplificado e Autodeclaratório</p>
-                </div>
+
+            <!-- Foco do dia -->
+            <div class="mb-6 p-4 sm:p-5 bg-[#53A67F]/10 border border-[#53A67F]/30 rounded-xl">
+              <p class="text-[#1D4C3D] text-sm sm:text-[15px] leading-relaxed">
+                <strong class="text-[#1D4C3D] font-bold">Foco do dia:</strong> Como as sete modalidades de licença funcionam na prática, com ênfase na LAC, nos novos prazos e na digitalização dos processos.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Modalidades em Ação: Como Escolher e Tramitar LP, LI, LO, LAU, LAC, LOC e LAE</h4>
               </div>
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Nelson.png" alt="Nelson Tonon"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Nelson Tonon</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Impactos da nova lei para setores-chave:
-                    infraestrutura, agro e indústria</p>
-                </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">LAC na Prática: Elaborando o RCE e Assinando o Termo de Compromisso sem Erros</h4>
               </div>
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Glaucia.png" alt="Glaucia Brenny"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Glaucia Brenny</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">A Nova Lei sob a Ótica do Gestor: Desafios
-                    Técnicos e Jurídicos na Transição para o Novo Fluxo de Licenciamento</p>
-                </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Regra de Ouro e TR Padrão: Prazos, Renovações Automáticas e o que Fazer Quando o Órgão Não Responde</h4>
               </div>
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Fabiana%20Figueir%C3%B3.png" alt="Fabiana Figueiró"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Fabiana Figueiró</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">A Nova Lei e os Avanços no Saneamento Básico:
-                    Dispensa, Simplificação e Segurança Jurídica</p>
-                </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Plataformas Digitais e o Cadastro Nacional Unificado: Preparando-se para 2027</h4>
               </div>
             </div>
           </div>
@@ -1340,55 +1169,39 @@
 
         <!-- Day 29 -->
         <div id="day29" class="tab-content reveal" role="tabpanel" aria-labelledby="tab-day29">
-          <div class="bg-[#F5F6F7] rounded-2xl p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-[#2EBFBC] flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-[#1B6E6E] text-lg">Inovação, Dados e a Responsabilidade pela Eficiência no
-                  Licenciamento
-                </h3>
-                <p class="text-gray-500 text-sm">29 de abril de 2026 · 17h às 21h</p>
-              </div>
+          <div class="bg-[#F2F2F2] rounded-2xl p-6 sm:p-8">
+            <div class="mb-6">
+              <h3 class="font-bold text-[#2C7B7B] text-xl">Dia 2 — Impactos Setoriais: Agronegócio, Infraestrutura e Projetos Estratégicos</h3>
+              <p class="text-gray-500 text-sm font-medium">23 de setembro de 2026 · 17h às 21h</p>
             </div>
-            <div class="space-y-4">
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Henrique.png" alt="Henrique Gonzalez"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Henrique Gonzalez</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Geotecnologias e IA: Estratégias Práticas para
-                    Profissionais de Vanguarda</p>
-                </div>
+
+            <!-- Foco do dia -->
+            <div class="mb-6 p-4 sm:p-5 bg-[#53A67F]/10 border border-[#53A67F]/30 rounded-xl">
+              <p class="text-[#1D4C3D] text-sm sm:text-[15px] leading-relaxed">
+                <strong class="text-[#1D4C3D] font-bold">Foco do dia:</strong> Os setores mais afetados pelas novas dispensas e pelo rito especial de projetos estratégicos, e como cada um deve se posicionar.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Dispensa na Prática Rural: CAR, PRA e o Fim da Sobreposição da LAR</h4>
               </div>
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Rafael.png" alt="Rafael Tímbola"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Rafael Tímbola</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Inteligência Artificial na Elaboração de Laudos
-                    Periciais</p>
-                </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Abolitio Infraccionis e Revisão de Embargos: Estratégias para Regularização de Áreas Rurais</h4>
               </div>
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Gustavo%20Coser.png" alt="Gustavo Coser"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Gustavo Coser</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Responsabilidade Técnica e Eficiência
-                    Operacional: O Consultor como Protagonista da Celeridade no Novo Marco</p>
-                </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Qualidade do Ar em Xeque: os Novos Requisitos da Resolução CONAMA nº 513/2026 para Indústria e Energia</h4>
+              </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Licença Ambiental Especial (LAE): Como se Candidatar ao Rito Prioritário de Projetos Estratégicos</h4>
+              </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Licenciamento de Aterros, Usinas de Triagem e Cooperativas: o que Muda na Prática com a LGLA</h4>
               </div>
             </div>
           </div>
@@ -1396,54 +1209,35 @@
 
         <!-- Day 30 -->
         <div id="day30" class="tab-content reveal" role="tabpanel" aria-labelledby="tab-day30">
-          <div class="bg-[#F5F6F7] rounded-2xl p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-[#1B6E6E] flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-[#1B6E6E] text-lg">Estratégia, Segurança Jurídica e o Futuro do Setor
-                  Ambiental</h3>
-                <p class="text-gray-500 text-sm">30 de abril de 2026 · 17h às 21h</p>
-              </div>
+          <div class="bg-[#F2F2F2] rounded-2xl p-6 sm:p-8">
+            <div class="mb-6">
+              <h3 class="font-bold text-[#2C7B7B] text-xl">Dia 3 — Compliance, Risco Jurídico e o Futuro da Consultoria Ambiental</h3>
+              <p class="text-gray-500 text-sm font-medium">24 de setembro de 2026 · 17h às 21h</p>
             </div>
-            <div class="space-y-4">
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Karen.png" alt="Karen Machado"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Karen Machado</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">A Nova Fronteira da Consultoria: Integrando
-                    Inovação Regulatória, Padrões GRI/IFRS e Compliance ao Licenciamento</p>
-                </div>
+
+            <!-- Foco do dia -->
+            <div class="mb-6 p-4 sm:p-5 bg-[#53A67F]/10 border border-[#53A67F]/30 rounded-xl">
+              <p class="text-[#1D4C3D] text-sm sm:text-[15px] leading-relaxed">
+                <strong class="text-[#1D4C3D] font-bold">Foco do dia:</strong> Como gerir a insegurança jurídica criada pelas ADIs no STF, acompanhar a fragmentação federativa das regras e transformar o novo cenário em oportunidade profissional.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Mapa de Riscos Jurídicos: Navegando as ADIs 7913, 7916 e 7919 sem Parar sua Operação</h4>
               </div>
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Anelise.png" alt="Anelise Gomes"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Anelise Gomes</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Valoração Econômica Ambiental na Nova Lei do
-                    Licenciamento: gestão de impactos, riscos e passivos</p>
-                </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Compliance Bancário e Socioambiental: O Novo Dever de Diligência das Instituições Financeiras</h4>
               </div>
-              <div
-                class="bg-white rounded-xl p-4 sm:p-5 border border-gray-100 flex items-center gap-4 hover:shadow-md transition-all">
-                <img src="apoio/Cl%C3%A1udio%20Farenzena.png" alt="Cláudio Farenzena"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                  loading="lazy">
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1B6E6E] text-base">Cláudio Farenzena</h4>
-                  <p class="text-gray-600 text-sm leading-snug mt-0.5">Precificação de serviços: como definir o preço
-                    justo para valorizar o seu trabalho e não perder clientes</p>
-                </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Mosaico Federativo: Acompanhando as Resoluções Estaduais na Prática do Dia a Dia</h4>
+              </div>
+              <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-sm hover:shadow-md hover:border-[#53A67F]/40 transition-all flex items-center gap-3.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#53A67F] flex-shrink-0"></div>
+                <h4 class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Novas Oportunidades para o Profissional do Meio Ambiente: Posicionando-se na Era da LGLA</h4>
               </div>
             </div>
           </div>
@@ -1454,59 +1248,58 @@
     <!-- ============================================================
          CERTIFICADO
     ============================================================ -->
-    <section id="certificado" class="py-20" style="background: linear-gradient(155deg, #1B6E6E 0%, #239C99 100%);"
+    <section id="certificado" class="py-20" style="background: linear-gradient(155deg, #41A6A6 0%, #53A67F 100%);"
       aria-label="Certificado de participação">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-14 items-center">
 
           <!-- Certificate mockup -->
           <div class="reveal text-center lg:text-left">
-            <img src="apoio/Certificado.png" alt="Certificado Digital Modelo"
+            <img src="apoio/Certificado.webp" alt="Certificado Digital Modelo" loading="lazy" decoding="async"
               class="inline-block w-full max-w-lg lg:max-w-xl drop-shadow-2xl hover:scale-105 transition-transform duration-500">
           </div>
 
           <!-- Text -->
           <div class="reveal reveal-delay-2 text-white">
-            <div class="h-1 w-14 bg-[#FFD11A] rounded mb-6"></div>
-            <h2 class="font-display text-white mb-5"
-              style="font-size: clamp(2rem, 4.5vw, 3.2rem); letter-spacing: 0.04em;">CERTIFICADO DE PARTICIPAÇÃO</h2>
+            <div class="h-1 w-14 bg-[#92BF30] rounded mb-6"></div>
+            <h2 class="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-5">CERTIFICADO DE PARTICIPAÇÃO</h2>
             <p class="text-white/85 text-lg leading-relaxed mb-8">
               Todos os inscritos receberão um <strong class="text-white">certificado digital de participação</strong>
               com 14 horas de carga horária, válido em todo o território nacional.
             </p>
             <div class="space-y-4">
               <div class="flex items-start gap-3">
-                <div class="w-7 h-7 rounded-full bg-[#FFD11A] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-4 h-4 text-[#1B6E6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                <div class="w-7 h-7 rounded-full bg-[#92BF30] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-[#41A6A6]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <p class="text-white/85">Pontuar em processos seletivos acadêmicos e profissionais</p>
               </div>
               <div class="flex items-start gap-3">
-                <div class="w-7 h-7 rounded-full bg-[#FFD11A] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-4 h-4 text-[#1B6E6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                <div class="w-7 h-7 rounded-full bg-[#92BF30] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-[#41A6A6]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <p class="text-white/85">Comprovar horas complementares em graduação e pós-graduação</p>
               </div>
               <div class="flex items-start gap-3">
-                <div class="w-7 h-7 rounded-full bg-[#FFD11A] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-4 h-4 text-[#1B6E6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                <div class="w-7 h-7 rounded-full bg-[#92BF30] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-[#41A6A6]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <p class="text-white/85">Fortalecer seu portfólio profissional junto a clientes e órgãos públicos</p>
               </div>
               <div class="flex items-start gap-3">
-                <div class="w-7 h-7 rounded-full bg-[#FFD11A] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-4 h-4 text-[#1B6E6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                <div class="w-7 h-7 rounded-full bg-[#92BF30] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-[#41A6A6]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <p class="text-white/85">Valorizar o currículo com um evento nacional reconhecido pela qualidade técnica
@@ -1521,13 +1314,12 @@
     <!-- ============================================================
          INGRESSOS
     ============================================================ -->
-    <section id="ingressos" class="py-20 bg-[#F5F6F7]" aria-label="Ingressos e preços">
+    <section id="ingressos" class="py-20 bg-[#F2F2F2]" aria-label="Ingressos e preços">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-14 reveal">
           <div class="accent-line mx-auto mb-5"></div>
-          <h2 class="font-display text-[#1B6E6E] mb-4"
-            style="font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: 0.04em;">INGRESSOS</h2>
+          <h2 class="font-display font-bold text-[#41A6A6] text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">INGRESSOS</h2>
           <p class="text-gray-600 text-lg max-w-xl mx-auto">Escolha o ingresso ideal e garanta sua participação no maior
             congresso de licenciamento ambiental do Brasil.</p>
         </div>
@@ -1536,59 +1328,59 @@
 
           <!-- Básico -->
           <div class="reveal reveal-delay-1 bg-white rounded-3xl p-8 border-2 border-gray-200 flex flex-col shadow-sm">
-            <p class="font-bold text-[#239C99] text-sm uppercase tracking-widest mb-3">Ingresso Básico</p>
+            <p class="font-bold text-[#53A67F] text-sm uppercase tracking-widest mb-3">Ingresso Básico</p>
             <div class="mb-1">
-              <span class="font-display text-[#1B6E6E]" style="font-size:3.2rem;">R$&nbsp;97</span>
+              <span class="font-display text-[#41A6A6]" style="font-size:3.2rem;">R$&nbsp;97</span>
               <span class="text-gray-500 text-sm">,00</span>
             </div>
             <p class="text-gray-500 text-sm mb-7">ou 12x de R$ 9,70</p>
             <ul class="space-y-3 mb-8 flex-1">
               <li class="flex items-start gap-2.5 text-sm text-gray-700">
-                <svg class="w-5 h-5 text-[#2EBFBC] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"
+                <svg class="w-5 h-5 text-[#41A6A6] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"
                   aria-hidden="true">
                   <path fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
+                    clip-rule="evenodd"></path>
                 </svg>
-                <span>Acesso à oficina prática ao vivo (dia 27)</span>
+                <span>Acesso à oficina prática ao vivo (dia 21)</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-gray-700">
-                <svg class="w-5 h-5 text-[#2EBFBC] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"
+                <svg class="w-5 h-5 text-[#41A6A6] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"
                   aria-hidden="true">
                   <path fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
+                    clip-rule="evenodd"></path>
                 </svg>
                 <span>Transmissões ao vivo — dias 28, 29 e 30</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-gray-700">
-                <svg class="w-5 h-5 text-[#2EBFBC] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"
+                <svg class="w-5 h-5 text-[#41A6A6] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"
                   aria-hidden="true">
                   <path fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
+                    clip-rule="evenodd"></path>
                 </svg>
                 <span>Painéis com especialistas e autoridades</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-gray-700">
-                <svg class="w-5 h-5 text-[#2EBFBC] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"
+                <svg class="w-5 h-5 text-[#41A6A6] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"
                   aria-hidden="true">
                   <path fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
+                    clip-rule="evenodd"></path>
                 </svg>
                 <span>Certificado digital de participação (14h)</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-gray-400">
                 <svg class="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
                 <span>Acesso às gravações após o evento</span>
               </li>
             </ul>
             <a href="#inscricao"
-              class="block text-center border-2 border-[#1B6E6E] text-[#1B6E6E] hover:bg-[#1B6E6E] hover:text-white font-bold py-4 rounded-2xl transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-4 focus:ring-[#1B6E6E]/30">
+              class="block text-center border-2 border-[#41A6A6] text-[#41A6A6] hover:bg-[#41A6A6] hover:text-white font-bold py-4 rounded-2xl transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-4 focus:ring-[#41A6A6]/30">
               QUERO O BÁSICO
             </a>
           </div>
@@ -1596,80 +1388,64 @@
           <!-- Completo -->
           <div class="reveal reveal-delay-2 pricing-popular rounded-3xl p-8 flex flex-col relative">
             <div
-              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FFD11A] text-[#1B6E6E] font-bold text-xs uppercase tracking-widest px-5 py-1.5 rounded-full shadow-md whitespace-nowrap">
+              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#92BF30] text-[#133824] font-black text-xs uppercase tracking-widest px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
               MAIS POPULAR
             </div>
-            <p class="font-bold text-[#7AD8D6] text-sm uppercase tracking-widest mb-3">Ingresso Completo</p>
+            <p class="font-black text-white text-sm uppercase tracking-widest mb-3">Ingresso Completo</p>
             <div class="mb-1">
               <span class="font-display text-white" style="font-size:3.2rem;">R$&nbsp;147</span>
-              <span class="text-white/70 text-sm">,00</span>
+              <span class="text-white/90 text-sm">,00</span>
             </div>
-            <p class="text-white/60 text-sm mb-7">ou 12x de R$ 14,70</p>
+            <p class="text-white/85 text-sm mb-7">ou 12x de R$ 14,70</p>
             <ul class="space-y-3 mb-8 flex-1">
-              <li class="flex items-start gap-2.5 text-sm text-white/90">
-                <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <li class="flex items-start gap-2.5 text-sm text-white">
+                <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
+                    clip-rule="evenodd"></path>
                 </svg>
                 <span>Tudo do Ingresso Básico</span>
               </li>
-              <li class="flex items-start gap-2.5 text-sm text-white/90">
-                <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <li class="flex items-start gap-2.5 text-sm text-white">
+                <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
+                    clip-rule="evenodd"></path>
                 </svg>
                 <span><strong class="font-bold">Acesso VITALÍCIO</strong> às gravações da oficina e todas as
                   palestras</span>
               </li>
-              <li class="flex items-start gap-2.5 text-sm text-white/90">
-                <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <li class="flex items-start gap-2.5 text-sm text-white">
+                <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
+                    clip-rule="evenodd"></path>
                 </svg>
                 <span>Rever o conteúdo quando e onde quiser</span>
               </li>
-              <li class="flex items-start gap-2.5 text-sm text-white/90">
-                <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span>Certificado digital de participação (14h)</span>
-              </li>
-              <li class="flex items-start gap-2.5 text-sm text-white/90">
-                <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span>Acesso completo por tempo ilimitado</span>
-              </li>
             </ul>
             <a href="#inscricao"
-              class="block w-full text-center bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold py-4 rounded-2xl transition-colors duration-200 cursor-pointer shadow-lg focus:outline-none focus:ring-4 focus:ring-[#FFD11A]/50">
+              class="block w-full text-center bg-[#92BF30] hover:bg-[#A3D436] text-[#133824] font-bold py-4 rounded-2xl transition-colors duration-200 cursor-pointer shadow-lg focus:outline-none focus:ring-4 focus:ring-[#92BF30]/50">
               QUERO O COMPLETO
             </a>
           </div>
         </div>
 
         <div
-          class="mt-10 max-w-2xl mx-auto bg-[#FFF8E1] border-2 border-[#FFD11A] rounded-2xl p-5 sm:p-6 text-center shadow-sm reveal">
-          <div class="flex items-center justify-center gap-2 mb-3">
-            <div class="w-8 h-8 rounded-full bg-[#FFD11A] flex items-center justify-center animate-pulse">
-              <svg class="w-5 h-5 text-[#B28900]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          class="mt-6 max-w-3xl mx-auto bg-[#F0F7E4] border-2 border-[#71A64B] rounded-2xl py-3 px-6 text-center shadow-sm reveal">
+          <div class="flex items-center justify-center gap-2 mb-1">
+            <div class="w-6 h-6 rounded-full bg-[#92BF30] flex items-center justify-center animate-pulse">
+              <svg class="w-3.5 h-3.5 text-[#1B4E3B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                </path>
               </svg>
             </div>
-            <h4 class="font-bold text-[#B28900] uppercase tracking-widest text-sm sm:text-base">Atenção aos Lotes</h4>
+            <h4 class="font-bold text-[#1B4E3B] uppercase tracking-widest text-xs sm:text-sm">Atenção aos Lotes</h4>
           </div>
-          <p class="text-gray-800 font-medium sm:text-lg leading-snug">O valor dos ingressos pode sofrer virada de lote
-            <strong class="text-[#B28900]">a qualquer momento</strong> dependendo da demanda.
+          <p class="text-gray-800 text-xs sm:text-sm leading-snug">
+            O valor dos ingressos pode sofrer virada de lote <strong class="text-[#1B4E3B]">a qualquer momento</strong> dependendo da demanda. Garanta sua participação agora para não pagar mais caro depois.
           </p>
-          <p class="text-gray-500 text-sm mt-2">Garanta sua participação agora para não pagar mais caro depois.</p>
         </div>
       </div>
     </section>
@@ -1677,43 +1453,30 @@
     <!-- ============================================================
          PARCEIROS
     ============================================================ -->
-    <section class="py-14 bg-white" aria-label="Parceiros do congresso">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-        <p class="text-gray-400 text-xs uppercase tracking-widest mb-8">Parceiro Oficial</p>
-        <div class="flex items-center justify-center">
-          <div
-            class="inline-flex items-center justify-center px-8 py-5 rounded-2xl border-2 border-gray-100 bg-[#F5F6F7] hover:shadow-md transition-shadow">
-            <img src="apoio/Parceiro_EnviroAsset.png" alt="EnviroAsset Logo"
-              class="h-12 sm:h-14 object-contain mix-blend-multiply" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- ============================================================
          FAQ
     ============================================================ -->
-    <section id="faq" class="py-20 bg-[#F5F6F7]" aria-label="Perguntas frequentes">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" class="py-20 hero-bg relative overflow-hidden text-white" aria-label="Perguntas frequentes">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         <div class="text-center mb-14 reveal">
-          <div class="accent-line mx-auto mb-5"></div>
-          <h2 class="font-display text-[#1B6E6E] mb-4"
-            style="font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: 0.04em;">PERGUNTAS FREQUENTES</h2>
-          <p class="text-gray-600 text-lg">Tire suas dúvidas sobre o congresso.</p>
+          <div class="h-1 w-14 bg-[#92BF30] rounded mx-auto mb-5"></div>
+          <h2 class="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">PERGUNTAS FREQUENTES</h2>
+          <p class="text-white/85 text-lg">Tire suas dúvidas sobre o congresso.</p>
         </div>
 
-        <div class="space-y-3">
+        <div class="space-y-3.5">
 
-          <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+          <div class="faq-item reveal bg-white rounded-2xl border border-white/20 overflow-hidden shadow-md">
             <button
-              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#239C99] focus:ring-inset"
+              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#53A67F] focus:ring-inset"
               aria-expanded="false" onclick="toggleFaq(this)">
-              <span class="font-semibold text-[#1B6E6E] text-base leading-snug">O congresso dará direito a
-                certificado?</span>
-              <svg class="faq-icon w-5 h-5 text-[#239C99]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              <span class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">O congresso dará direito a certificado?</span>
+              <svg class="faq-icon w-5 h-5 text-[#53A67F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
             <div class="faq-answer">
@@ -1724,53 +1487,51 @@
           </div>
 
           <div
-            class="faq-item reveal reveal-delay-1 bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+            class="faq-item reveal reveal-delay-1 bg-white rounded-2xl border border-white/20 overflow-hidden shadow-md">
             <button
-              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#239C99] focus:ring-inset"
+              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#53A67F] focus:ring-inset"
               aria-expanded="false" onclick="toggleFaq(this)">
-              <span class="font-semibold text-[#1B6E6E] text-base leading-snug">Como funciona o acesso às palestras ao
-                vivo?</span>
-              <svg class="faq-icon w-5 h-5 text-[#239C99]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              <span class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Como funciona o acesso às palestras ao vivo?</span>
+              <svg class="faq-icon w-5 h-5 text-[#53A67F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
             <div class="faq-answer">
               <p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">As transmissões acontecem online, entre 17h e
-                21h (horário de Brasília), nos dias 28, 29 e 30 de abril. Após a inscrição, você recebe as orientações
-                de acesso por e-mail.</p>
+                21h (horário de Brasília), nos dias 22, 23 e 24 de setembro. Após a inscrição, você recebe as
+                orientações de acesso por e-mail.</p>
             </div>
           </div>
 
           <div
-            class="faq-item reveal reveal-delay-2 bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+            class="faq-item reveal reveal-delay-2 bg-white rounded-2xl border border-white/20 overflow-hidden shadow-md">
             <button
-              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#239C99] focus:ring-inset"
+              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#53A67F] focus:ring-inset"
               aria-expanded="false" onclick="toggleFaq(this)">
-              <span class="font-semibold text-[#1B6E6E] text-base leading-snug">Como funciona o acesso à oficina
-                prática?</span>
-              <svg class="faq-icon w-5 h-5 text-[#239C99]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              <span class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Como funciona o acesso à oficina prática?</span>
+              <svg class="faq-icon w-5 h-5 text-[#53A67F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
             <div class="faq-answer">
               <p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">Para participar da oficina, é obrigatório
-                confirmar sua presença pelo formulário de check-in. A atividade ocorre no dia 27 de abril, das 17h às
+                confirmar sua presença pelo formulário de check-in. A atividade ocorre no dia 21 de setembro, das 17h às
                 18h30. Somente os congressistas que validarem sua participação por este canal terão o acesso garantido.
               </p>
             </div>
           </div>
 
           <div
-            class="faq-item reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+            class="faq-item reveal reveal-delay-3 bg-white rounded-2xl border border-white/20 overflow-hidden shadow-md">
             <button
-              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#239C99] focus:ring-inset"
+              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#53A67F] focus:ring-inset"
               aria-expanded="false" onclick="toggleFaq(this)">
-              <span class="font-semibold text-[#1B6E6E] text-base leading-snug">Onde será a transmissão?</span>
-              <svg class="faq-icon w-5 h-5 text-[#239C99]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              <span class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Onde será a transmissão?</span>
+              <svg class="faq-icon w-5 h-5 text-[#53A67F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
             <div class="faq-answer">
@@ -1780,15 +1541,14 @@
             </div>
           </div>
 
-          <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+          <div class="faq-item reveal bg-white rounded-2xl border border-white/20 overflow-hidden shadow-md">
             <button
-              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#239C99] focus:ring-inset"
+              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#53A67F] focus:ring-inset"
               aria-expanded="false" onclick="toggleFaq(this)">
-              <span class="font-semibold text-[#1B6E6E] text-base leading-snug">Terei acesso às gravações depois do
-                evento?</span>
-              <svg class="faq-icon w-5 h-5 text-[#239C99]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              <span class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Terei acesso às gravações depois do evento?</span>
+              <svg class="faq-icon w-5 h-5 text-[#53A67F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
             <div class="faq-answer">
@@ -1803,14 +1563,14 @@
           </div>
 
           <div
-            class="faq-item reveal reveal-delay-1 bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+            class="faq-item reveal reveal-delay-1 bg-white rounded-2xl border border-white/20 overflow-hidden shadow-md">
             <button
-              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#239C99] focus:ring-inset"
+              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#53A67F] focus:ring-inset"
               aria-expanded="false" onclick="toggleFaq(this)">
-              <span class="font-semibold text-[#1B6E6E] text-base leading-snug">Até quando posso me inscrever?</span>
-              <svg class="faq-icon w-5 h-5 text-[#239C99]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              <span class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Até quando posso me inscrever?</span>
+              <svg class="faq-icon w-5 h-5 text-[#53A67F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
             <div class="faq-answer">
@@ -1821,15 +1581,14 @@
           </div>
 
           <div
-            class="faq-item reveal reveal-delay-2 bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+            class="faq-item reveal reveal-delay-2 bg-white rounded-2xl border border-white/20 overflow-hidden shadow-md">
             <button
-              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#239C99] focus:ring-inset"
+              class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#53A67F] focus:ring-inset"
               aria-expanded="false" onclick="toggleFaq(this)">
-              <span class="font-semibold text-[#1B6E6E] text-base leading-snug">Como tirar dúvidas ou falar com os
-                organizadores?</span>
-              <svg class="faq-icon w-5 h-5 text-[#239C99]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              <span class="font-bold text-[#1D4C3D] text-base sm:text-lg leading-snug">Como tirar dúvidas ou falar com os organizadores?</span>
+              <svg class="faq-icon w-5 h-5 text-[#53A67F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
             <div class="faq-answer">
@@ -1845,140 +1604,23 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         FORMULÁRIO / INSCRIÇÃO
-    ============================================================ -->
-    <section id="inscricao" class="py-20 bg-white" aria-label="Formulário de inscrição">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-14 items-center">
 
-          <div class="reveal">
-            <div class="accent-line mb-5"></div>
-            <h2 class="font-display text-[#1B6E6E] mb-5"
-              style="font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: 0.04em;">GARANTA SUA VAGA AGORA</h2>
-            <p class="text-gray-600 text-lg leading-relaxed mb-7">
-              Mais do que uma discussão, esta edição é o <strong class="text-[#1B6E6E]">guia prático sobre a Nova Lei do
-                Licenciamento</strong>. Capacite-se para mitigar riscos e dominar o novo cenário regulatório.
-            </p>
-            <div class="space-y-4">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-[#1B6E6E] flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p class="text-gray-700">4 dias de conteúdo técnico e jurídico de alto nível</p>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-[#1B6E6E] flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p class="text-gray-700">400+ Participantes</p>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-[#1B6E6E] flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p class="text-gray-700">Certificado digital de 14h incluso em todos os ingressos</p>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-[#1B6E6E] flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p class="text-gray-700">Realização: Ambiental Pro — referência nacional em formação ambiental</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="reveal reveal-delay-2 bg-[#F5F6F7] rounded-3xl p-8 sm:p-10 border border-gray-100 shadow-sm">
-            <h3 class="font-bold text-[#1B6E6E] text-xl mb-6">Preencha seus dados</h3>
-            <form id="form-registration" class="space-y-5" aria-label="Formulário de interesse no congresso">
-              <div>
-                <label for="f-nome" class="block text-sm font-semibold text-gray-700 mb-1.5">Seu nome <span
-                    class="text-red-500" aria-hidden="true">*</span></label>
-                <input type="text" id="f-nome" name="nome" class="form-input" placeholder="Digite seu nome completo"
-                  required autocomplete="name">
-              </div>
-              <div>
-                <label for="f-email" class="block text-sm font-semibold text-gray-700 mb-1.5">Seu e-mail <span
-                    class="text-red-500" aria-hidden="true">*</span></label>
-                <input type="email" id="f-email" name="email" class="form-input" placeholder="seu@email.com" required
-                  autocomplete="email">
-              </div>
-              <div>
-                <label for="f-tel" class="block text-sm font-semibold text-gray-700 mb-1.5">Telefone com DDD <span
-                    class="text-red-500" aria-hidden="true">*</span></label>
-                <input type="tel" id="f-tel" name="telefone" class="form-input" placeholder="(21) 99999-9999" required
-                  autocomplete="tel">
-              </div>
-              <div>
-                <label for="f-area" class="block text-sm font-semibold text-gray-700 mb-1.5">Qual é a sua área de
-                  formação? <span class="text-red-500" aria-hidden="true">*</span></label>
-                <input type="text" id="f-area" name="area" class="form-input"
-                  placeholder="Ex: Engenharia Ambiental, Direito, Biologia..." required>
-              </div>
-              <fieldset>
-                <legend class="block text-sm font-semibold text-gray-700 mb-2.5">Você possui graduação completa? <span
-                    class="text-red-500" aria-hidden="true">*</span>
-                </legend>
-                <div class="flex gap-6">
-                  <label class="flex items-center gap-2 cursor-pointer">
-                    <input type="radio" name="graduacao" value="sim" class="w-4 h-4" style="accent-color:#239C99;"
-                      required>
-                    <span class="text-gray-700 text-sm">Sim</span>
-                  </label>
-                  <label class="flex items-center gap-2 cursor-pointer">
-                    <input type="radio" name="graduacao" value="nao" class="w-4 h-4" style="accent-color:#239C99;">
-                    <span class="text-gray-700 text-sm">Não</span>
-                  </label>
-                </div>
-              </fieldset>
-              <button type="submit" id="btn-submit"
-                class="w-full bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold text-lg py-4 rounded-2xl transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#FFD11A]/50 mt-2 disabled:opacity-50 disabled:cursor-wait">
-                <span id="btn-text">QUERO GARANTIR MEU INGRESSO</span>
-              </button>
-              <p class="text-gray-400 text-xs text-center mt-2">Ao continuar você concorda com os termos de uso e
-                política de privacidade da Ambiental Pro.</p>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
     <!-- ============================================================
          PATROCÍNIO
     ============================================================ -->
-    <section class="py-20 bg-[#F5F6F7]" aria-label="Patrocínio do congresso">
+    <section class="py-20 bg-[#F2F2F2]" aria-label="Patrocínio do congresso">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-        <div
-          class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white shadow-sm border border-gray-100 mb-6 text-[#2EBFBC]">
-          <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        </div>
-        <h2 class="font-display text-[#1B6E6E] mb-5"
-          style="font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.01em;">Deseja patrocinar o CBLCAM?</h2>
+        <h2 class="font-display font-bold text-[#41A6A6] text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-5">Deseja patrocinar o CBLCAM?</h2>
         <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
           Associe a sua marca ao principal congresso de licenciamento ambiental do Brasil. Apresente suas soluções para
           um público-alvo altamente qualificado e posicione-se como referência no setor.
         </p>
         <a href="https://tinyurl.com/patrociniocblcam" target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center gap-2.5 bg-[#1B6E6E] hover:bg-[#155A5A] text-white font-bold text-lg px-10 py-4 rounded-full transition-colors duration-200 cursor-pointer shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#1B6E6E]/30">
+          class="inline-flex items-center gap-2.5 bg-[#41A6A6] hover:bg-[#3C7E7E] text-white font-bold text-lg px-10 py-4 rounded-full transition-colors duration-200 cursor-pointer shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#41A6A6]/30">
           QUERO SER UM PATROCINADOR
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </a>
       </div>
@@ -1987,22 +1629,23 @@
     <!-- ============================================================
          REALIZAÇÃO
     ============================================================ -->
-    <section class="py-16" style="background: linear-gradient(155deg, #1B6E6E 0%, #239C99 100%);"
+    <section class="py-20 hero-bg relative overflow-hidden text-white"
       aria-label="Realização do congresso">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-        <p class="text-[#7AD8D6] text-sm uppercase tracking-widest mb-4 font-semibold">Realização</p>
-        <h2 class="font-display text-white mb-5" style="font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: 0.05em;">
-          AMBIENTAL PRO</h2>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal relative z-10">
+        <p class="text-white text-sm uppercase tracking-widest mb-4 font-bold">Realização</p>
+        <div class="flex justify-center my-6">
+          <img src="apoio/logobranca.webp" alt="Ambiental Pro" loading="lazy" decoding="async" class="h-12 sm:h-14 md:h-16 w-auto object-contain drop-shadow-md">
+        </div>
         <p class="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
           O Congresso Brasileiro de Licenciamento e Consultoria Ambiental é uma iniciativa da Ambiental Pro, referência
           nacional em formação e inovação na área ambiental. Mais do que uma instituição de ensino, a Ambiental Pro se
           consolidou como um <strong class="text-white">ecossistema de transformação profissional</strong>.
         </p>
         <a href="#inscricao"
-          class="inline-flex items-center gap-2 bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold text-lg px-9 py-4 rounded-full transition-colors duration-200 cursor-pointer shadow-xl focus:outline-none focus:ring-4 focus:ring-[#FFD11A]/50">
+          class="inline-flex items-center gap-2 bg-[#92BF30] hover:bg-[#A3D436] text-[#133824] font-bold text-lg px-9 py-4 rounded-full transition-colors duration-200 cursor-pointer shadow-xl focus:outline-none focus:ring-4 focus:ring-[#92BF30]/50">
           GARANTIR MINHA VAGA
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
       </div>
@@ -2013,69 +1656,38 @@
   <!-- ============================================================
        FOOTER
   ============================================================ -->
-  <footer class="bg-[#104545] text-white py-12" role="contentinfo">
+  <footer class="bg-gradient-to-br from-[#1D4C3D] via-[#3B7E5E] to-[#548035] text-white py-6" role="contentinfo">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-
-        <div class="lg:col-span-2">
-
-          <p class="text-white/55 text-sm leading-relaxed max-w-xs">
-            O Marco Regulatório da Nova Lei do Licenciamento Ambiental no Brasil. 27 a 30 de abril de 2026.
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+          <img src="apoio/Logo_menu_rev.webp" alt="II CBLCAM 2026" class="h-9 object-contain opacity-90">
+          <p class="text-white/80 text-xs sm:text-sm">
+            © 2026 Ambiental Pro · II CBLCAM. Todos os direitos reservados.
           </p>
         </div>
-
-        <div>
-          <h4 class="font-bold text-white text-sm uppercase tracking-wide mb-4">Contato</h4>
-          <div class="space-y-3">
-            <a href="https://wa.me/5521985047457"
-              class="flex items-center gap-2.5 text-white/55 hover:text-[#FFD11A] text-sm transition-colors duration-200 cursor-pointer focus:outline-none focus:text-[#FFD11A]"
-              target="_blank" rel="noopener noreferrer">
-              <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-              +55 21 98504-7457
-            </a>
-            <a href="https://instagram.com/ambientalpro"
-              class="flex items-center gap-2.5 text-white/55 hover:text-[#FFD11A] text-sm transition-colors duration-200 cursor-pointer focus:outline-none focus:text-[#FFD11A]"
-              target="_blank" rel="noopener noreferrer">
-              <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-              @ambientalpro
-            </a>
-          </div>
+        <div class="flex items-center gap-6 text-xs sm:text-sm">
+          <a href="https://wa.me/5521985047457"
+            class="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors duration-200"
+            target="_blank" rel="noopener noreferrer">
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
+              </path>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://instagram.com/ambientalpro"
+            class="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors duration-200"
+            target="_blank" rel="noopener noreferrer">
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+              </path>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="#hero" class="text-white/80 hover:text-white transition-colors duration-200 font-medium">Voltar ao topo ↑</a>
         </div>
-
-        <div>
-          <h4 class="font-bold text-white text-sm uppercase tracking-wide mb-4">Links Rápidos</h4>
-          <ul class="space-y-2">
-            <li><a href="#certificado"
-                class="text-white/55 hover:text-[#FFD11A] text-sm transition-colors duration-200 cursor-pointer focus:outline-none focus:text-[#FFD11A]">Certificado</a>
-            </li>
-            <li><a href="#palestrantes"
-                class="text-white/55 hover:text-[#FFD11A] text-sm transition-colors duration-200 cursor-pointer focus:outline-none focus:text-[#FFD11A]">Palestrantes</a>
-            </li>
-            <li><a href="#palestras"
-                class="text-white/55 hover:text-[#FFD11A] text-sm transition-colors duration-200 cursor-pointer focus:outline-none focus:text-[#FFD11A]">Palestras</a>
-            </li>
-            <li><a href="#ingressos"
-                class="text-white/55 hover:text-[#FFD11A] text-sm transition-colors duration-200 cursor-pointer focus:outline-none focus:text-[#FFD11A]">Ingressos</a>
-            </li>
-            <li><a href="#faq"
-                class="text-white/55 hover:text-[#FFD11A] text-sm transition-colors duration-200 cursor-pointer focus:outline-none focus:text-[#FFD11A]">FAQ</a>
-            </li>
-            <li><a href="#inscricao"
-                class="text-white/55 hover:text-[#FFD11A] text-sm transition-colors duration-200 cursor-pointer focus:outline-none focus:text-[#FFD11A]">Inscrição</a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p class="text-white/35 text-sm">&copy; 2026 Ambiental Pro. Todos os direitos reservados.</p>
-        <p class="text-white/35 text-sm">II Congresso Brasileiro de Licenciamento e Consultoria Ambiental</p>
       </div>
     </div>
   </footer>
@@ -2090,13 +1702,8 @@
 
       <!-- HEADER DO MODAL -->
       <div class="text-center mb-10 sm:mb-12">
-        <div class="w-16 h-16 bg-[#E8F5E9] rounded-full flex items-center justify-center mx-auto mb-6 text-[#2E7D32]">
-          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
         <h2 id="modal-title"
-          class="font-display font-bold text-[#1B6E6E] text-3xl sm:text-4xl mb-4 uppercase tracking-tight">QUASE LÁ!
+          class="font-display font-bold text-[#41A6A6] text-3xl sm:text-4xl mb-4 uppercase tracking-tight">QUASE LÁ!
         </h2>
         <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">Seu interesse foi registrado com sucesso. Agora,
           selecione o tipo de ingresso para garantir sua vaga:</p>
@@ -2106,7 +1713,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
         <!-- Básico -->
         <div class="pricing-standard rounded-3xl p-8 flex flex-col border border-gray-100 shadow-sm bg-white">
-          <p class="font-bold text-[#30B1AD] text-sm uppercase tracking-widest mb-3">Ingresso Básico</p>
+          <p class="font-bold text-[#53A67F] text-sm uppercase tracking-widest mb-3">Ingresso Básico</p>
           <div class="mb-1">
             <span class="font-display text-gray-900" style="font-size:3.2rem;">R$&nbsp;97</span>
             <span class="text-gray-400 text-sm">,00</span>
@@ -2114,108 +1721,92 @@
           <p class="text-gray-500 text-sm mb-7">ou 12x de R$ 9,70</p>
           <ul class="space-y-4 mb-8 flex-1">
             <li class="flex items-start gap-2.5 text-sm text-gray-600">
-              <svg class="w-5 h-5 text-[#30B1AD] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-[#53A67F] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"></path>
               </svg>
-              <span>Acesso à oficina prática ao vivo (dia 27)</span>
+              <span>Acesso à oficina prática ao vivo (dia 21)</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-gray-600">
-              <svg class="w-5 h-5 text-[#30B1AD] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-[#53A67F] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"></path>
               </svg>
               <span>Transmissões ao vivo — dias 28, 29 e 30</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-gray-600">
-              <svg class="w-5 h-5 text-[#30B1AD] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-[#53A67F] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"></path>
               </svg>
               <span>Painéis com especialistas e autoridades</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-gray-600">
-              <svg class="w-5 h-5 text-[#30B1AD] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-[#53A67F] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"></path>
               </svg>
               <span>Certificado digital de participação (14h)</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-gray-300">
               <svg class="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
                 viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
               <span>Acesso às gravações após o evento</span>
             </li>
           </ul>
           <button onclick="selectTicket('basico')"
-            class="btn-basico block w-full text-center border-2 border-[#1B6E6E] text-[#1B6E6E] hover:bg-[#1B6E6E] hover:text-white font-bold py-4 rounded-2xl transition-all duration-200 cursor-pointer focus:outline-none focus:ring-4 focus:ring-[#1B6E6E]/30">
+            class="btn-basico block w-full text-center border-2 border-[#41A6A6] text-[#41A6A6] hover:bg-[#41A6A6] hover:text-white font-bold py-4 rounded-2xl transition-all duration-200 cursor-pointer focus:outline-none focus:ring-4 focus:ring-[#41A6A6]/30">
             QUERO O BÁSICO
           </button>
         </div>
 
         <!-- Completo -->
-        <div class="pricing-popular rounded-3xl p-8 flex flex-col relative bg-[#1B6E6E]">
+        <div class="pricing-popular rounded-3xl p-8 flex flex-col relative text-white">
           <div
-            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FFD11A] text-[#1B6E6E] font-bold text-xs uppercase tracking-widest px-5 py-1.5 rounded-full shadow-md whitespace-nowrap">
+            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#92BF30] text-[#133824] font-black text-xs uppercase tracking-widest px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
             MAIS POPULAR
           </div>
-          <p class="font-bold text-[#7AD8D6] text-sm uppercase tracking-widest mb-3">Ingresso Completo</p>
+          <p class="font-black text-white text-sm uppercase tracking-widest mb-3">Ingresso Completo</p>
           <div class="mb-1">
             <span class="font-display text-white" style="font-size:3.2rem;">R$&nbsp;147</span>
-            <span class="text-white/70 text-sm">,00</span>
+            <span class="text-white/90 text-sm">,00</span>
           </div>
-          <p class="text-white/60 text-sm mb-7">ou 12x de R$ 14,70</p>
+          <p class="text-white/85 text-sm mb-7">ou 12x de R$ 14,70</p>
           <ul class="space-y-4 mb-8 flex-1">
-            <li class="flex items-start gap-2.5 text-sm text-white/90">
-              <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <li class="flex items-start gap-2.5 text-sm text-white">
+              <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"></path>
               </svg>
               <span>Tudo do Ingresso Básico</span>
             </li>
-            <li class="flex items-start gap-2.5 text-sm text-white/90">
-              <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <li class="flex items-start gap-2.5 text-sm text-white">
+              <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"></path>
               </svg>
               <span><strong class="font-bold">Acesso VITALÍCIO</strong> às gravações da oficina e todas as
                 palestras</span>
             </li>
-            <li class="flex items-start gap-2.5 text-sm text-white/90">
-              <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <li class="flex items-start gap-2.5 text-sm text-white">
+              <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"></path>
               </svg>
               <span>Rever o conteúdo quando e onde quiser</span>
             </li>
-            <li class="flex items-start gap-2.5 text-sm text-white/90">
-              <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Certificado digital de participação (14h)</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-white/90">
-              <svg class="w-5 h-5 text-[#FFD11A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Acesso completo por tempo ilimitado</span>
-            </li>
           </ul>
           <button onclick="selectTicket('completo')"
-            class="btn-completo block w-full text-center bg-[#FFD11A] hover:bg-[#FFC107] text-[#1B6E6E] font-bold py-4 rounded-2xl transition-all duration-200 cursor-pointer shadow-lg focus:outline-none focus:ring-4 focus:ring-[#FFD11A]/50">
+            class="btn-completo block w-full text-center bg-[#92BF30] hover:bg-[#A3D436] text-[#133824] font-bold py-4 rounded-2xl transition-all duration-200 cursor-pointer shadow-lg focus:outline-none focus:ring-4 focus:ring-[#92BF30]/50">
             QUERO O COMPLETO
           </button>
         </div>
@@ -2230,12 +1821,20 @@
     let currentContactId = null;
 
     function getUtms() {
-      const utms = {};
+      const utms = {
+        utm_source: '',
+        utm_medium: '',
+        utm_campaign: '',
+        utm_content: '',
+        utm_term: ''
+      };
       const params = new URLSearchParams(window.location.search);
       for (const [key, value] of params.entries()) {
         const lowerKey = key.toLowerCase();
-        if (lowerKey.startsWith('utm_') || lowerKey.startsWith('cblcam_')) {
-          utms[key] = value;
+        if (utms.hasOwnProperty(lowerKey)) {
+          utms[lowerKey] = value;
+        } else if (lowerKey.startsWith('utm_')) {
+          utms[lowerKey] = value;
         }
       }
       return utms;
@@ -2258,16 +1857,19 @@
         const utms = getUtms();
 
         const payload = {
-          name: formData.get('nome'),
-          email: formData.get('email'),
-          phone: formData.get('telefone'),
-          area: formData.get('area'),
-          graduacao: formData.get('graduacao'),
-          utms: utms
+          name: formData.get('nome') || '',
+          email: formData.get('email') || '',
+          phone: formData.get('telefone') || '',
+          graduacao: formData.get('graduacao') || '',
+          utm_source: utms.utm_source || '',
+          utm_medium: utms.utm_medium || '',
+          utm_campaign: utms.utm_campaign || '',
+          utm_content: utms.utm_content || '',
+          utm_term: utms.utm_term || ''
         };
 
         try {
-          const response = await fetch('/api/register', {
+          const response = await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
@@ -2277,16 +1879,16 @@
 
           if (data.success) {
             currentContactId = data.contactId;
-            // Abrir modal
+            // Abrir modal de seleção de ingressos
             modal.classList.add('open');
             document.body.style.overflow = 'hidden';
           } else {
-            alert('Ocorreu um erro ao salvar seus dados. Por favor, tente novamente.');
-            console.error(data.error);
+            alert('Ocorreu um erro ao processar seus dados. Por favor, tente novamente.');
+            console.error('Subscription error:', data.error || data.details);
           }
         } catch (err) {
-          alert('Erro de conexão. Verifique sua internet.');
-          console.error(err);
+          alert('Erro de conexão. Verifique sua internet e tente novamente.');
+          console.error('Fetch error:', err);
         } finally {
           btnSubmit.disabled = false;
           btnText.textContent = 'QUERO GARANTIR MEU INGRESSO';
@@ -2295,44 +1897,44 @@
     }
 
     async function selectTicket(type) {
-      if (!currentContactId) return;
-
-      const tagName = type === 'basico'
-        ? '[C2] [CBLCAM] Geral'
-        : '[C2] [CBLCAM] Acesso a Gravação';
-
       const btn = document.querySelector(`.btn-${type}`);
-      const originalText = btn.textContent;
-      btn.textContent = 'CARREGANDO...';
-      btn.disabled = true;
-
-      try {
-        await fetch('/api/tag', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contactId: currentContactId, tagName: tagName })
-        });
-
-        // Placeholder Redirection
-        if (type === 'basico') {
-          window.location.href = 'https://pay.voompcreators.com.br/10625/offer/OMskwR';
-        } else {
-          window.location.href = 'https://pay.voompcreators.com.br/10625/offer/4Dv9IV';
-        }
-      } catch (err) {
-        console.error('Tagging error:', err);
-        // Prosseguir mesmo com erro de tag para não travar o usuário
-        window.location.href = type === 'basico'
-          ? 'https://pay.voompcreators.com.br/10625/offer/OMskwR'
-          : 'https://pay.voompcreators.com.br/10625/offer/4Dv9IV';
+      if (btn) {
+        btn.textContent = 'REDIRECIONANDO...';
+        btn.disabled = true;
       }
+
+      // Carry URL UTM search query to checkout
+      const searchParams = window.location.search;
+      const baseUrl = type === 'basico'
+        ? 'https://pay.voompcreators.com.br/10625/offer/oSchMM'
+        : 'https://pay.voompcreators.com.br/10625/offer/hTkYhg';
+
+      const destination = searchParams ? `${baseUrl}${baseUrl.includes('?') ? '&' : '?'}${searchParams.substring(1)}` : baseUrl;
+
+      if (currentContactId) {
+        const tagName = type === 'basico'
+          ? '[C3][CBLCAM] Lead'
+          : '[C3][CBLCAM] Lead';
+
+        try {
+          await fetch('/api/tag', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contactId: currentContactId, tagName: tagName })
+          });
+        } catch (err) {
+          console.error('Tagging error:', err);
+        }
+      }
+
+      window.location.href = destination;
     }
 
     // ============================================================
     // COUNTDOWN
     // ============================================================
     function updateCountdown() {
-      const target = new Date('2026-04-27T17:00:00-03:00').getTime();
+      const target = new Date('2026-09-21T17:00:00-03:00').getTime();
       const now = Date.now();
       const diff = target - now;
       if (diff <= 0) {
@@ -2463,6 +2065,56 @@
     }
   </script>
 
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.speakers-swiper', {
+        slidesPerView: 1,
+        loop: true,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 }
+        }
+      });
+    });
+  </script>
+
+  <script id="form-logic-graduacao">
+    document.addEventListener('DOMContentLoaded', function () {
+      const gradRadios = document.querySelectorAll('input[name="graduacao"]');
+      const areaContainer = document.getElementById('area-container');
+      const areaInput = document.getElementById('f-area');
+
+      gradRadios.forEach(radio => {
+        radio.addEventListener('change', function () {
+          if (this.value === 'sim') {
+            areaContainer.style.display = 'block';
+            areaInput.required = true;
+          } else {
+            areaContainer.style.display = 'none';
+            areaInput.required = false;
+            areaInput.value = ''; // Optional: clear value if they switch to no
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
