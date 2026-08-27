@@ -774,10 +774,9 @@
             </h1>
 
             <div class="flex flex-col items-start gap-3 mb-4 relative z-10">
-              <span class="inline-block bg-white/20 border border-white/40 backdrop-blur-md px-4 py-1.5 rounded-full text-white font-bold text-sm uppercase tracking-wider shadow-sm">
+              <span class="inline-block bg-[#92BF30] text-[#133824] font-extrabold px-4 py-1.5 rounded-full text-xs sm:text-sm uppercase tracking-wider shadow-md">
                 Nova Lei do Licenciamento Ambiental
               </span>
-
             </div>
           </div>
 
@@ -1693,6 +1692,20 @@
   </footer>
 
   <!-- ============================================================
+       MOBILE STICKY CTA (Bottom Right)
+  ============================================================ -->
+  <div id="mobile-sticky-cta"
+    class="fixed bottom-5 right-4 z-40 sm:hidden transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none">
+    <a href="#inscricao"
+      class="inline-flex items-center gap-2 bg-[#92BF30] hover:bg-[#A3D436] text-[#133824] font-black text-sm px-5 py-3.5 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.35)] border border-white/25 active:scale-95 transition-all duration-200">
+      <span>GARANTIR VAGA</span>
+      <svg class="w-4 h-4 text-[#133824]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ============================================================
        SUCCESS MODAL (TICKET SELECTION)
   ============================================================ -->
   <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6"
@@ -1963,14 +1976,27 @@
     setInterval(updateCountdown, 1000);
 
     // ============================================================
-    // NAVBAR SCROLL & LOGO RESIZE
+    // NAVBAR SCROLL & MOBILE STICKY CTA
     // ============================================================
     const navbar = document.getElementById('navbar');
+    const mobileStickyCta = document.getElementById('mobile-sticky-cta');
+
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
+      const scrollY = window.scrollY;
+      if (scrollY > 40) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
+      }
+
+      if (mobileStickyCta) {
+        if (scrollY > 350) {
+          mobileStickyCta.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+          mobileStickyCta.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        } else {
+          mobileStickyCta.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+          mobileStickyCta.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        }
       }
     }, { passive: true });
 
