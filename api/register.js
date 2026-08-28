@@ -45,12 +45,18 @@ export default async function handler(req, res) {
     const formattedDate = now.toLocaleDateString('pt-BR');
     fieldValues.push({ field: '612', value: formattedDate });
 
+    // Sanitizar telefone: apenas dígitos e sem o prefixo +55 / 55
+    let cleanPhone = (phone || '').toString().trim().replace(/\D/g, '');
+    if (cleanPhone.startsWith('55') && cleanPhone.length > 11) {
+      cleanPhone = cleanPhone.substring(2);
+    }
+
     const contactPayload = {
       contact: {
         email,
         firstName,
         lastName,
-        phone,
+        phone: cleanPhone,
         fieldValues
       }
     };

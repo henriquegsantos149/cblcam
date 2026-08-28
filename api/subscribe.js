@@ -33,7 +33,14 @@ export default async function handler(req, res) {
     'Content-Type': 'application/json'
   };
 
-  const contactPhone = phone || telefone || '';
+  // Sanitizar telefone: apenas dígitos e sem o prefixo +55 / 55
+  let contactPhone = (phone || telefone || '').toString().trim();
+  let phoneDigits = contactPhone.replace(/\D/g, '');
+  if (phoneDigits.startsWith('55') && phoneDigits.length > 11) {
+    phoneDigits = phoneDigits.substring(2);
+  }
+  contactPhone = phoneDigits;
+
   const contactGraduacao = graduacao || graduation || '';
 
   // Split name if possible

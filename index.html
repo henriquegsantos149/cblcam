@@ -1802,10 +1802,16 @@
         const formData = new FormData(form);
         const utms = getUtms();
 
+        const rawPhone = (formData.get('telefone') || '').toString().trim();
+        let cleanPhone = rawPhone.replace(/\D/g, '');
+        if (cleanPhone.startsWith('55') && cleanPhone.length > 11) {
+          cleanPhone = cleanPhone.substring(2);
+        }
+
         const payload = {
           name: formData.get('nome') || '',
           email: formData.get('email') || '',
-          phone: formData.get('telefone') || '',
+          phone: cleanPhone,
           graduacao: formData.get('graduacao') || '',
           utm_source: utms.utm_source || '',
           utm_medium: utms.utm_medium || '',
