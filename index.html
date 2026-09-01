@@ -359,37 +359,41 @@
     ============================================================ */
     .speaker-card {
       background: #fff;
-      border-radius: 24px;
+      border-radius: 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
-      width: calc(100% - 1.25rem);
+      width: 100%;
+      max-width: 270px;
       display: flex;
       flex-direction: column;
     }
 
     @media (min-width: 640px) {
       .speaker-card {
-        width: calc(50% - 1.25rem);
+        width: calc(50% - 1rem);
+        max-width: 260px;
       }
     }
 
     @media (min-width: 768px) {
       .speaker-card {
-        width: calc(33.333% - 1.25rem);
+        width: calc(33.333% - 1rem);
+        max-width: 250px;
       }
     }
 
     @media (min-width: 1024px) {
       .speaker-card {
-        width: calc(25% - 1.25rem);
-        max-width: 300px;
+        width: calc(20% - 0.85rem);
+        max-width: 240px;
+        flex: 1 1 0;
       }
     }
 
     .speaker-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(65, 166, 166, 0.12);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(65, 166, 166, 0.15);
     }
 
     /* Gradientes extraídos da logo */
@@ -661,8 +665,8 @@
         <div class="hidden lg:flex items-center gap-8">
           <a href="#certificado" class="nav-link text-sm uppercase tracking-wider">Certificado</a>
           <a href="#publico" class="nav-link text-sm uppercase tracking-wider">Público-Alvo</a>
-
-          <a href="#palestras" class="nav-link text-sm uppercase tracking-wider">Palestras</a>
+          <a href="#palestras" class="nav-link text-sm uppercase tracking-wider">Programação</a>
+          <a href="#palestrantes" class="nav-link text-sm uppercase tracking-wider">Palestrantes</a>
           <a href="#sobre" class="nav-link text-sm uppercase tracking-wider">Sobre</a>
           <a href="#faq" class="nav-link text-sm uppercase tracking-wider">FAQ</a>
         </div>
@@ -698,8 +702,8 @@
           class="h-20 mb-12 opacity-80 drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
         <a href="#certificado" class="mobile-link" onclick="closeMobileMenu()">Certificado</a>
         <a href="#publico" class="mobile-link" onclick="closeMobileMenu()">Público-Alvo</a>
-
-        <a href="#palestras" class="mobile-link" onclick="closeMobileMenu()">Palestras</a>
+        <a href="#palestras" class="mobile-link" onclick="closeMobileMenu()">Programação</a>
+        <a href="#palestrantes" class="mobile-link" onclick="closeMobileMenu()">Palestrantes</a>
         <a href="#sobre" class="mobile-link" onclick="closeMobileMenu()">Sobre o Congresso</a>
         <a href="#faq" class="mobile-link" onclick="closeMobileMenu()">FAQ</a>
         <a href="#inscricao"
@@ -1075,11 +1079,6 @@
     </section>
 
     <!-- ============================================================
-         PALESTRANTES
-    ============================================================ -->
-
-
-    <!-- ============================================================
          PALESTRAS / PROGRAMAÇÃO
     ============================================================ -->
     <section id="palestras" class="py-20 bg-white" aria-label="Programação do congresso">
@@ -1173,6 +1172,89 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PALESTRANTES
+    ============================================================ -->
+    <section id="palestrantes" class="py-14 sm:py-16 bg-[#F2F2F2]" aria-label="Palestrantes do congresso">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-10 sm:mb-12 reveal">
+          <div class="accent-line mx-auto mb-4"></div>
+          <h2 class="font-display font-bold text-[#41A6A6] text-2xl sm:text-3xl lg:text-4xl tracking-tight mb-3">PALESTRANTES</h2>
+          <p class="text-gray-600 text-sm sm:text-base max-w-xl mx-auto">Grandes referências nacionais no licenciamento ambiental, direito regulatório, geotecnologias e inteligência artificial.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3.5 sm:gap-4 lg:gap-3 xl:gap-4">
+
+          <article class="speaker-card reveal reveal-delay-1" tabindex="0" aria-label="Palestrante Henrique Gonzalez">
+            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+              <div class="w-full mb-2 overflow-hidden rounded-xl">
+                <img src="apoio/Henrique.webp" alt="Henrique Gonzalez" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+              </div>
+              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Henrique Gonzalez</h3>
+                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Ambiental, Especialista em Geotecnologias · UFRJ</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card reveal reveal-delay-2" tabindex="0" aria-label="Palestrante Anelise Gomes">
+            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+              <div class="w-full mb-2 overflow-hidden rounded-xl">
+                <img src="apoio/Anelise.webp" alt="Anelise Gomes" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+              </div>
+              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Anelise Gomes</h3>
+                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Cientista Social, Doutoranda em Ciências Ambientais · IEE/USP</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card reveal reveal-delay-3" tabindex="0" aria-label="Palestrante Gustavo Coser">
+            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+              <div class="w-full mb-2 overflow-hidden rounded-xl">
+                <img src="apoio/Gustavo%20Coser.webp" alt="Gustavo Coser" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+              </div>
+              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Gustavo Coser</h3>
+                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Ambiental, 17 anos em ESG · UFES</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card reveal reveal-delay-4" tabindex="0" aria-label="Palestrante Sarah Antunes">
+            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+              <div class="w-full mb-2 overflow-hidden rounded-xl">
+                <img src="apoio/Sarah%20Antunes.webp" alt="Sarah Antunes" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+              </div>
+              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Sarah Antunes</h3>
+                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheira Ambiental e Sanitarista, Especialista em ESG · IBESG</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card reveal reveal-delay-1" tabindex="0" aria-label="Palestrante Gustavo Gutemberg">
+            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+              <div class="w-full mb-2 overflow-hidden rounded-xl">
+                <img src="apoio/Gustavo%20Gutemberg.webp" alt="Gustavo Gutemberg" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+              </div>
+              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Gustavo Gutemberg</h3>
+                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Sanitarista e Ambiental, Especialista em Gestão Ambiental · Descomplica</p>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
