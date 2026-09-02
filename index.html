@@ -2,6 +2,7 @@
 <html lang="pt-BR" class="scroll-smooth">
 
 <head>
+  <meta charset="UTF-8">
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -33,7 +34,6 @@
       src="https://www.facebook.com/tr?id=1373287802810243&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
 
-  <meta charset="UTF-8">
   <link rel="icon" type="image/webp" href="apoio/Logo_menu_rev.webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
@@ -355,8 +355,20 @@
     }
 
     /* ============================================================
-       SPEAKER CARDS  — gradientes teal da logo
+       SPEAKER CARDS & CAROUSEL (SWIPER)
     ============================================================ */
+    .speakers-swiper {
+      padding: 12px 4px 48px 4px !important;
+      position: relative;
+      overflow: hidden !important;
+    }
+
+    .speakers-swiper .swiper-slide {
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+
     .speaker-card {
       background: #fff;
       border-radius: 20px;
@@ -364,36 +376,64 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
       width: 100%;
-      max-width: 270px;
+      height: 100%;
       display: flex;
       flex-direction: column;
-    }
-
-    @media (min-width: 640px) {
-      .speaker-card {
-        width: calc(50% - 1rem);
-        max-width: 260px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .speaker-card {
-        width: calc(33.333% - 1rem);
-        max-width: 250px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .speaker-card {
-        width: calc(20% - 0.85rem);
-        max-width: 240px;
-        flex: 1 1 0;
-      }
     }
 
     .speaker-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 24px rgba(65, 166, 166, 0.15);
+    }
+
+    /* Swiper custom bullets */
+    .speakers-swiper .swiper-pagination-bullet {
+      width: 9px;
+      height: 9px;
+      background: #cbd5e1;
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+
+    .speakers-swiper .swiper-pagination-bullet-active {
+      width: 28px;
+      border-radius: 9999px;
+      background: #41A6A6 !important;
+    }
+
+    /* Swiper custom arrows */
+    .speakers-nav-btn {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 30;
+      cursor: pointer;
+    }
+
+    .speakers-nav-btn:hover {
+      background: #41A6A6;
+      border-color: #41A6A6;
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 6px 20px rgba(65, 166, 166, 0.4);
+    }
+
+    .speakers-nav-btn:after {
+      display: none !important;
+    }
+
+    .swiper-button-disabled.speakers-nav-btn {
+      opacity: 0.3;
+      pointer-events: none;
     }
 
     /* Gradientes extraídos da logo */
@@ -629,6 +669,11 @@
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    .speakers-swiper {
+      overflow: hidden !important;
+    }
+  </style>
 </head>
 
 <body class="font-body bg-[#F2F2F2] text-[#2C2C2C] overflow-x-hidden">
@@ -1188,73 +1233,139 @@
           <p class="text-gray-600 text-sm sm:text-base max-w-xl mx-auto">Grandes referências nacionais no licenciamento ambiental, direito regulatório, geotecnologias e inteligência artificial.</p>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-3.5 sm:gap-4 lg:gap-3 xl:gap-4">
+        <div class="relative px-6 sm:px-12 md:px-14 reveal">
+          <div class="swiper speakers-swiper !overflow-hidden" style="overflow: hidden !important;">
+            <div class="swiper-wrapper">
 
-          <article class="speaker-card reveal reveal-delay-1" tabindex="0" aria-label="Palestrante Henrique Gonzalez">
-            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
-              <div class="w-full mb-2 overflow-hidden rounded-xl">
-                <img src="apoio/Henrique.webp" alt="Henrique Gonzalez" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+              <!-- Henrique Gonzalez -->
+              <div class="swiper-slide">
+                <article class="speaker-card h-full" tabindex="0" aria-label="Palestrante Henrique Gonzalez">
+                  <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+                    <div class="w-full mb-2 overflow-hidden rounded-xl">
+                      <img src="apoio/Henrique.webp" alt="Henrique Gonzalez" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                      <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Henrique Gonzalez</h3>
+                      <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                      <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Ambiental, Especialista em Geotecnologias · UFRJ</p>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Henrique Gonzalez</h3>
-                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
-                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Ambiental, Especialista em Geotecnologias · UFRJ</p>
+
+              <!-- Anelise Gomes -->
+              <div class="swiper-slide">
+                <article class="speaker-card h-full" tabindex="0" aria-label="Palestrante Anelise Gomes">
+                  <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+                    <div class="w-full mb-2 overflow-hidden rounded-xl">
+                      <img src="apoio/Anelise.webp" alt="Anelise Gomes" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                      <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Anelise Gomes</h3>
+                      <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                      <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Cientista Social, Doutoranda em Ciências Ambientais · IEE/USP</p>
+                    </div>
+                  </div>
+                </article>
               </div>
+
+              <!-- Gustavo Coser -->
+              <div class="swiper-slide">
+                <article class="speaker-card h-full" tabindex="0" aria-label="Palestrante Gustavo Coser">
+                  <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+                    <div class="w-full mb-2 overflow-hidden rounded-xl">
+                      <img src="apoio/Gustavo%20Coser.webp" alt="Gustavo Coser" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                      <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Gustavo Coser</h3>
+                      <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                      <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Ambiental, 17 anos em ESG · UFES</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Sarah Antunes -->
+              <div class="swiper-slide">
+                <article class="speaker-card h-full" tabindex="0" aria-label="Palestrante Sarah Antunes">
+                  <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+                    <div class="w-full mb-2 overflow-hidden rounded-xl">
+                      <img src="apoio/Sarah%20Antunes.webp" alt="Sarah Antunes" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                      <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Sarah Antunes</h3>
+                      <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                      <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheira Ambiental e Sanitarista, Especialista em ESG · IBESG</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Gustavo Gutemberg -->
+              <div class="swiper-slide">
+                <article class="speaker-card h-full" tabindex="0" aria-label="Palestrante Gustavo Gutemberg">
+                  <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+                    <div class="w-full mb-2 overflow-hidden rounded-xl">
+                      <img src="apoio/Gustavo%20Gutemberg.webp" alt="Gustavo Gutemberg" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                      <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Gustavo Gutemberg</h3>
+                      <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                      <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Sanitarista e Ambiental, Especialista em Gestão Ambiental · Descomplica</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Hermann Fernandes -->
+              <div class="swiper-slide">
+                <article class="speaker-card h-full" tabindex="0" aria-label="Palestrante Hermann Fernandes">
+                  <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+                    <div class="w-full mb-2 overflow-hidden rounded-xl">
+                      <img src="apoio/Hermann%20Fernandes.webp" alt="Hermann Fernandes" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                      <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Hermann Fernandes</h3>
+                      <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                      <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Ambiental (UFRJ), Especialista em Ciência de Dados · NewFields</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Marvin Freitas -->
+              <div class="swiper-slide">
+                <article class="speaker-card h-full" tabindex="0" aria-label="Palestrante Marvin Freitas">
+                  <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
+                    <div class="w-full mb-2 overflow-hidden rounded-xl">
+                      <img src="apoio/Marvim.webp" alt="Marvin Freitas" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
+                      <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Marvin Freitas</h3>
+                      <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
+                      <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Geólogo (UFRGS), Consultor Sênior em Regulação e Remediação · NewFields</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
             </div>
-          </article>
 
-          <article class="speaker-card reveal reveal-delay-2" tabindex="0" aria-label="Palestrante Anelise Gomes">
-            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
-              <div class="w-full mb-2 overflow-hidden rounded-xl">
-                <img src="apoio/Anelise.webp" alt="Anelise Gomes" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
-              </div>
-              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Anelise Gomes</h3>
-                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
-                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Cientista Social, Doutoranda em Ciências Ambientais · IEE/USP</p>
-              </div>
-            </div>
-          </article>
+            <!-- Pagination Bullets -->
+            <div class="swiper-pagination !bottom-0"></div>
+          </div>
 
-          <article class="speaker-card reveal reveal-delay-3" tabindex="0" aria-label="Palestrante Gustavo Coser">
-            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
-              <div class="w-full mb-2 overflow-hidden rounded-xl">
-                <img src="apoio/Gustavo%20Coser.webp" alt="Gustavo Coser" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
-              </div>
-              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Gustavo Coser</h3>
-                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
-                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Ambiental, 17 anos em ESG · UFES</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-4" tabindex="0" aria-label="Palestrante Sarah Antunes">
-            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
-              <div class="w-full mb-2 overflow-hidden rounded-xl">
-                <img src="apoio/Sarah%20Antunes.webp" alt="Sarah Antunes" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
-              </div>
-              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Sarah Antunes</h3>
-                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
-                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheira Ambiental e Sanitarista, Especialista em ESG · IBESG</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal reveal-delay-1" tabindex="0" aria-label="Palestrante Gustavo Gutemberg">
-            <div class="p-2 h-full flex flex-col bg-white rounded-[1.25rem] border border-gray-200/70 shadow-sm">
-              <div class="w-full mb-2 overflow-hidden rounded-xl">
-                <img src="apoio/Gustavo%20Gutemberg.webp" alt="Gustavo Gutemberg" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
-              </div>
-              <div class="bg-gradient-to-br from-[#1D4C3D] to-[#2C7B7B] rounded-xl p-3 sm:p-3.5 lg:p-3 xl:p-3.5 flex-1 flex flex-col text-left">
-                <h3 class="font-bold text-white text-[14px] sm:text-[15px] leading-tight mb-1.5">Gustavo Gutemberg</h3>
-                <div class="w-8 flex-shrink-0 h-[2px] bg-[#92BF30] mb-2 rounded-full"></div>
-                <p class="text-white/85 text-[11.5px] sm:text-[12px] leading-snug font-medium">Engenheiro Sanitarista e Ambiental, Especialista em Gestão Ambiental · Descomplica</p>
-              </div>
-            </div>
-          </article>
-
+          <!-- Navigation Buttons -->
+          <button class="swiper-button-prev speakers-nav-btn group !left-0 sm:!left-1" aria-label="Palestrante anterior">
+            <svg class="w-5 h-5 text-[#2C7B7B] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="swiper-button-next speakers-nav-btn group !right-0 sm:!right-1" aria-label="Próximo palestrante">
+            <svg class="w-5 h-5 text-[#2C7B7B] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -2122,8 +2233,14 @@
     document.addEventListener('DOMContentLoaded', function () {
       const swiper = new Swiper('.speakers-swiper', {
         slidesPerView: 1,
-        loop: true,
         spaceBetween: 20,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -2133,10 +2250,18 @@
           clickable: true,
         },
         breakpoints: {
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-          1280: { slidesPerView: 5 }
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          }
         }
       });
     });
