@@ -253,10 +253,6 @@ As inscrições ficam abertas até o início do congresso, ou enquanto houver va
 **O valor do ingresso já inclui o certificado?**
 Sim. O certificado digital está incluso em todos os ingressos, sem custo adicional.
 
-**Como tirar dúvidas ou falar com os organizadores?**
-Você pode entrar em contato pelos canais oficiais:
-- **WhatsApp:** +55 21 98263-9824
-- **Instagram:** @ambientalpro
 
 ---
 
