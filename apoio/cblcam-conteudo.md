@@ -81,6 +81,9 @@ Engenheiro Ambiental e Urbano pela UFABC, com pós-graduação em Remediação A
 ### Alice Hagge
 Bióloga e Mestre em Entomologia pela UFV, Especialista em Liderança e Gestão Pública pelo Centro de Liderança Pública. Pós-graduanda em ESG de Alto Impacto pela "Business Behavior Institute of Chicago".
 
+### Victor Silvestre
+Engenheiro Sanitarista e Ambiental, Mestre e Pesquisador. Especialista em inteligência artificial e licenciamento ambiental, fundador da SabIA e da VIVA Assessoria Ambiental.
+
 ### Gustavo Rosa
 Engenheiro de Produção pela UFF, com Pós-Graduação em Meio Ambiente e Sustentabilidade pela FGV.
 
