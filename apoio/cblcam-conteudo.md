@@ -247,9 +247,6 @@ Todos que buscam segurança jurídica e atualização técnica frente ao novo ma
 - Advogados e especialistas em Direito Ambiental que necessitam de atualizações normativas, precedentes e integração técnica-jurídica;
 - Desenvolvedores e fornecedores de tecnologia que buscam expor soluções em softwares GIS, IA e monitoramento para o setor ambiental.
 
-**Até quando posso me inscrever?**
-As inscrições ficam abertas até o início do congresso, ou enquanto houver vagas. Recomendamos garantir a sua o quanto antes para não perder lugar.
-
 **O valor do ingresso já inclui o certificado?**
 Sim. O certificado digital está incluso em todos os ingressos, sem custo adicional.
 
