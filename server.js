@@ -110,6 +110,23 @@ const server = http.createServer(async (req, res) => {
   fs.createReadStream(filePath).pipe(res);
 });
 
-server.listen(PORT, () => {
-  console.log(`Local dev server with /api support running at http://localhost:${PORT}`);
+let currentPort = Number(PORT);
+
+function startServer(port) {
+  server.listen(port, () => {
+    console.log(`\n🚀 Servidor local rodando em: http://localhost:${port}\n`);
+  });
+}
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.warn(`⚠️  A porta ${currentPort} já está em uso. Tentando a porta ${currentPort + 1}...`);
+    currentPort++;
+    startServer(currentPort);
+  } else {
+    console.error('Erro no servidor:', err);
+  }
 });
+
+startServer(currentPort);
+

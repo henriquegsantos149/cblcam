@@ -255,7 +255,7 @@ Sim. O certificado digital está incluso em todos os ingressos, sem custo adicio
 
 **Como tirar dúvidas ou falar com os organizadores?**
 Você pode entrar em contato pelos canais oficiais:
-- **WhatsApp:** +55 21 98504-7457
+- **WhatsApp:** +55 21 98263-9824
 - **Instagram:** @ambientalpro
 
 ---
