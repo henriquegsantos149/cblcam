@@ -55,31 +55,28 @@ Paleta predominante em verdes (natureza/meio ambiente), com amarelo de destaque 
 ## 🎤 Palestrantes
 
 ### Henrique Gonzalez
-Engenheiro Ambiental formado pela UFRJ e especialista em geotecnologias, com período de estudos na University of Technology Sydney, na Austrália, na área de Engenharia Ambiental e Tecnologias Ambientais.
+Engenheiro Ambiental formado pela UFRJ, com estudos na Universidade de Tecnologia em Sydney, na Austrália, e experiência em consultoria e análise espacial de dados ambientais. É Co-fundador da Ambiental Pro e atuou como Especialista Ambiental na NewFields. É especializado em remediação de solos e águas subterrâneas, gestão de áreas contaminadas e marcos regulatórios ambientais.
 
-### Karen Machado
-Advogada graduada pela PUC e especialista em Direito Ambiental (UFRGS), é Secretária-Geral da Comissão de Direito Ambiental da OAB/RS e atua há mais de 20 anos em compliance e ESG.
-
-### Rafael Tímbola
-Engenheiro ambiental, mestre e doutor em Engenharia com 14 anos de experiência na área ambiental. É responsável pela empresa O Perito Ambiental.
+### Gustavo Coser
+Engenheiro Ambiental e de Segurança do Trabalho e Mestrando em Tecnologias Sustentáveis pelo Instituto Federal do Espírito Santo, com 17 anos de experiência em gestão, consultoria e licenciamento ambiental. Possui atuação nos setores público e privado e, atualmente, lidera uma equipe responsável pela gestão de mais de 4 mil condicionantes ambientais distribuídas pelo Brasil.
 
 ### Anelise Gomes
-Graduada em Ciências Sociais com ênfase em Ciência Política (UFSCar) e Doutoranda em Ciências Ambientais pelo Instituto de Energia e Meio Ambiente (IEE/USP).
+Professora da pós-graduação em Auditoria, Licenciamento e Perícia Ambiental da Ambiental Pro. É Doutora em Ciências Ambientais pelo IEE/USP, com estágio na Universidade NOVA de Lisboa, mestre em Ciências da Engenharia Ambiental pela USP e graduada em Ciências Sociais pela UFSCar. É especializada em políticas públicas ambientais, economia do meio ambiente, economia ecológica e valoração econômica ambiental.
 
-### Cassio Albert Arend
-Advogado, Doutorando em Direito Ambiental (UCS) e Mestre (UNISC). É Conselheiro no CONSEMA/RS e Presidente da Comissão de Direito Ambiental da OAB de Santa Cruz do Sul. Atua de forma estratégica e institucional no debate sobre o licenciamento ambiental no Brasil.
+### Sarah Antunes
+Engenheira Ambiental e Sanitarista, Engenheira de Segurança do Trabalho, Mestre e Doutoranda em Gestão dos Recursos Naturais, com mais de 7 anos de experiência na área ambiental. Atua em licenciamento ambiental, elaboração de estudos e implementação de Sistemas de Gestão Integrado (SGI), com experiência nos setores de mineração, agroindústria, siderurgia, infraestrutura e energia. É Conselheira Consultiva do IBESG e possui uma comunidade de mais de 33 mil profissionais no LinkedIn.
 
-### Glaucia Brenny
-Advogada e Gestora Ambiental, Mestre em Controle da Poluição (UERJ). Especialista em Direito Ambiental e Público, atua há 15 anos em consultoria, compliance e licenciamento. É professora de pós-graduação com experiência em assessoria preventiva e negociação institucional.
+### Hermann Fernandes
+Engenheiro Ambiental pela UFRJ, especialista em Meio Ambiente e Ciência de Dados, com experiência em análise ambiental, automação, remediação e gestão de áreas contaminadas. Liderou equipes e estruturou departamentos de dados, além de atuar como mentor em sustentabilidade e inovação. Atualmente, é Especialista em Ciência de Dados e Meio Ambiente na NewFields Brasil.
 
-### Nelson Tonon
-Advogado, Mestre e Graduado em Direito (UFSC). Especialista em Direito Processual Civil (CESUSC) e Ambiental (PUC-SP). É sócio do Farenzena & Franco e Presidente do IDAM, com atuação especializada na interface entre Direito Ambiental e Agronegócio.
-
-### Bruno Bezerra
-Engenheiro Ambiental e Urbano pela UFABC, com pós-graduação em Remediação Ambiental pelo SENAC Santo Amaro.
+### Gustavo Gutemberg
+Graduado em Engenharia Ambiental e Sanitária pela Universidade da Amazônia (UNAMA), especialista em Gestão, Consultoria, Perícia, Auditoria e Fiscalização Ambiental pela Estácio e em Engenharia de Segurança do Trabalho pela UFPA. Atuou como professor na Faculdade Descomplica Digital e na Cogna Educação. Consultor Ambiental em Licenciamento e Estudos Ambientais e produtor de conteúdo com mais de 1,5 milhão de visualizações e mais de 50 mil seguidores.
 
 ### Alice Hagge
 Bióloga e Mestre em Entomologia pela UFV, Especialista em Liderança e Gestão Pública pelo Centro de Liderança Pública. Pós-graduanda em ESG de Alto Impacto pela "Business Behavior Institute of Chicago".
+
+### Márcio Rodrigues
+Gerente Corporativo Sênior de Meio Ambiente e Sustentabilidade na ICL América do Sul. Biólogo (Mackenzie) com especializações em ESG (Berkeley Law) e gestão de resíduos (JICA), além de pós-graduação em Gestão Ambiental e MBAs em Auditoria Ambiental Internacional e Economia Circular. Experiência executiva em gestão com passagens por CETESB, ContourGlobal, Ramboll e Bradesco.
 
 ### Victor Silvestre
 Engenheiro Sanitarista e Ambiental, Mestre e Pesquisador. Especialista em inteligência artificial e licenciamento ambiental, fundador da SabIA e da VIVA Assessoria Ambiental.
