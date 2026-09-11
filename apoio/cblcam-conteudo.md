@@ -64,7 +64,7 @@ Engenheiro Ambiental e de Segurança do Trabalho e Mestrando em Tecnologias Sust
 Professora da pós-graduação em Auditoria, Licenciamento e Perícia Ambiental da Ambiental Pro. É Doutora em Ciências Ambientais pelo IEE/USP, com estágio na Universidade NOVA de Lisboa, mestre em Ciências da Engenharia Ambiental pela USP e graduada em Ciências Sociais pela UFSCar. É especializada em políticas públicas ambientais, economia do meio ambiente, economia ecológica e valoração econômica ambiental.
 
 ### Sarah Antunes
-Engenheira Ambiental e Sanitarista, Engenheira de Segurança do Trabalho, Mestre e Doutoranda em Gestão dos Recursos Naturais, com mais de 7 anos de experiência na área ambiental. Atua em licenciamento ambiental, elaboração de estudos e implementação de Sistemas de Gestão Integrado (SGI), com experiência nos setores de mineração, agroindústria, siderurgia, infraestrutura e energia. É Conselheira Consultiva do IBESG e possui uma comunidade de mais de 33 mil profissionais no LinkedIn.
+Engenheira Ambiental e Sanitarista, Engenheira de Segurança do Trabalho, Mestre e Doutoranda em Gestão dos Recursos Naturais, com mais de 7 anos de experiência na área ambiental. Atua em licenciamento ambiental, elaboração de estudos e implementação de Sistemas de Gestão Integrado (SGI), com experiência nos setores de mineração, agroindústria, siderurgia, infraestrutura e energia. É Conselheira Consultiva do IBESG e possui uma comunidade de mais de 35 mil profissionais no LinkedIn.
 
 ### Hermann Fernandes
 Engenheiro Ambiental pela UFRJ, especialista em Meio Ambiente e Ciência de Dados, com experiência em análise ambiental, automação, remediação e gestão de áreas contaminadas. Liderou equipes e estruturou departamentos de dados, além de atuar como mentor em sustentabilidade e inovação. Atualmente, é Especialista em Ciência de Dados e Meio Ambiente na NewFields Brasil.
@@ -73,7 +73,7 @@ Engenheiro Ambiental pela UFRJ, especialista em Meio Ambiente e Ciência de Dado
 Graduado em Engenharia Ambiental e Sanitária pela Universidade da Amazônia (UNAMA), especialista em Gestão, Consultoria, Perícia, Auditoria e Fiscalização Ambiental pela Estácio e em Engenharia de Segurança do Trabalho pela UFPA. Atuou como professor na Faculdade Descomplica Digital e na Cogna Educação. Consultor Ambiental em Licenciamento e Estudos Ambientais e produtor de conteúdo com mais de 1,5 milhão de visualizações e mais de 50 mil seguidores.
 
 ### Alice Hagge
-Bióloga e Mestre em Entomologia pela UFV, Especialista em Liderança e Gestão Pública pelo Centro de Liderança Pública. Pós-graduanda em ESG de Alto Impacto pela "Business Behavior Institute of Chicago".
+Coordenadora de Projetos da Masterplan Engenharia Consultiva e Ambiental. Bióloga e Mestre em Entomologia pela UFV, Especialista em Liderança e Gestão Pública pelo Centro de Liderança Pública. Pós-graduanda em ESG de Alto Impacto pela "Business Behavior Institute of Chicago".
 
 ### Márcio Rodrigues
 Gerente Corporativo Sênior de Meio Ambiente e Sustentabilidade na ICL América do Sul. Biólogo (Mackenzie) com especializações em ESG (Berkeley Law) e gestão de resíduos (JICA), além de pós-graduação em Gestão Ambiental e MBAs em Auditoria Ambiental Internacional e Economia Circular. Experiência executiva em gestão com passagens por CETESB, ContourGlobal, Ramboll e Bradesco.
