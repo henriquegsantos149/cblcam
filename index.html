@@ -2639,65 +2639,6 @@
       });
     });
   </script>
-  <!-- Entry Intent Modal (Últimos Dias) -->
-  <div id="entry-intent-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-    <div class="relative bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="entry-intent-card">
-      <button onclick="closeEntryIntent()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-      <div class="text-center">
-        <h3 class="text-2xl font-bold font-display text-gray-900 mb-2">ÚLTIMOS DIAS!</h3>
-        <p class="text-gray-600 mb-8 text-lg leading-relaxed">O lote atual vai virar em breve. Não perca a oportunidade de garantir seu ingresso com o valor promocional.</p>
-        <button onclick="closeEntryIntentAndScroll()" class="w-full bg-[#92BF30] text-[#133824] font-bold py-4 rounded-xl hover:bg-[#82AC2A] transition-colors shadow-lg">
-          QUERO GARANTIR MINHA VAGA
-        </button>
-      </div>
-    </div>
-  </div>
-  
-  <script>
-    function closeEntryIntent() {
-      const modal = document.getElementById('entry-intent-modal');
-      const card = document.getElementById('entry-intent-card');
-      if (modal && card) {
-        modal.classList.remove('opacity-100');
-        card.classList.remove('scale-100');
-        setTimeout(() => {
-          modal.classList.add('hidden');
-          modal.classList.remove('flex');
-        }, 300);
-      }
-    }
-
-    function closeEntryIntentAndScroll() {
-      closeEntryIntent();
-      const target = document.getElementById('inscricao');
-      if(target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Show the entry modal after 1.5 seconds if it hasn't been shown in this session
-      if(!sessionStorage.getItem('entryIntentShown')) {
-        setTimeout(() => {
-          const modal = document.getElementById('entry-intent-modal');
-          const card = document.getElementById('entry-intent-card');
-          if (modal && card) {
-            sessionStorage.setItem('entryIntentShown', 'true');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            setTimeout(() => {
-              modal.classList.add('opacity-100');
-              card.classList.add('scale-100');
-            }, 10);
-          }
-        }, 1500);
-      }
-    });
-  </script>
 </body>
 
 </html>
