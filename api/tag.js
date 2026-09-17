@@ -7,7 +7,8 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { API_URL_ACTIVE, API_KEY_ACTIVE } = process.env;
+  const API_KEY_ACTIVE = process.env.API_KEY_ACTIVE || process.env.ACTIVE_API_KEY;
+  const API_URL_ACTIVE = process.env.API_URL_ACTIVE || 'https://ambientalpro.api-us1.com';
 
   if (!API_URL_ACTIVE || !API_KEY_ACTIVE) {
     return res.status(500).json({ error: 'Missing ActiveCampaign API configuration' });
