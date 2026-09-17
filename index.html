@@ -678,7 +678,44 @@
     .speakers-swiper {
       overflow: hidden !important;
     }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "III CBLCAM 2026 - Congresso Brasileiro de Licenciamento e Consultoria Ambiental",
+    "description": "O Marco Regulatório da Nova Lei do Licenciamento Ambiental no Brasil. Maior evento online do setor.",
+    "startDate": "2026-09-21T09:00:00-03:00",
+    "endDate": "2026-09-24T18:00:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://cblcam2026.ambientalpro.com.br"
+    },
+    "image": [
+      "https://cblcam2026.ambientalpro.com.br/apoio/Logo_menu_rev.webp"
+    ],
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ambiental Pro",
+      "url": "https://ambientalpro.com.br"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://cblcam2026.ambientalpro.com.br",
+      "price": "49.90",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-01-01T00:00:00-03:00"
+    }
+  }
+  </script>
 </head>
 
 <body class="font-body bg-[#F2F2F2] text-[#2C2C2C] overflow-x-hidden">
@@ -884,7 +921,7 @@
         </div>
         <div id="inscricao"
           class="bg-[#F2F2F2] rounded-3xl border border-gray-100 hero-right-column relative z-10 w-full mx-auto shadow-2xl bg-white border-0 lg:ml-auto max-w-sm p-5 sm:p-6 scroll-mt-28">
-          <h3 class="font-bold text-[#41A6A6] text-xl mb-6">Preencha seus dados</h3>
+          <h2 class="font-bold text-[#41A6A6] text-xl mb-6">Preencha seus dados</h2>
           <form id="form-registration" class="space-y-3" aria-label="Formulário de interesse no congresso">
             <div>
               <label for="f-nome" class="block text-sm font-semibold text-gray-700 mb-1.5">Seu nome <span
@@ -1418,9 +1455,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Ráfaga Fontoura</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Oficina Prática:</strong> Abertura da programação técnica com atividade prática conduzida por Ráfaga Fontoura
-                  </h3>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1459,9 +1496,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Anelise Gomes</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> Valoração econômica ambiental na Lei Geral do Licenciamento Ambiental: evidências para decisões, condicionantes e gestão de riscos
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1476,9 +1513,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Victor Silvestre</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> LAC na Prática: Elaborando o RCE e Assinando o Termo de Compromisso sem Erros
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1493,9 +1530,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Alice Hagge</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> Quem licencia? O mosaico federativo no licenciamento ambiental e o que muda para consultores e empreendedores
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1510,9 +1547,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Fernanda Bueloni</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> A nova Lei do Licenciamento na prática: os novos riscos de quem elabora e assina documentos e estudos ambientais
-                  </h3>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1547,9 +1584,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Henrique Gonzalez</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> Geotecnologias e IA: Estratégias Práticas para Profissionais de Vanguarda
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1564,9 +1601,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Sarah Antunes</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> Modalidades em Ação: Como Escolher e Tramitar LP, LI e LO
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1581,9 +1618,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Cristina Kei</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> CONAMA 513/2026: Novas Exigências para Monitoramento, Transparência e Gestão de Riscos Ambientais
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1598,9 +1635,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Alisson Melo</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> A Lei geral do Licenciamento Ambiental e seus efeitos no saneamento básico: Case do Ceará
-                  </h3>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1635,9 +1672,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Hermann Fernandes</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> Cumprir condicionantes é o suficiente? Dados, evidências e rastreabilidade para decisões ambientais em um cenário de insegurança jurídica
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1652,9 +1689,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Gustavo Gutemberg</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> Novas Licenças Ambientais: Facilitação do Processo vs. Rigor nos Estudos Ambientais
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1669,9 +1706,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Gustavo Coser</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> Novas Oportunidades para o Profissional do Meio Ambiente: Posicionando-se na era da LGLA
-                  </h3>
+                  </h5>
                 </div>
               </div>
 
@@ -1686,9 +1723,9 @@
                   <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                     <h4 class="font-bold text-[#1D4C3D] text-sm sm:text-base">Márcio Rodrigues</h4>
                   </div>
-                  <h3 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
+                  <h5 class="font-normal text-black text-xs sm:text-sm leading-relaxed">
                     <strong class="font-bold text-black">Palestra:</strong> Data Science Ambiental: Transformando Dados e Georreferenciamento em Soluções Reais para análise de riscos e controles ambientais
-                  </h3>
+                  </h5>
                 </div>
               </div>
             </div>

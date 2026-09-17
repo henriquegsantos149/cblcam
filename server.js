@@ -34,7 +34,9 @@ const MIME_TYPES = {
   '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
-  '.pdf': 'application/pdf'
+  '.pdf': 'application/pdf',
+  '.txt': 'text/plain; charset=utf-8',
+  '.md': 'text/markdown; charset=utf-8'
 };
 
 const server = http.createServer(async (req, res) => {
@@ -93,11 +95,32 @@ const server = http.createServer(async (req, res) => {
   // Serve static files
   let filePath = path.join(__dirname, pathname === '/' ? 'index.html' : decodeURIComponent(pathname));
   
+  // Markdown Content Negotiation
+  if (pathname === '/' && req.headers.accept && req.headers.accept.includes('text/markdown')) {
+    res.setHeader('Vary', 'Accept');
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+    
+    const mdPath = path.join(__dirname, 'apoio', 'cblcam-conteudo.md');
+    if (fs.existsSync(mdPath)) {
+      fs.createReadStream(mdPath).pipe(res);
+    } else {
+      res.end('# III CBLCAM 2026\n\nBem-vindo ao III Congresso Brasileiro de Licenciamento e Consultoria Ambiental. Para agentes de IA, consulte nosso `/llms.txt`.\n');
+    }
+    return;
+  }
+  
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
     filePath = path.join(filePath, 'index.html');
   }
 
   if (!fs.existsSync(filePath)) {
+    if (req.headers.accept && req.headers.accept.includes('text/markdown')) {
+      res.statusCode = 404;
+      res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+      res.end('# 404 Not Found\n\nThe page you requested does not exist. Please refer to our [agent instructions](/llms.txt) for available endpoints.');
+      return;
+    }
     res.statusCode = 404;
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
     res.end('404 Not Found');
