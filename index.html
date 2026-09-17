@@ -2639,34 +2639,68 @@
       });
     });
   </script>
-  <!-- Toast Notification (Últimos Dias) -->
-  <div id="toast-urgency" class="fixed bottom-6 right-6 z-[100] transform translate-y-20 opacity-0 transition-all duration-700 ease-out flex items-center gap-4 bg-gradient-to-r from-[#1D4C3D] to-[#2C7B7B] p-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/10 max-w-[340px] md:max-w-[400px]">
-    <div class="flex-shrink-0 relative">
-      <span class="absolute -top-1 -right-1 flex h-3 w-3">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#92BF30] opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#92BF30]"></span>
-      </span>
-      <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
-        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+  <!-- Entry Intent Modal (Últimos Dias) -->
+  <div id="entry-intent-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+    <div class="relative bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="entry-intent-card">
+      <button onclick="closeEntryIntent()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#E8F3D6] mb-6">
+          <svg class="w-8 h-8 text-[#548035]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold font-display text-gray-900 mb-2">ÚLTIMOS DIAS!</h3>
+        <p class="text-gray-600 mb-8 text-lg leading-relaxed">O lote atual vai virar em breve. Não perca a oportunidade de garantir seu ingresso com o valor promocional.</p>
+        <button onclick="closeEntryIntentAndScroll()" class="w-full bg-[#92BF30] text-[#133824] font-bold py-4 rounded-xl hover:bg-[#82AC2A] transition-colors shadow-lg">
+          QUERO GARANTIR MINHA VAGA
+        </button>
       </div>
     </div>
-    <div class="flex-1 cursor-pointer" onclick="document.getElementById('inscricao').scrollIntoView({ behavior: 'smooth' }); document.getElementById('toast-urgency').style.display='none';">
-      <h4 class="font-display font-bold text-white text-sm">ÚLTIMOS DIAS!</h4>
-      <p class="font-body text-white/90 text-xs mt-0.5 leading-tight">O lote atual vai virar em breve. <span class="font-semibold text-[#92BF30]">Garanta sua vaga!</span></p>
-    </div>
-    <button onclick="document.getElementById('toast-urgency').style.display='none'" class="absolute top-2 right-2 text-white/40 hover:text-white transition-colors" aria-label="Fechar aviso">
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-    </button>
   </div>
   
   <script>
+    function closeEntryIntent() {
+      const modal = document.getElementById('entry-intent-modal');
+      const card = document.getElementById('entry-intent-card');
+      if (modal && card) {
+        modal.classList.remove('opacity-100');
+        card.classList.remove('scale-100');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }, 300);
+      }
+    }
+
+    function closeEntryIntentAndScroll() {
+      closeEntryIntent();
+      const target = document.getElementById('inscricao');
+      if(target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        const toast = document.getElementById('toast-urgency');
-        if (toast) {
-          toast.classList.remove('translate-y-20', 'opacity-0');
-        }
-      }, 1500);
+      // Show the entry modal after 1.5 seconds if it hasn't been shown in this session
+      if(!sessionStorage.getItem('entryIntentShown')) {
+        setTimeout(() => {
+          const modal = document.getElementById('entry-intent-modal');
+          const card = document.getElementById('entry-intent-card');
+          if (modal && card) {
+            sessionStorage.setItem('entryIntentShown', 'true');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+              modal.classList.add('opacity-100');
+              card.classList.add('scale-100');
+            }, 10);
+          }
+        }, 1500);
+      }
     });
   </script>
 </body>
