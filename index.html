@@ -2639,6 +2639,36 @@
       });
     });
   </script>
+  <!-- Toast Notification (Últimos Dias) -->
+  <div id="toast-urgency" class="fixed bottom-6 right-6 z-[100] transform translate-y-20 opacity-0 transition-all duration-700 ease-out flex items-center gap-4 bg-gradient-to-r from-[#1D4C3D] to-[#2C7B7B] p-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/10 max-w-[340px] md:max-w-[400px]">
+    <div class="flex-shrink-0 relative">
+      <span class="absolute -top-1 -right-1 flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#92BF30] opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#92BF30]"></span>
+      </span>
+      <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </div>
+    </div>
+    <div class="flex-1 cursor-pointer" onclick="document.getElementById('inscricao').scrollIntoView({ behavior: 'smooth' }); document.getElementById('toast-urgency').style.display='none';">
+      <h4 class="font-display font-bold text-white text-sm">ÚLTIMOS DIAS!</h4>
+      <p class="font-body text-white/90 text-xs mt-0.5 leading-tight">O lote atual vai virar em breve. <span class="font-semibold text-[#92BF30]">Garanta sua vaga!</span></p>
+    </div>
+    <button onclick="document.getElementById('toast-urgency').style.display='none'" class="absolute top-2 right-2 text-white/40 hover:text-white transition-colors" aria-label="Fechar aviso">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const toast = document.getElementById('toast-urgency');
+        if (toast) {
+          toast.classList.remove('translate-y-20', 'opacity-0');
+        }
+      }, 1500);
+    });
+  </script>
 </body>
 
 </html>
