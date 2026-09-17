@@ -2586,11 +2586,6 @@
         </svg>
       </button>
       <div class="text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-6">
-          <svg class="w-8 h-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-          </svg>
-        </div>
         <h3 class="text-2xl font-bold font-display text-gray-900 mb-2">Realmente deseja sair?</h3>
         <p class="text-gray-600 mb-8 text-lg leading-relaxed">Últimos dias para garantir seu ingresso, finalize sua compra antes que o lote mude ou que as vendas encerrem.</p>
         <button onclick="closeExitIntentAndScroll()" class="w-full bg-[#92BF30] text-[#133824] font-bold py-4 rounded-xl hover:bg-[#82AC2A] transition-colors shadow-lg">
@@ -2637,6 +2632,65 @@
           }, 10);
         }
       });
+    });
+  </script>
+  <!-- Entry Intent Modal (Últimos Dias) -->
+  <div id="entry-intent-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+    <div class="relative bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="entry-intent-card">
+      <button onclick="closeEntryIntent()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="text-center">
+        <h3 class="text-2xl font-bold font-display text-gray-900 mb-2">ÚLTIMOS DIAS!</h3>
+        <p class="text-gray-600 mb-8 text-lg leading-relaxed">Não perca a oportunidade de garantir seu ingresso para o maior congresso de licenciamento e consultoria ambiental!</p>
+        <button onclick="closeEntryIntentAndScroll()" class="w-full bg-[#92BF30] text-[#133824] font-bold py-4 rounded-xl hover:bg-[#82AC2A] transition-colors shadow-lg">
+          QUERO GARANTIR MINHA VAGA
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function closeEntryIntent() {
+      const modal = document.getElementById('entry-intent-modal');
+      const card = document.getElementById('entry-intent-card');
+      if (modal && card) {
+        modal.classList.remove('opacity-100');
+        card.classList.remove('scale-100');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }, 300);
+      }
+    }
+
+    function closeEntryIntentAndScroll() {
+      closeEntryIntent();
+      const target = document.getElementById('inscricao');
+      if(target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Show the entry modal after 1.5 seconds if it hasn't been shown in this session
+      if(!sessionStorage.getItem('entryIntentShown')) {
+        setTimeout(() => {
+          const modal = document.getElementById('entry-intent-modal');
+          const card = document.getElementById('entry-intent-card');
+          if (modal && card) {
+            sessionStorage.setItem('entryIntentShown', 'true');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+              modal.classList.add('opacity-100');
+              card.classList.add('scale-100');
+            }, 10);
+          }
+        }, 1500);
+      }
     });
   </script>
 </body>
