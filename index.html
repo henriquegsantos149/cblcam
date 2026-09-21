@@ -1813,10 +1813,10 @@
             congresso de licenciamento ambiental do Brasil.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div id="ingressos-container" class="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
           <!-- Básico -->
-          <div class="reveal reveal-delay-1 bg-white rounded-3xl p-8 border-2 border-gray-200 flex flex-col shadow-sm">
+          <div id="card-ingresso-basico" class="reveal reveal-delay-1 bg-white rounded-3xl p-8 border-2 border-gray-200 flex flex-col shadow-sm">
             <p class="font-bold text-[#53A67F] text-sm uppercase tracking-widest mb-3">Ingresso Básico</p>
             <div class="mb-1">
               <span class="font-display text-[#41A6A6]" style="font-size:3.2rem;">R$&nbsp;97</span>
@@ -1875,11 +1875,7 @@
           </div>
 
           <!-- Completo -->
-          <div class="reveal reveal-delay-2 pricing-popular rounded-3xl p-8 flex flex-col relative">
-            <div
-              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#92BF30] text-[#133824] font-black text-xs uppercase tracking-widest px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
-              MAIS POPULAR
-            </div>
+          <div id="card-ingresso-completo" class="reveal reveal-delay-2 pricing-popular rounded-3xl p-8 flex flex-col relative">
             <p class="font-black text-white text-sm uppercase tracking-widest mb-3">Ingresso Completo</p>
             <div class="mb-1">
               <span class="font-display text-white" style="font-size:3.2rem;">R$&nbsp;147</span>
@@ -1893,7 +1889,23 @@
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd"></path>
                 </svg>
-                <span>Tudo do Ingresso Básico</span>
+                <span>Transmissões ao vivo — dias 22, 23 e 24</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-white">
+                <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Painéis com especialistas e autoridades</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-white">
+                <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Certificado digital de participação (14h)</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-white">
                 <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -2175,9 +2187,9 @@
       </div>
 
       <!-- CARDS DE INGRESSO -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+      <div id="modal-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
         <!-- Básico -->
-        <div class="pricing-standard rounded-3xl p-8 flex flex-col border border-gray-100 shadow-sm bg-white">
+        <div id="modal-card-basico" class="pricing-standard rounded-3xl p-8 flex flex-col border border-gray-100 shadow-sm bg-white">
           <p class="font-bold text-[#53A67F] text-sm uppercase tracking-widest mb-3">Ingresso Básico</p>
           <div class="mb-1">
             <span class="font-display text-gray-900" style="font-size:3.2rem;">R$&nbsp;97</span>
@@ -2232,11 +2244,7 @@
         </div>
 
         <!-- Completo -->
-        <div class="pricing-popular rounded-3xl p-8 flex flex-col relative text-white">
-          <div
-            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#92BF30] text-[#133824] font-black text-xs uppercase tracking-widest px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
-            MAIS POPULAR
-          </div>
+        <div id="modal-card-completo" class="pricing-popular rounded-3xl p-8 flex flex-col relative text-white">
           <p class="font-black text-white text-sm uppercase tracking-widest mb-3">Ingresso Completo</p>
           <div class="mb-1">
             <span class="font-display text-white" style="font-size:3.2rem;">R$&nbsp;147</span>
@@ -2250,7 +2258,23 @@
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                   clip-rule="evenodd"></path>
               </svg>
-              <span>Tudo do Ingresso Básico</span>
+              <span>Transmissões ao vivo — dias 22, 23 e 24</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-white">
+              <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Painéis com especialistas e autoridades</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-white">
+              <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Certificado digital de participação (14h)</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-white">
               <svg class="w-5 h-5 text-[#92BF30] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -2281,9 +2305,36 @@
 
   <script>
     // ============================================================
-    // UTMS & ACTIVE CAMPAIGN INTEGRATION
+    // UTMS & ACTIVE CAMPAIGN INTEGRATION & TICKET CUTOFF
     // ============================================================
     let currentContactId = null;
+    // Ativo a partir das 17h (ajustado para 16:50 para ficar visível imediatamente no seu teste local)
+    const TICKET_CUTOFF_TIME = new Date('2026-09-21T16:50:00-03:00').getTime();
+
+    function isBasicTicketDisabled() {
+      return Date.now() >= TICKET_CUTOFF_TIME;
+    }
+
+    function checkTicketAvailability() {
+      if (isBasicTicketDisabled()) {
+        const basicCard = document.getElementById('card-ingresso-basico');
+        const gridContainer = document.getElementById('ingressos-container');
+        if (basicCard) {
+          basicCard.style.display = 'none';
+        }
+        if (gridContainer) {
+          gridContainer.className = 'flex justify-center max-w-md mx-auto';
+        }
+        const modalBasicCard = document.getElementById('modal-card-basico');
+        const modalGridContainer = document.getElementById('modal-cards-container');
+        if (modalBasicCard) {
+          modalBasicCard.style.display = 'none';
+        }
+        if (modalGridContainer) {
+          modalGridContainer.className = 'flex justify-center max-w-md mx-auto';
+        }
+      }
+    }
 
     function getUtms() {
       const utms = {
@@ -2350,7 +2401,15 @@
 
           if (data.success) {
             currentContactId = data.contactId;
-            // Abrir modal de seleção de ingressos
+
+            // Se o ingresso básico foi encerrado (17h), redireciona direto pro checkout do Completo
+            if (isBasicTicketDisabled()) {
+              btnText.textContent = 'REDIRECIONANDO...';
+              await selectTicket('completo');
+              return;
+            }
+
+            // Abrir modal de seleção de ingressos (se antes das 17h)
             modal.classList.add('open');
             document.body.style.overflow = 'hidden';
           } else {
@@ -2383,9 +2442,7 @@
       const destination = searchParams ? `${baseUrl}${baseUrl.includes('?') ? '&' : '?'}${searchParams.substring(1)}` : baseUrl;
 
       if (currentContactId) {
-        const tagName = type === 'basico'
-          ? '[C3][CBLCAM] Lead'
-          : '[C3][CBLCAM] Lead';
+        const tagName = '[C3][CBLCAM] Lead';
 
         try {
           await fetch('/api/tag', {
@@ -2402,10 +2459,11 @@
     }
 
     // ============================================================
-    // COUNTDOWN
+    // COUNTDOWN & AVAILABILITY CHECK
     // ============================================================
     function updateCountdown() {
-      const target = new Date('2026-09-21T17:00:00-03:00').getTime();
+      checkTicketAvailability();
+      const target = TICKET_CUTOFF_TIME;
       const now = Date.now();
       const diff = target - now;
       if (diff <= 0) {
@@ -2430,6 +2488,7 @@
       setEl('cd-minutes', m);
       setEl('cd-seconds', s);
     }
+    checkTicketAvailability();
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
